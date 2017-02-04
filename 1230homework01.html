@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	body{font-size: 0}
+	*{margin: 0;padding: 0}	
+	#time{font-size: 30px; height: 30px}
+	li{list-style: none;width: 136px;height: 356px}
+	#clock{width:1088px;height: 178px;overflow: hidden; position: relative;}
+	ul{position: absolute;top: 0px}
+</style>
+<script src="js/doMove.js"></script>
+<script>
+	
+/*
+  系统时间对象
+*/
+//alert(new Date());		//当前 系统的时间对象
+
+//myTime typeof object
+window.onload=function(){
+
+	var oBody=document.getElementsByTagName('body')[0];
+	var oP=document.getElementById('time');
+	var oClock=document.getElementById('clock');
+	var aUl=oClock.getElementsByTagName('ul');
+	var aLi=document.getElementsByTagName('li');
+	var aNow=document.querySelectorAll('.now');
+	var aLater=document.querySelectorAll('.later');
+	var onOff=true;
+	var n=0;
+	var m=0;
+	var timer1=null;
+	var timer2=null;
+	var timer3=null;
+	var timer4=null;
+	var timer5=null;
+	var timer6=null;
+
+//初始化
+	
+
+
+	
+
+	for (var i = 0; i < aUl.length; i++) {
+
+		aUl[i].style.left=136*i+'px'
+	}
+
+//	fnTab();
+	
+	function Change(index){
+			clearInterval(timer1)
+			doMove(aUl[index],'top',3,-178,function(){
+				aUl[index].style['top']=0;
+				aNow[index].src=aLater[index].src
+			})
+	}
+
+
+	
+	
+	setInterval(fnTimer,1000)
+
+	fnTimer()
+
+	timer2=setInterval(function(){
+  		var url=['image/1230/'+'n'+'.png','image/1230/'+'m'+'.png']
+  		n++;
+  		if (n==2) {
+  			n=0
+  		}
+  		aNow[2].src=url[n];
+  		aNow[5].src=url[n];
+		
+  	},500)
+	
+
+
+	function fnTimer(){
+	var myTime=new Date();
+	
+	
+	
+
+
+	//number
+	
+	var iHours=myTime.getHours();
+	var iMin=myTime.getMinutes();
+	var iSec=myTime.getSeconds();
+
+	var str='';
+	var str2='';
+
+	str=toTwo(iHours)+'n'+toTwo(iMin)+'n'+toTwo(iSec);
+	str2=toTwo2(iHours)+'n'+toTwo2(iMin)+'n'+toTwo2(iSec);
+
+	
+	oP.innerHTML=str;
+
+	
+	Change(7)
+
+
+		if (str2.charAt(7)==0 ) {
+			Change(6)
+		};
+
+		if (str2.charAt(6)==0 && str2.charAt(7)==0) {
+			Change(4)
+		};
+		
+		if (str2.charAt(4)==0 && str2.charAt(6)==0 && str2.charAt(7)==0) {
+			Change(3)
+		};
+
+		if (str2.charAt(6)==0 && str2.charAt(7)==0 && str2.charAt(3)==0 && str2.charAt(4)==0) {
+			Change(1)
+		};
+
+		if (str2.charAt(6)==0 && str2.charAt(7)==0 && str2.charAt(3)==0 && str2.charAt(4)==0 && str2.charAt(1)==0) {
+			Change(0)
+		};
+  	
+  	
+
+	for (var i = 0; i < aNow.length; i++) {
+		aNow[i].src='image/1230/'+str.charAt(i)+'.png';
+		
+		
+	};
+
+	for (var i = 0; i < aLater.length; i++) {
+		var num=Number(parseInt(str.charAt(i))+1)
+		if (str.charAt(i)==9) {num=0}
+		aLater[i].src='image/1230/'+str2.charAt(i)+'.png'
+	};
+
+
+	
+	};
+	
+	function toTwo(n){
+		return n<10? '0'+n:''+n;
+	};
+
+	function toTwo2(n){
+		var m=n+1
+		if (m<10) {
+			return '0'+m
+		}else if (m==60) {
+			return '0'+0
+		}else{
+			return m
+		}
+	};
+
+
+};
+
+</script>
+</head>
+<body>
+	<p id="time" style="display: none"></p>
+	<div id="clock">
+		<ul id="c1">
+			<li>
+				<img class="now" src="image/1230/1.png" alt="">
+				<img class="later" src="image/1230/1.png" alt="">
+			</li>
+		</ul>
+
+		<ul id="c2">
+			<li>
+				<img class="now" src="image/1230/1.png" alt="">
+				<img class="later" src="image/1230/1.png" alt="">
+			</li>
+		</ul>
+
+		<ul id="c3">
+			<li>
+				<img class="now" class="point" src="image/1230/1.png" alt="">
+				<img class="later" src="image/1230/1.png" alt="">
+			</li>
+		</ul>
+
+		<ul id="c4">
+			<li>
+				<img class="now" src="image/1230/1.png" alt="">
+				<img class="later" src="image/1230/1.png" alt="">
+			</li>
+		</ul>
+
+		<ul id="c5">
+			<li>
+				<img class="now" src="image/1230/1.png" alt="">
+				<img class="later" src="image/1230/1.png" alt="">
+			</li>
+		</ul>
+
+		<ul id="c6">
+			<li>
+				<img class="now" class="point" src="image/1230/1.png" alt="">
+				<img class="later" src="image/1230/1.png" alt="">
+			</li>
+		</ul>
+
+		<ul id="c7">
+			<li>
+				<img class="now" src="image/1230/1.png" alt="">
+				<img class="later" src="image/1230/1.png" alt="">
+			</li>
+		</ul>
+
+		<ul id="c8">
+			<li>
+				<img class="now" src="image/1230/1.png" alt="">
+				<img class="later" src="image/1230/1.png" alt="">
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>
