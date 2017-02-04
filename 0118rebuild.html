@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业2</title>
+<style>
+	body{background: url(image/ff15/Kingsglaive-32.png) no-repeat center;}
+	ul,li{padding: 0;margin: 0}
+	#pic{width: 800px;height: 500px;}
+	#album{width: 800px;height: 500px;overflow: hidden;position: relative;}
+	#img{height: 500px;position: absolute;}
+	#img li{list-style: none;background: url(image/ff15/t1.jpg);width: 800px;height: 500px;float: left;}
+	#pic{position: relative;margin: 0 auto;margin-top: 50px;}
+	
+	#pic a{width: 36px;height: 36px;border: 0px solid orange;border-radius: 18px;background: rgba(205,76,0,0.5);color: white;text-decoration: none;font-weight: bold;position: absolute;top: 50%;line-height: 36px;text-align: center;font-size: 20px;}
+	#pic #prev{left: 20px;}
+	#pic #next{right: 20px;}
+
+	#index{position: absolute;left: 325px;bottom: -30px;}
+	#index li{float: left;margin-right: 10px;list-style: none;width: 20px;height: 20px;border: 0px solid #333;border-radius: 10px;background: rgba(165,16,0,0.5);}
+	#index .tip{width: 80px;height: 50px;position: absolute;background: #fff;top: -55px;margin-left: -30px;opacity: 0;filter: alpha(opacity:0);border-radius: 10px}
+	#index .active{background: orange}
+</style>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+$(function(){
+	var iImgs=$('#img>li');
+	var iLength=iImgs.length;
+	var iW=iImgs.eq(0).outerWidth();
+	var iNow=0;
+	for (var i = 0; i < iLength; i++) {
+		iImgs.eq(i).css('background-image','url(image/ff15/t'+(i+1)+'.jpg')
+		$('#index img').eq(i).attr('src','image/ff15/t'+(i+1)+'.jpg')
+	}
+
+	$('#img').css('width',iW*iLength);
+		
+	$('#next').on('click',function(){		
+		iNow++;
+		if (iNow==iLength) iNow=0;
+		tab(iNow);
+	})
+	
+	$('#prev').on('click',function(){		
+		iNow--;
+		if (iNow==-1) iNow=iLength-1;
+		tab(iNow);
+	})
+	
+	for (var i = 0; i < iLength; i++) {
+		$('#index>li').eq(i).on('click',function(){			
+			iNow=$(this).index();
+			tab(iNow);
+		})
+
+		$('#index>li').eq(i).on('mouseover',function(){
+			n=$(this).index();
+			$('#index img').eq(n).animate({opacity:1},300)
+		})
+
+		$('#index>li').eq(i).on('mouseout',function(){
+			n=$(this).index();
+			$('#index img').eq(n).animate({opacity:0},300)
+		})
+	}
+
+	function tab(iNow){
+		$('#index>li').removeClass('active');
+		$('#index>li').eq(iNow).addClass('active');
+		$('#img').animate({left:-iW*iNow},500,'swing')
+	}
+
+	
+		var timer=setInterval(function(){
+		iNow++;
+		if (iNow==iLength) iNow=0;
+		tab(iNow);
+		},4000)
+	
+	$('#pic').mouseover(function(){
+		clearInterval(timer)
+	})
+
+	$('#pic').mouseout(function(){
+		timer=setInterval(function(){
+		iNow++;
+		if (iNow==iLength) iNow=0;
+		tab(iNow);
+		},2000)
+	})
+	
+
+})
+</script>
+</head>
+<body>
+	<div id="pic">
+		<div id="album">
+			<ul id="img">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>		
+		<a id="prev" href="javascript:;"><</a>
+		<a id="next" href="javascript:;">></a>
+		<ul id="index">
+			<li class="active"><img src=""  class="tip"></li>
+			<li><img src=""  class="tip"></li>
+			<li><img src=""  class="tip"></li>
+			<li><img src=""  class="tip"></li>
+			<li><img src=""  class="tip"></li>
+		</ul>
+	</div>
+	
+</body>
+</html>
