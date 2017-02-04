@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{margin: 0;padding: 0;list-style: none;text-transform: none;font-family: '微软雅黑'}
+	body{font-size: 0;background: #f5f5f5}
+	#title{width: 1000px;height: 50px;border-bottom: 3px solid brown;color: darkred;font-size: 30px;line-height: 50px;margin: 0 auto;margin-top: 5px}
+	#item{width: 960px;height:370px;margin: 0 auto;margin-top:10px ;position: relative;}
+	#content{position: relative;}
+	input{outline: none;}
+	#item .inp{width: 170px;height: 30px;background: white;float: left;margin-left: 10px;border-radius: 4px;border: 1px solid #ccc;}
+	#item .btn{width: 50px;height: 30px;font-size: 20px;line-height: 30px;color: darkred;background: white;float: left;border: none;}
+	#item li{width:240px;height: 350px;box-sizing: border-box;border-right: 1px solid lightgrey;float: left;position: relative;background: white;padding: 5px 0;}
+	#item #item4{border: 0}
+	#content .time{font-size: 16px;float: left;width: 200px;height: 30px;line-height: 30px;display: block;margin: 0 20px}
+	#content .pic{width: 200px;height: 200px;float: left;margin: 0 20px;background: orange;}
+	#content .ico{position: absolute;top: 60px;right: 10px;width: 50px;height: 50px;}
+	#content .text{width: 200px;height: 50px;font-size: 20px;float: left;margin: 0 20px;line-height: 30px;margin-bottom: 5px}
+	#content em{height: 30px;font-size: 16px;line-height: 30px;float: left;font-style: normal;margin-left: 20px}
+	#content strong{height: 30px;color: darkred;font-size: 16px;line-height: 30px;float: left;}
+	#list{width: 1000px;height: 50px;background: lightgrey;margin: 0 auto;margin-top: 5px;text-align: center;}
+	#list h2{font-size: 20px;line-height: 50px;color: darkred;width: 100px;height: 60px;margin: 0 150px;font-size: 20px;display: block;float: left;text-align: center;}
+	#price{width: 1000px;height: auto;margin: 0 auto;}
+	#now{width: 1000px;height: 40px;margin: 0 auto}
+	#now h3{font-size: 25px;line-height: 40px;margin-left: 20px;float: left;}
+	#now span{font-size: 25px;line-height: 40px;float: left;}
+	#now p{font-size: 25px;line-height:40px;color: darkred;float: left;font-weight: bold;}
+	.soldout{background: url(image/0101/soldout.png);}
+	.block{display: none;width: 240px;height: 350px;background: url(image/0101/soldout.png);position: absolute;top: 0;left: 0;}
+
+	.newItem{width: 1000px;height: 100px;background: darkred;color: white;float: left;font-size: 20px;border-bottom: 2px solid white}
+	#price .newItem .itemName{width: 400px;height: 100px;font-size: 20px;line-height: 100px;text-align: center;float: left;margin-left: 0}
+	#price .newItem .itemPrice{width: 100px;height: 100px;font-size: 20px;line-height: 100px;text-align: center;color: white;float: left;margin-left: 150px;}
+	#price .newItem .itemPic{width: 100px;height: 100px;float: right;}
+
+</style>
+<script src="js/doMove.js"></script>
+<script src="js/move.js"></script>
+<script>
+window.onload=function(){
+	var aInp=document.querySelectorAll('.inp');
+	var aBtn=document.querySelectorAll('.btn');
+	var aTime=document.querySelectorAll('.time');
+	var oItem=document.getElementById('item');
+	var aItem=oItem.getElementsByTagName('li');
+	var aImg=oItem.getElementsByTagName('img');
+	var aText=oItem.querySelectorAll('.text');
+	var aPrice=oItem.querySelectorAll('.price');
+	var oPrice=document.getElementById('price');
+	var nowPrice=document.querySelector('#now span');
+	var aBlock=oItem.querySelectorAll('.block');
+	var timer1=null;
+	var timer2=null;
+	var timer3=null;
+	var arrUrl=['image/0101/n1.png','image/0101/n2.png','image/0101/n3.png','image/0101/n4.png']
+
+	for (var i = 0; i < aBlock.length; i++) {
+		aBlock[i].style.left=i*240+'px';
+	};
+
+	for (var i = 0; i < aBtn.length; i++) {
+		aBtn[i].index=i;
+		aBtn[i].onclick=function(){	
+
+			var n=this.index	
+			
+			clearInterval(timer1)
+
+			timer3=setInterval(function(){
+				var iNow=new Date();
+				var iNew=new Date(aInp[n].value);
+				var t=Math.floor((iNew-iNow)/1000);
+				var str=Math.floor(t/86400)+'天'+Math.floor(t%86400/3600)+'时'+Math.floor(t%86400%3600/60)+'分'+t%60+'秒';	
+				
+				
+				aTime[n].innerHTML='剩余'+str;
+				if (t==0) {
+					clearInterval(timer3)
+						shake(aItem[n],'left',0,function(){
+						
+						doMove(aItem[n],'top',4,400);
+						timer2=setInterval(function(){
+							var o=n;
+							var opa=parseFloat(getStyle(aItem[o],'opacity'))-0.007;
+							aItem[o].style['opacity']=opa;
+							if (opa==0) {clearInterval(timer2)}
+						},10)
+						
+						aBlock[n].style.display='block';
+						oPrice.innerHTML+='<div class="newItem">'+'<h3 class="itemName">'+aText[n].innerHTML+'</h3>'+'<p class="itemPrice">'+aPrice[n].innerHTML+'</p>'+'<img src="'+arrUrl[n]+'"'+'class="itemPic">'+'</div>'
+
+						nowPrice.innerHTML=parseInt(nowPrice.innerHTML)+parseInt(aPrice[n].innerHTML)
+
+					});
+				};
+				
+			},1000)
+
+			timer1=setInterval(function(){
+
+				var iNow=new Date();
+				var iNew=new Date(aInp[n].value);
+				var t=Math.floor((iNew-iNow)/1000);
+				var str=Math.floor(t/86400)+'天'+Math.floor(t%86400/3600)+'时'+Math.floor(t%86400%3600/60)+'分'+t%60+'秒';	
+				
+				
+				aTime[n].innerHTML='剩余'+str;
+					
+				
+
+				if ( t==0) {
+					clearInterval(timer1)
+					var m=n
+					shake(aItem[m],'left',0,function(){
+						
+						doMove(aItem[m],'top',4,400);
+						timer2=setInterval(function(){
+							var o=m;
+							var opa=parseFloat(getStyle(aItem[o],'opacity'))-0.007;
+							aItem[o].style['opacity']=opa;
+							if (opa==0) {clearInterval(timer2)}
+						},10)
+						
+						aBlock[m].style.display='block';
+						oPrice.innerHTML+='<div class="newItem">'+'<h3 class="itemName">'+aText[m].innerHTML+'</h3>'+'<p class="itemPrice">'+aPrice[m].innerHTML+'</p>'+'<img src="'+arrUrl[m]+'"'+'class="itemPic">'+'</div>'
+
+						nowPrice.innerHTML=parseInt(nowPrice.innerHTML)+parseInt(aPrice[m].innerHTML)
+
+					});
+				};
+				
+			},1000);
+
+			
+		};
+	};
+
+	
+};
+</script>
+</head>
+<body>
+	<h2 id="title">限购时间</h2>
+
+	<div id="item">
+		<div class="block"></div>
+		<div class="block"></div>
+		<div class="block"></div>
+		<div class="block"></div>
+
+		<ul id="content">
+			<li id="item1">
+				<input class="inp" type="text" value="January 2,2017 01:48:12">				<input class="btn" type="button" value="确定"/><br/>
+				<span class="time">剩余00天00小时00分00秒</span>
+				<img class="pic" src="image/0101/m1.jpg" alt="">
+				<img class="ico" src="image/0101/sale.png" alt="">
+				<h3 class="text">Yezzy 350 Boost V2 原价抢购</h3>
+				<em>抢购价 </em>
+				<strong> ￥</strong>
+				<strong class="price">1899</strong>				
+			</li>
+		
+			<li id="item2">
+				<input class="inp" type="text" value="January 2,2017 01:48:12">				<input class="btn" type="button" value="确定"/><br/>
+				<span class="time">剩余00天00小时00分00秒</span>
+				<img class="pic" src="image/0101/m2.jpg" alt="">
+				<img class="ico" src="image/0101/sale.png" alt="">
+				<h3 class="text">PS4 Pro 1TB游戏主机 冰点价抢购</h3>
+				<em>抢购价 </em>
+				<strong> ￥</strong>
+				<strong class="price">2799</strong>
+				
+			</li>
+
+			<li id="item3">
+				<input class="inp" type="text" value="January 2,2017 01:48:12">				<input class="btn" type="button" value="确定"/><br/>
+				<span class="time">剩余00天00小时00分00秒</span>
+				<img class="pic" src="image/0101/m3.jpg" alt="">
+				<img class="ico" src="image/0101/sale.png" alt="">
+				<h3 class="text">Curry Back2back MVP套装 限时抢购</h3>
+				<em>抢购价 </em>
+				<strong> ￥</strong>
+				<strong class="price">2299</strong>
+				
+			</li>
+
+			<li id="item4">
+				<input class="inp" type="text" value="January 2,2017 01:48:12">				<input class="btn" type="button" value="确定"/><br/>
+				<span class="time">剩余00天00小时00分00秒</span>
+				<img class="pic" src="image/0101/m4.jpg" alt="">
+				<img class="ico" src="image/0101/sale.png" alt="">
+				<h3 class="text">最终幻想15 レガリア Xbox One 限定手柄</h3>
+				<em>抢购价 </em>
+				<strong> ￥</strong>
+				<strong class="price">599</strong>
+				
+			</li>
+		</ul>
+	</div>
+
+
+
+	<div id="list">
+		<h2>商品名称</h2>
+		<h2>价钱</h2>
+	</div>
+
+	<div id="price">
+		
+	</div>
+
+	<div id="now"><h3>总价：</h3><span>00.00</span><p>元</p>
+	</div>
+</body>
+</html>
