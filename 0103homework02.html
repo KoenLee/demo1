@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{margin: 0;padding: 0;}
+	h3{display: inline;}
+	#box{width: 900px;height: 400px;padding: 30px;border:10px solid lightgrey;position: relative;margin: 0 auto;margin-top: 20px}
+	#text1,#text2{width: 350px;height: 380px;padding: 10px;font-family: arial}
+	#text1{float: left;background: lightyellow;font-size: 16px;line-height: 20px;resize: none;border: 0;}
+	#text2{float: right;background: lightblue;font-size: 16px;line-height: 20px;overflow: auto;word-break: break-all;word-wrap: break-word;white-space: pre-wrap;text-shadow: 2px 2px 4px grey;}
+	#box a{position: absolute;left:50%;margin-left:-60px;width: 120px;height: 40px;display: block;background: orange;font-size: 18px;color: white;line-height: 40px;text-align: center;text-decoration: none;}
+	#box ul{position: absolute;left: 50%;width: 90px;margin-left: -60px;}
+	li{float: left;width: 10px;height: 10px;background: lightgrey;list-style: none;margin-right: 5px}
+	#strip{position: absolute;left:50%;margin-left: 15px;top: 130px;}
+	#loadStrip{opacity: 0}
+	#strip span{position: absolute;left: 50%;top:-40px;width: 120px;margin-left: -75px;font-size: 24px;text-align: center;font-family: '微软雅黑'}
+
+	.on{background: darkorange;}
+
+
+</style>
+<script src="js/doMove.js"></script>
+<script>
+window.onload=function(){
+	var oStrip=document.getElementById('strip');
+	var oLoad=document.getElementById('loadStrip');
+	var aPoint=oStrip.getElementsByTagName('li');
+	var oText1=document.getElementById('text1');
+	var oText2=document.getElementById('text2');	
+	var oA=document.getElementsByTagName('a')[0];
+	var oN1=document.getElementById('n1');
+	var oN2=document.getElementById('n2');
+	var oStr=oText1.innerHTML;
+	var timer1=null;
+	var timer2=null;
+	var n=0;
+
+//初始化
+	oText1.innerHTML='';
+
+//进度条动画效果：
+function loading(){
+	for (var i = 0; i < aPoint.length; i++) {
+		clearInterval(timer1);
+		opMove(oLoad,0.02,1);
+		timer1=setInterval(function(){
+			n++;
+			if (n==aPoint.length) {
+				n=0;
+			};
+			for (var i = 0; i < aPoint.length; i++) {
+				aPoint[i].className='';
+			};
+
+			aPoint[n].className='on';
+		},50)
+	};
+};
+
+//点击按钮之后：
+	oA.onclick=function(){	
+		clearInterval(timer2);
+		oText2.innerHTML='';
+		opMove(oA,0.01,0.5);
+		var oTv=oText1.value;	
+		var m=0;
+		var textContent=document.getElementById('text1').value;
+		var str=String(textContent);
+
+		if (oText1.value.length==0) return;
+		loading();
+		timer2=setInterval(function(){			
+			m++;
+			oN1.innerHTML=m;
+			oN2.innerHTML=textContent.length;
+			if (m==textContent.length) {
+				clearInterval(timer2);
+				clearInterval(timer1);
+				opMove(oLoad,0.02,0,function(){
+					oLoad.style.display='none';
+					opMove(oA,0.01,1);
+				});
+			};			
+			oText1.value=oTv.slice(m);
+			oText2.innerHTML+=str.charAt(m-1);
+		},30)
+	};
+
+};
+</script>
+</head>
+<body>
+	<div id="box">
+		<textarea id="text1">
+			
+		</textarea>
+
+		<a href="javascript:;">把文字右移</a>
+		<div id="strip">
+			<ul id="loadStrip">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li> 
+			</ul>	
+			<span>
+				<h3 id="n1">0</h3><h3>/</h3><h3 id="n2">0</h3>
+			</span>		
+		</div>
+		
+
+		<div id="text2">
+			<p>
+				
+			</p>
+		</div>
+	</div>
+</body>
+</html>
