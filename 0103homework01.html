@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{margin: 0;padding: 0}
+	li{list-style: none;}
+	a{text-decoration: none;}
+	#content{width: 400px;height: 280px;border: 10px solid lightgrey;padding: 15px;position: relative;margin: 0 auto;margin-top: 10px}
+	#content p{font-size: 15px;line-height: 25px;font-family: '微软雅黑';}
+	#active{position: absolute;top:-10px;right: -89px;width: 80px;background: silver}
+	#active li{height: 30px;font-size: 16px;line-height: 30px;border-bottom: 1px solid lightgrey;text-align: center;cursor: pointer;}
+	#active #a2,#active #a3{display: none;}
+	#console{position: relative;width: 400px;height: 100px;background: silver;padding: 15px;margin: 0 auto;border: 10px solid grey}
+	#close{position: absolute;top: 8px;right: 8px;font-size: 20px;font-family: 'arial';cursor: pointer;}
+	 a{width: 80px;height: 30px;background: white;color: #333;font-size: 16px;line-height: 30px;text-align: center;display: inline-block;}
+	#text1{width: 400px;border-top: 2px solid grey;box-sizing: border-box;display: none;}
+	#text1 .input-Text{font-size: 16px;height: 26px;width: 200px;margin-top: 20px}
+	#text1 .input-Button{font-size: 16px;height: 30px;width: 80px;text-align: center;line-height: 30px}
+	#text2{width: 400px;border-top: 2px solid grey;box-sizing: border-box;}
+	#text2 .input-Text{font-size: 16px;height: 26px;width: 140px;margin-top: 20px}
+	#text2 .input-Button{font-size: 16px;height: 30px;width: 80px;text-align: center;line-height: 30px}
+
+	.actived{color: white;background: orange}
+	.selected{color: white;background: grey}
+	.got{background: yellow;}
+	.normal{background: white;}
+</style>
+<script>
+window.onload=function(){
+	var oP=document.getElementsByTagName('p')[0];
+	var aActive=document.getElementsByTagName('li');
+	var oClose=document.getElementById('close');
+	var oConsele=document.getElementById('console');
+	var aTab=oConsele.querySelectorAll('#console a');
+	var aTextbox=oConsele.getElementsByClassName('text-Box');
+	var aInp=oConsele.getElementsByClassName('input-Text');
+	var aButton=oConsele.getElementsByClassName('input-Button');
+	var onOff=true;
+	var oPP=oP.innerHTML;
+
+//初始状态：
+	oConsele.style.display='none';
+
+//点击'展开'按钮执行以下操作：
+	aActive[0].onclick=function(){
+	//展开后：
+		if (onOff) {
+			aActive[0].innerHTML='收缩';
+			aActive[0].style.background='grey';
+			aActive[0].style.color='white';
+
+			for (var i = 0; i < aActive.length; i++) {
+				aActive[i].index=i;
+				aActive[i].style.display='block';			
+
+				for (var j = 1; j < aActive.length; j++) {
+				//点击查找或替换按钮：
+					aActive[j].onclick=function(){
+
+						for (var i = 1; i < aActive.length; i++) {
+							aActive[i].className='';
+							aTab[i-1].className='';
+							aTextbox[i-1].style.display='none';
+						};
+						this.className='actived';
+						oConsele.style.display='block';
+						aTab[this.index-1].className='selected';
+						aTextbox[this.index-1].style.display='block';
+					};
+				};
+						
+			};
+			onOff=false;
+	//点击收缩：
+		}else{
+			aActive[0].innerHTML='展开';
+			for (var j = 1; j < aActive.length; j++) {
+				aActive[j].style.display='none';
+
+				
+			};
+			onOff=true;
+		};
+	};
+
+//点击'X'关闭操作框：
+	oClose.onclick=function(){
+		oConsele.style.display='none';
+	};
+
+
+	for (var i = 0; i < aTab.length; i++) {
+		aTab[i].index=i;
+//点击操作框中的查找或替换标签：
+		aTab[i].onclick=function(){		
+			for (var i = 0; i < aTab.length; i++) {
+				aActive[i+1].className='';
+				aTab[i].className='';
+				aTextbox[i].style.display='none';	
+							
+			}
+			aActive[this.index+1].className='actived';
+			this.className='selected';			
+			aTextbox[this.index].style.display='block';
+			
+			
+		};
+
+//点击查找按钮
+		aButton[0].onclick=function(){
+			
+			var str=aInp[0].value;
+
+			aInp[0].value='';
+			if (!str) {
+				alert('请输入内容')
+				return;}
+			if (oPP.indexOf(str)==-1) {
+				alert('您输入的'+'"'+str+'"'+'未找到')
+			}
+			oP.innerHTML=oPP;
+			oP.innerHTML=oP.innerHTML.split(str).join('<span class="got">'+str+'</span>');
+
+			
+			
+		};
+
+		aButton[1].onclick=function(){
+			
+			var str=aInp[1].value;
+			var newStr=aInp[2].value;
+			
+			aInp[1].value='';
+			aInp[2].value='';
+			
+			if (oP.innerHTML.indexOf(str)==-1) {
+					alert('未找到'+'"'+str+'"');
+					return;
+				};
+
+			aInp[1].value='';
+			aInp[2].value='';
+			if (!str) {
+				alert('请输入要替换的值');
+				return;}
+			if (oPP.indexOf(str)==-1) alert()
+			
+			
+			
+			oP.innerHTML=oP.innerHTML.split(str).join('<span>'+newStr+'</span>');	
+			var newPP=oP.innerHTML;	
+
+			if (!newStr ) {				
+				var r=window.confirm('确定要删除'+'"'+str+'"'+'吗？')
+				
+				if (r==false) return;
+				
+			};	
+			
+		};
+	};
+
+};
+</script>
+</head>
+<body>
+	<div id="content">
+		<p>
+			虎扑体育1月3日讯 在今日勇士主场127-119战胜掘金的比赛中，勇士球员克莱-汤普森三分球7投4中，生涯三分球命中总数升至了历史第56位。<br>
+			<br>
+			此前汤普森生涯一共命中了1165个三分，目前他以1169个三分超越了昆廷-理查德森（Quentin Richardson）的1167个，排在他前面第55位的是本-戈登（Ben Gordon）的1171个。<br>
+			<br>
+			本场比赛，汤普森出场37分钟，19投9中得到了25分5个篮板。
+		</p>
+		
+		<ul id="active">
+			<li id="a1">展开</li>
+			<li id="a2">查找</li>
+			<li id="a3">替换</li>
+		</ul>
+		
+	</div>
+
+	<div id="console">
+		<span id="close">&times;</span>
+		<a href="javascript:;" class="select">查找</a><a href="javascript:;" class="select">替换</a>
+		<div id="text1" class="text-Box">
+			<input class="input-Text" type="text">
+			<input class="input-Button" type="button" value="查找">
+		</div>
+		<div id="text2" class="text-Box">
+			<input class="input-Text" type="text">
+			<input class="input-Text" type="text">
+			<input class="input-Button" type="button" value="替换">
+		</div>
+	</div>
+</body>
+</html>
