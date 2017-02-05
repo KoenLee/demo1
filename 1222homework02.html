@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>播放器</title>
+<style>
+	*{font-family: '微软雅黑'}
+	ul,li,a,div{margin: 0;padding:0;}
+	li{list-style: none;height: 25px;position: relative;line-height: 25px}
+	a{text-decoration: none;color: #333;line-height: 25px;font-size: 16px}
+	#box{width: 350px;height: 300px;margin: 0 auto;background: lightyellow;}
+	.title{font-size: 16px;position: absolute;left: 20px}
+	.artist{position: absolute;right: 5px}
+	span{background: lightgreen;display: block;height: 30px;line-height: 30px;font-size: 18px;}
+	input{height: 20px;line-height: 20px;}
+	#all{line-height: 20px;height: 25px;float: left;}
+</style>
+<script>
+window.onload=function(){
+	var oBox=document.getElementById('box');
+	var oUl=oBox.getElementsByTagName('ul')[0];
+	var aLi=oUl.getElementsByTagName('li');
+	var oLi=oBox.getElementsByTagName('li')[6];
+	var aInp=oUl.getElementsByTagName('input');
+	var oInp=oBox.getElementsByTagName('input')[6];
+	var color=['#d9e8ee','white']
+	var str=''
+	var onOff=true
+	for (var i = 0; i < aLi.length; i++) {
+		aLi[i].index=i
+		aInp[i].index=i
+		aLi[i].style.background=color[i%color.length]
+		aInp[i].onclick=fnCheck;
+		aLi[i].onmouseover=fnOver;
+		aLi[i].onmouseout=fnOut;
+		oInp.onclick=fnAll;
+		
+
+		function fnOver(){
+			str=this.style.background
+			this.style.background='lightgrey'
+		};
+		function fnOut(){			
+			this.style.background=str
+			aInp[this.index].checked?this.style.background='lightgrey':this.style.background=color[this.index%color.length]
+		};
+
+		function fnAll(){
+			for (var i = 0; i < aInp.length; i++) {				
+				this.checked==true?aInp[i].checked=true:aInp[i].checked=false
+				if (this.checked) {
+				aLi[i].style.background='lightgrey'
+				}else{
+					aLi[i].style.background=color[i%color.length]
+				};					
+				
+			};			
+		};
+		
+		function fnCheck(){
+			this.checked==true?aLi[this.index].style.background='lightgrey':aLi[this.index].style.background=color[this.index%color.length]
+		}
+
+	};
+
+};
+</script>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li>
+			<input type="checkbox">
+			<a class="title" href="javascript:;">安静</a>
+			<a class="artist" href="javascript:;">周杰伦</a>
+			</li>
+			<li>
+			<input type="checkbox">
+			<a class="title" href="javascript:;">Journey</a>
+			<a  class="artist" href="javascript:;">清水翔太</a>
+			</li>
+			<li><input type="checkbox">
+			<a class="title" href="javascript:;">悲しみはオーロラに</a>
+			<a  class="artist" href="javascript:;">Aimer</a>
+			</li>
+			<li>
+			<input type="checkbox">
+			<a class="title" href="javascript:;">Lost Stars</a>
+			<a  class="artist" href="javascript:;">maroon 5</a>
+			</li>
+			<li>
+			<input type="checkbox">
+			<a class="title" href="javascript:;">感觉身体被掏空</a>
+			<a  class="artist" href="javascript:;">上海彩虹室内合唱团</a>
+			</li>
+			<li>
+			<input type="checkbox">
+			<a class="title" href="javascript:;">桜会</a>
+			<a  class="artist" href="javascript:;">ゆず</a>
+			</li>
+		</ul>
+		<span>
+			<input id="all" type="checkbox">全选
+		</span>
+	</div>
+</body>
+</html>
