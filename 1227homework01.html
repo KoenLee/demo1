@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{margin: 0;padding: 0；}
+	#box{width: 500px;height: 300px;padding: 5px;position: relative;margin: 0 auto}
+	#bar{width: 490px;height: 30px;border: 1px solid #333;position:absolute;bottom: 10px;box-sizing: border-box;}
+	li{list-style: none;float: left;font-size: 16px;line-height: 30px;width: 49px;text-align: center;position: absolute;top: 0px;opacity:1;color: red}
+	#strip{width: 20px;height: 30px;background:darkblue;position: absolute;bottom: 10px;opacity: 0}
+</style>
+<script src='js/doMove.js'></script>
+<script>
+window.onload=function(){
+	var oBox=document.getElementById('box');
+	var oBar=oBox.getElementsByTagName('ul')[0];
+	var aLi=oBar.getElementsByTagName('li');
+	var oStrip=document.getElementById('strip');
+	var timer=null;
+	var timer2=null;
+	var n=0;
+	var len=aLi.length
+
+	for (var i = 0; i < 10; i++) {
+		oBar.innerHTML+='<li style="left:'+49*i+'px'+'">'+'￥100'+'</li>'
+	}
+	
+
+	oBox.onclick=function(){
+		doMove(oStrip,'width',5,490)
+		opa(oStrip,0.08,1)
+		timer=setInterval(function(){
+			doMove(aLi[n],'top',10,-200,function(){
+				opa(oStrip,-0.05,0)
+			},100)
+			opa(aLi[n],-0.2,0)
+			n++;
+			if (n==10) {
+				clearInterval(timer)
+			}
+		},100)
+	};
+
+	function opa(obj,dir,target){
+		clearInterval(obj.timer2)
+		obj.timer2=setInterval(function(){
+			var speed=parseFloat(getStyle(obj,'opacity'))+dir
+			if (speed>target && dir>=0 || speed<target && dir<0)
+			 {speed=target};
+			obj.style['opacity']=speed;
+			if (speed==target) {
+				clearInterval(obj.timer2)
+			}
+		},50)
+	}
+
+};
+</script>
+</head>
+<body>
+	<div id="box">
+		<ul id="bar">
+			
+		</ul>
+		<div id="strip"></div>
+	</div>
+</body>
+</html>
