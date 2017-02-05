@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器2</title>
+<style>
+	*{margin: 0;padding: 0;font-family: '微软雅黑';color: #333}
+	body{font-size: 0;}
+	li{list-style: none;}
+	#box{width: 500px;height: 200px;background: #ddd;padding: 5px	20px}
+	input{width: 90px;height: 25px;border-bottom: 0;font-size: 16px;border:0;position: relative;top: 1px;border:1px solid #4f4f4f;border-bottom: 0;z-index: 10;outline: none;}
+	.active{background: white}
+	.select{background: darkred;color: white}
+	.normal{background: white;color: #333}
+	#content{width:500px;height: 170px;background:white;position: relative;border:0; border:1px solid #4f4f4f}
+	#pic{width: 180px;height: 150px;overflow: hidden;float: left;background: url(image/1225/1.jpg);margin-left: 10px;margin-top:10px}
+	ul{width: 310px;height: 150px;float:right;margin-top: 10px}
+	li{height: 50px;background: white;font-size: 14px;color: #333;line-height: 50px;text-align: left;text-indent: 10px}
+	#content2{display: none;}
+</style>
+<script src="js/Koen's.js"></script>
+<script>
+	$(function(){
+		var aBtn=$('box').getElementsByTagName('input');
+		var aUl=$('content').getElementsByTagName('ul');
+		var aLi=$('content').getElementsByTagName('li');
+		var oPic=$('pic');
+		var that=null;
+		var timer=null;
+		var n=0;
+		var arrUrl=['url(image/1225/1.jpg)','url(image/1225/2.jpg)','url(image/1225/3.jpg)','url(image/1225/4.jpg)','url(image/1225/5.jpg)','url(image/1225/6.jpg)']
+
+		
+		aLi[0].className='select'
+		aBtn[0].className='active';
+
+
+		function Skip(){
+			timer=setInterval(function(){				
+				n++;
+				n%=aLi.length;
+				for (var i = 0; i < aLi.length; i++) {
+					
+					aLi[i].className='normal'				
+				}
+				aLi[n].className='select'			
+				//oPic.style.backgroundImage=arrUrl[n]
+				if (n>2) {
+					Switch(1,0)
+				}else{
+					Switch(0,1)
+				}	
+
+				if (aLi[n].className='select') {
+					oPic.style.backgroundImage=arrUrl[n]
+				}
+			},1000)
+			
+		}
+
+		function Switch(now,last){
+			aUl[now].style.display='block';
+			aUl[last].style.display='none';
+			aBtn[now].className='active';
+			aBtn[last].className='';
+		}
+
+		Skip();
+
+		for (var i = 0; i < aBtn.length; i++) {
+			aBtn[i].index=i;
+
+			aBtn[i].onclick=fnTab
+
+			function fnTab(){
+				clearInterval(timer)
+				for (var i = 0; i < aUl.length; i++) {
+					aUl[i].style.display='none'
+					aBtn[i].className=''
+				}
+				aUl[this.index].style.display='block'
+				this.className='active'
+				if (this.index==1) {					
+					for (var i = 0; i < aLi.length; i++) {
+						aLi[i].className='normal'
+					}	
+					aLi[3].className='select';
+					oPic.style.backgroundImage=arrUrl[3];
+					n=3}
+				else if (this.index==0){					
+					for (var i = 0; i < aLi.length; i++) {
+						aLi[i].className='normal'
+					}	
+					aLi[0].className='select';
+					oPic.style.backgroundImage=arrUrl[0];
+					n=0}								
+				Skip()
+			}
+		}
+
+		for (var i = 0; i < aLi.length; i++) {
+			aLi[i].onmouseover=Select
+			aLi[i].onmouseout=Back
+			aLi[i].index=i
+			function Select(){
+				clearInterval(timer);
+				for (var i = 0; i < aLi.length; i++) {
+					aLi[i].className='normal'
+				}
+				this.className='select';
+				oPic.style.backgroundImage=arrUrl[this.index];
+			}
+
+			function Back(){
+				n=this.index
+				Skip()
+			}
+		}
+		
+	})
+</script>
+</head>
+<body>
+	<div id="box">
+		<input type="button" value="最新" />
+		<input type="button" value="经典" />
+		<div id="content">
+			<span id="pic"></span>
+			<ul id="content1">
+				<li>太欢乐了！NBA捧腹时刻长篇集锦</li>
+				<li>队内气氛赞！库里爆笑模仿杜兰特上篮</li>
+				<li>引起公愤！史上最不要脸刷三双</li>
+			</ul>
+
+			<ul id="content2">
+				<li>兄弟变死敌！04年科比鲨鱼圣诞大战再相遇 </li>
+				<li>得分王的状态有多强？韦德08-09赛季高</li>
+				<li>NBA圣诞大战最惊艳广告：众球星投篮</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
