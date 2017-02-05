@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	.active{background: yellow}
+	.normal{background: white}
+</style>
+<script>
+window.onload=function(){
+	var oText=document.getElementById('text');
+	var oBtn=document.getElementById('btn');
+	var oDel=document.getElementById('del');
+	var oUl=document.getElementById('list');
+	var onOff=true;
+
+	oBtn.onclick=function(){
+
+		var oLi=document.createElement('li');
+		oLi.className='normal';
+		oLi.innerHTML=oText.value;
+		
+		
+
+		if (oUl.children.length<5) {
+
+			if (oUl.children[0]) {
+				oUl.insertBefore(oLi,oUl.children[0]);
+			}else{
+				oUl.appendChild(oLi);
+			};
+
+		}else{
+			oUl.removeChild(oUl.lastElementChild);
+			oUl.insertBefore(oLi,oUl.children[0]);
+		}
+
+		for (var i = 0; i < oUl.children.length; i++) {
+			oUl.children[i].onOff=true;
+			oUl.children[i].onclick=function(){
+				
+				if (this.onOff) {
+					this.className='active';
+					this.onOff=false;
+				}else{
+					this.className='normal';
+					this.onOff=true;
+				}
+				
+			}
+		}
+
+		oText.value='';
+
+
+	};
+
+	oDel.onclick=function(){
+		var aActive=document.getElementsByClassName('active')
+
+
+		for (var i = 0; i < aActive.length; i++) {
+
+			oUl.removeChild(aActive[i]);
+			i--;
+		}
+		
+	}
+};
+</script>
+</head>
+
+<body>
+	<input type="text" id="text" />
+	<input type="button" value="留言" id="btn" />
+	<input type="button" value="批量删除" id="del" />
+	<ul id="list"></ul>
+</body>
+</html>
