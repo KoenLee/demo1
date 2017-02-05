@@ -175,6 +175,18 @@ body{
 	text-align: center;
 }
 
+#case .thumbnail{
+	background: #dadada;
+}
+
+#case a{
+	text-decoration: none;
+}
+
+#case a h4:hover{
+	color: #fff;
+}
+
 #case h4{
 	color: #666;
 }
@@ -209,7 +221,6 @@ body{
 	background: #fff;
 	box-shadow: 2px 2px 3px #ccc;
 	padding: 15px;
-	margin: 15px;
 }
 
 .footer{
