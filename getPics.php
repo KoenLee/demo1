@@ -1,0 +1,39 @@
+<?php
+	header('content-type:text/html;charset="utf-8"');
+	error_reporting(0);
+
+$url=array(
+	array("url"=>'imgs/1.jpg',"title"=>'图片1'),
+	array("url"=>'imgs/2.jpg',"title"=>'图片2'),
+	array("url"=>'imgs/3.jpg',"title"=>'图片3'),
+	array("url"=>'imgs/4.jpg',"title"=>'图片4'),
+	array("url"=>'imgs/5.jpg',"title"=>'图片5'),
+	array("url"=>'imgs/6.jpg',"title"=>'图片6'),
+	array("url"=>'imgs/7.jpg',"title"=>'图片7'),
+	array("url"=>'imgs/8.jpg',"title"=>'图片8'),
+	array("url"=>'imgs/9.jpg',"title"=>'图片9'),
+	array("url"=>'imgs/10.jpg',"title"=>'图片10'),
+	array("url"=>'imgs/011.jpg',"title"=>'图片11'),
+	array("url"=>'imgs/012.jpg',"title"=>'图片12'),
+	array("url"=>'imgs/013.jpg',"title"=>'图片13'),
+	array("url"=>'imgs/014.jpg',"title"=>'图片14'),
+	array("url"=>'imgs/015.jpg',"title"=>'图片15'),
+	array("url"=>'imgs/016.jpg',"title"=>'图片16'),
+	array("url"=>'imgs/017.jpg',"title"=>'图片17'),
+	array("url"=>'imgs/018.jpg',"title"=>'图片18'),
+	array("url"=>'imgs/019.jpg',"title"=>'图片19'),
+	array("url"=>'imgs/020.jpg',"title"=>'图片20'),
+	array("url"=>'imgs/021.jpg',"title"=>'图片21'),
+	array("url"=>'imgs/022.jpg',"title"=>'图片22'),
+	array("url"=>'imgs/023.jpg',"title"=>'图片23'),
+	array("url"=>'imgs/024.jpg',"title"=>'图片24'),
+	array("url"=>'imgs/025.jpg',"title"=>'图片25'),
+	array("url"=>'imgs/01.jpg',"title"=>'图片26'),
+	array("url"=>'imgs/02.jpg',"title"=>'图片27'),
+	array("url"=>'imgs/03.jpg',"title"=>'图片28'),
+	array("url"=>'imgs/04.jpg',"title"=>'图片29'),
+	array("url"=>'imgs/05.jpg',"title"=>'图片30'),
+);
+
+echo json_encode($url);
+?>
