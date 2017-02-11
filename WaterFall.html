@@ -29,10 +29,9 @@ var b=true;
 
 LoadImgs();
 function LoadImgs(){
-	Ajax('get','getPics.php','',function(data){
+	Ajax('get','info.txt','',function(data){
 		//alert(typeof JSON.parse(data))
-		var data=JSON.parse(data);
-
+		var data=eval(data);
 		if (!data.length) {
 			return;
 		}
