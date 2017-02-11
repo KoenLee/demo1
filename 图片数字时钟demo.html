@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>图片数字时钟demo</title>
 <style>
 	body{font-size: 0}
@@ -13,13 +14,6 @@
 </style>
 <script src="js/doMove.js"></script>
 <script>
-	
-/*
-  系统时间对象
-*/
-//alert(new Date());		//当前 系统的时间对象
-
-//myTime typeof object
 window.onload=function(){
 
 	var oBody=document.getElementsByTagName('body')[0];
@@ -34,23 +28,11 @@ window.onload=function(){
 	var m=0;
 	var timer1=null;
 	var timer2=null;
-	var timer3=null;
-	var timer4=null;
-	var timer5=null;
-	var timer6=null;
-
-//初始化
-	
-
-
-	
 
 	for (var i = 0; i < aUl.length; i++) {
 
 		aUl[i].style.left=136*i+'px'
 	}
-
-//	fnTab();
 	
 	function Change(index){
 			clearInterval(timer1)
@@ -59,9 +41,6 @@ window.onload=function(){
 				aNow[index].src=aLater[index].src
 			})
 	}
-
-
-	
 	
 	setInterval(fnTimer,1000)
 
@@ -77,17 +56,9 @@ window.onload=function(){
   		aNow[5].src=url[n];
 		
   	},500)
-	
-
 
 	function fnTimer(){
 	var myTime=new Date();
-	
-	
-	
-
-
-	//number
 	
 	var iHours=myTime.getHours();
 	var iMin=myTime.getMinutes();
@@ -99,12 +70,9 @@ window.onload=function(){
 	str=toTwo(iHours)+'n'+toTwo(iMin)+'n'+toTwo(iSec);
 	str2=toTwo2(iHours)+'n'+toTwo2(iMin)+'n'+toTwo2(iSec);
 
-	
 	oP.innerHTML=str;
 
-	
 	Change(7)
-
 
 		if (str2.charAt(7)==0 ) {
 			Change(6)
@@ -125,13 +93,9 @@ window.onload=function(){
 		if (str2.charAt(6)==0 && str2.charAt(7)==0 && str2.charAt(3)==0 && str2.charAt(4)==0 && str2.charAt(1)==0) {
 			Change(0)
 		};
-  	
-  	
 
 	for (var i = 0; i < aNow.length; i++) {
 		aNow[i].src='image/1230/'+str.charAt(i)+'.png';
-		
-		
 	};
 
 	for (var i = 0; i < aLater.length; i++) {
@@ -139,8 +103,6 @@ window.onload=function(){
 		if (str.charAt(i)==9) {num=0}
 		aLater[i].src='image/1230/'+str2.charAt(i)+'.png'
 	};
-
-
 	
 	};
 	
@@ -158,7 +120,6 @@ window.onload=function(){
 			return m
 		}
 	};
-
 
 };
 
