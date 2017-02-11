@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+
+	body,ul,li,h2{margin: 0;padding: 0;}
+	li{list-style: none;}
+	#main{width: 1000px;margin: 0 auto;}
+	.box{float: left;padding:14px 14px 0 14px;}
+	.pic{border:1px solid #ccc;padding: 10px;border-radius: 5px;box-shadow: 0 0 5px #ccc;margin: 0 0 10px 0;}
+	.pic img{width: 200px;text-align: center;}
+	.pic h2{text-align: center;line-height: 40px}
+</style>
+<script src='iMove.js'></script>
+<script src="Ajax.js"></script>
+<script>
+window.onload=function(){
+	
+var oBtn=document.getElementById('btn');
+var oUl=document.getElementById('main');
+var aLi=oUl.getElementsByTagName('li');
+var iLen=aLi.length;
+var iPage=1;
+var b=true;
+//初始化数据处理
+
+
+LoadImgs();
+function LoadImgs(){
+	Ajax('get','getPics.php','',function(data){
+		//alert(typeof JSON.parse(data))
+		var data=JSON.parse(data);
+
+		if (!data.length) {
+			return;
+		}
+		
+		for (var i = 0; i < data.length; i++) {
+
+			//获取高度最短的li
+			var _index=getMin(aLi,iLen);
+			//alert(getMin(aLi,iLen))
+
+			var oDiv=document.createElement('div');
+			oDiv.className='pic';
+			oDiv.style.filter='alpha(opacity:'+10+')';
+			oDiv.style.opacity=0.1;
+			var oImg=document.createElement('img');
+			oImg.src=data[i].url;
+			oDiv.appendChild(oImg);
+			var oP=document.createElement('h2');
+			oP.innerHTML=data[i].title;
+			oDiv.appendChild(oP);
+
+			aLi[_index].appendChild(oDiv);
+			startMove(oDiv,{'opacity':100})
+
+		}
+
+		b=true;
+	});
+}
+
+window.onscroll=function(){
+	var _index=getMin(aLi,iLen);
+	var oLi=aLi[_index];
+
+	var scrollTop=document.documentElement.scrollTop || document.body.scrollTop;
+	if (getTop(oLi)+oLi.offsetHeight<document.documentElement.clientHeight+scrollTop) {
+		if (b) {
+			b=false;
+			LoadImgs();	
+		}
+		
+	}
+}
+
+function getMin(arr,length){
+	var index=0;
+	var iH=arr[index].offsetHeight;
+	for (var i = 0; i < length; i++) {
+		if (arr[i].offsetHeight<iH) {
+			index=i;
+			iH=arr[i].offsetHeight;
+		}
+	}
+	return index;
+}
+
+function getTop(obj){
+	var iTop=0;
+	while(obj){
+		iTop+=obj.offsetTop;
+		obj=obj.offsetParent;
+	}
+	return iTop;
+}	
+	
+}
+</script>
+</head>
+<body>
+	<ul id="main">	
+		<li class="box">
+			
+		</li>
+		<li class="box">
+		
+		</li>
+		<li class="box">
+			
+		</li>
+		<li class="box">
+			
+		</li>
+
+	</ul>	
+</body>
+</html>
