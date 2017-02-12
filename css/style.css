@@ -230,9 +230,11 @@ body{
 	color: #eee
 }
 
+.footer a{
+	color: #eee
+}
 
 
-/*没有小于768px，因为Bootstrap以移动端为优先*/
 
 @media (min-width: 768px){
 	.tab-h2{
