@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>jQuery焦点轮播图demo</title>
 <style>
-	body{background:#3f6184 url(image/ff15/Kingsglaive-32.png) no-repeat center;}
+	body{background:url(image/ff15/Kingsglaive-32.png) no-repeat center;background-color: #090e2b}
 	ul,li{padding: 0;margin: 0}
 	#pic{width: 800px;height: 500px;}
 	#album{width: 800px;height: 500px;overflow: hidden;position: relative;}
@@ -30,7 +30,7 @@ $(function(){
 	var iNow=0;
 	var bStop=true;
 	for (var i = 0; i < iLength; i++) {
-		iImgs.eq(i).css('background-image','url(image/ff15/t'+(i+1)+'.jpg')
+		iImgs.eq(i).css('background','url(image/ff15/t'+(i+1)+'.jpg')
 		$('#index img').eq(i).attr('src','image/ff15/t'+(i+1)+'.jpg')
 	}
 
