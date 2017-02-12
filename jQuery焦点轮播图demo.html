@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
 	<title>jQuery焦点轮播图demo</title>
 <style>
-	body{background:url(image/ff15/Kingsglaive-32.png) no-repeat center;background-color: #090e2b}
+	body{background: url(image/ff15/Kingsglaive-32.png) no-repeat center;background-color: #090e2b}
 	ul,li{padding: 0;margin: 0}
 	#pic{width: 800px;height: 500px;}
 	#album{width: 800px;height: 500px;overflow: hidden;position: relative;}
 	#img{height: 500px;position: absolute;}
-	#img li{list-style: none;background: url(image/ff15/t1.jpg);width: 800px;height: 500px;float: left;}
+	#img li{list-style: none;width: 800px;height: 500px;float: left;}
 	#pic{position: relative;margin: 0 auto;margin-top: 50px;}
 	
 	#pic a{width: 36px;height: 36px;border: 0px solid orange;border-radius: 18px;background: rgba(205,76,0,0.5);color: white;text-decoration: none;font-weight: bold;position: absolute;top: 50%;line-height: 36px;text-align: center;font-size: 20px;}
@@ -24,13 +24,13 @@
 <script src="js/jquery-3.1.1.js"></script>
 <script>
 $(function(){
-	var iImgs=$('#img>li');
+	var iImgs=$('#img>li>img');
 	var iLength=iImgs.length;
 	var iW=iImgs.eq(0).outerWidth();
 	var iNow=0;
 	var bStop=true;
 	for (var i = 0; i < iLength; i++) {
-		iImgs.eq(i).css('background','url(image/ff15/t'+(i+1)+'.jpg')
+		iImgs.eq(i).attr('src','image/ff15/t'+(i+1)+'.jpg')
 		$('#index img').eq(i).attr('src','image/ff15/t'+(i+1)+'.jpg')
 	}
 
@@ -106,11 +106,11 @@ $(function(){
 	<div id="pic">
 		<div id="album">
 			<ul id="img">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li><img src="image/ff15/t1.jpg"></li>
+				<li><img src=""></li>
+				<li><img src=""></li>
+				<li><img src=""></li>
+				<li><img src=""></li>
 			</ul>
 		</div>		
 		<a id="prev" href="javascript:;">&lt;</a>
