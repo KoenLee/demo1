@@ -18,7 +18,7 @@
 
 	#index{position: absolute;left: 325px;bottom: -30px;}
 	#index li{float: left;margin-right: 10px;list-style: none;width: 20px;height: 20px;border: 0px solid #333;border-radius: 10px;background: rgba(165,16,0,0.5);}
-	#index .tip{width: 80px;height: 50px;position: absolute;background: #fff;top: -55px;margin-left: -30px;opacity: 0;filter: alpha(opacity:0);border-radius: 10px}
+	#index .tip{width: 80px;height: 50px;position: absolute;background: #fff;top: -55px;margin-left: -30px;display:none;border-radius: 10px}
 	#index .active{background: orange}
 </style>
 <script src="js/jquery-3.1.1.js"></script>
@@ -29,7 +29,6 @@ $(function(){
 	var iW=iImgs.eq(0).outerWidth();
 	var iNow=0;
 	var bStop=true;
-	
 	for (var i = 0; i < iLength; i++) {
 		iImgs.eq(i).css('background-image','url(image/ff15/t'+(i+1)+'.jpg')
 		$('#index img').eq(i).attr('src','image/ff15/t'+(i+1)+'.jpg')
@@ -80,12 +79,12 @@ $(function(){
 		$('#img').animate({left:-iW*iNow},500,'swing',function(){bStop=true});
 	}
 
-
-	var timer=setInterval(function(){
-	iNow++;
-	if (iNow==iLength) iNow=0;
-	tab(iNow);
-	},4000)
+	
+		var timer=setInterval(function(){
+		iNow++;
+		if (iNow==iLength) iNow=0;
+		tab(iNow);
+		},4000)
 	
 	$('#pic').mouseover(function(){
 		clearInterval(timer)
