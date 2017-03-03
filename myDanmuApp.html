@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>弹幕袭击</title>
-	<link href="css/bootstrap.css" rel="stylesheet">
-<script src='js/jquery-3.1.1.js'></script>
+	<title>Document</title>
+	<link href="../css/bootstrap.css" rel="stylesheet">
+<script src='jquery-3.1.1.js'></script>
 <style>
 .text-box{
   width: 100%;
@@ -59,33 +58,37 @@ var initText=['233333333','太棒了','什么鬼？？？','OMG','不忍直视',
 	function launch(){
 		$launch.click(function() {
 			danmu_render($input.val());
+			autoLaunch();
 			$input.val('');
 		});
 
 		$input.keydown(function(event) {
 			if (event.keyCode===13) {
 				danmu_render($input.val());
+				autoLaunch();
 				$input.val('');
 			};
 		});
 	};
 
+	autoLaunch();
+
 	launch();	
 
-//模拟发射弹幕
-	(function(){
-		var time_random=rd(500,2500);
+//模拟自动发射弹幕
+	function autoLaunch(){
+			var time_random=rd(500,2500);
 
-		function rd(n,m){
-			var c=m-n+1;
-			return Math.floor(Math.random()*c+n);
-		};
-		
-		timer=setInterval(function(){
-			danmu_random();
-		},time_random)
-	})();
-	
+			function rd(n,m){
+				var c=m-n+1;
+				return Math.floor(Math.random()*c+n);
+			};
+			clearInterval(timer);
+			timer=setInterval(function(){
+				danmu_random();
+			},time_random);
+	};
+
 
 	function danmu_random(){
 		var num=Math.floor(Math.random()*initText.length);
@@ -163,9 +166,5 @@ var initText=['233333333','太棒了','什么鬼？？？','OMG','不忍直视',
     	</div>
   </div>
 </div>
-<hr />
-<footer class='text-center'>
-  <p>Coded by <a href="http://codepen.io/KOENLEE">Koen</a></p>
-</footer>
 </body>
 </html>
