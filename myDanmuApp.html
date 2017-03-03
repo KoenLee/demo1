@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="../css/bootstrap.css" rel="stylesheet">
+<script src='jquery-3.1.1.js'></script>
+<style>
+.text-box{
+  width: 100%;
+  height: 300px;
+  border:1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  position: relative; 
+  overflow: hidden;
+}
+.danmu-init{
+	height: 20px;
+	position: absolute;
+	right: 0;
+}
+.jumbotron .danmu{
+	font-size: 18px;
+}
+.btn-launch,
+.btn-launch{
+	margin-bottom: 5px;
+	outline: none;
+}
+
+</style>
+<script>
+$(function(){
+	var $input=$('.input-area');
+	var $text_box=$('.text-box');
+	var $launch=$('.btn-launch');
+	var $clear=$('.btn-clear');
+	var danmu=null;
+	var boxHeight=$text_box.innerHeight();
+	var boxWidth=$text_box.innerWidth();
+	var danmuList=[];
+	var timer=null;
+
+//缩放窗口时重新计算box宽度
+	$(window).on('resize',function(){
+		boxWidth=$text_box.innerWidth();
+			
+	});
+
+//模拟随机文字
+var initText=['233333333','太棒了','什么鬼？？？','OMG','不忍直视','WoW!!','嘎嘎嘎','月下三兄贵 ♂','凶手就是他！','装逼就服你','保持队形','黑人问号脸.jpg','黑人问号脸.psd','矮油，不错哦！','Do...you...understand?','我不做人啦！JOJO！！！','無駄無駄無駄無駄！','オラオラオラオラオラァ！','火钳刘明','证明你开了弹幕','红红火火恍恍惚惚','猝不及防','♂ Boy next door ♂','啦啦啦，我要占位置','前方高能！！！Σ(っ °Д °;)っ','蜜汁笑点','。。。。MDZZ','队长是我别开枪！','<(￣︶￣)>','╮(╯▽╰)╭','（╯‵□′）╯︵┴─┴','(；°○° ) (>c','黄人问号脸.png','白人问号脸.avi','有毒，必火！','66666666666'];
+
+//五颜六色的字体
+	var color=['#ff3333','#33ffff','#3399ff','#33ff33','#ffff33','#ff6600','#cc00ff','#000000','#ff3399','#9933ff','#660099','#666666','#33cc99','#33cc33','#99ff33'];
+
+//监听触发弹幕发射事件
+	function launch(){
+		$launch.click(function() {
+			danmu_render($input.val());
+			$input.val('');
+		});
+
+		$input.keydown(function(event) {
+			if (event.keyCode===13) {
+				danmu_render($input.val());
+				$input.val('');
+			};
+		});
+	};
+
+	launch();	
+
+//模拟发射弹幕
+	(function(){
+		var time_random=rd(500,2500);
+
+		function rd(n,m){
+			var c=m-n+1;
+			return Math.floor(Math.random()*c+n);
+		};
+		
+		timer=setInterval(function(){
+			danmu_random();
+		},time_random)
+	})();
+	
+
+	function danmu_random(){
+		var num=Math.floor(Math.random()*initText.length);
+		danmu_render(initText[num]);
+	};
+
+//点击清屏按钮
+	$clear.click(function() {
+		danmu_clear();
+		clearInterval(timer);
+	});
+
+//渲染弹幕内容
+	function danmu_render(data){
+		var temp='<div class="danmu">'+data+'</div>';		
+		danmu=$('<div>').css({height:'20px'});
+		danmu.html(null);
+		danmu.html(temp);
+		danmu_init(danmu);
+		danmuList.push(data);
+	};
+
+//初始化弹幕样式并发射弹幕
+	function danmu_init(target){	
+		var posY=Math.random()*(boxHeight-target.outerHeight()-10);
+		var time=3500;
+		time=$text_box.width()<1000? 3000:7000;
+
+		var colorIndex=Math.round(Math.random()*color.length);
+		if (colorIndex==color.length) colorIndex=colorIndex-1;
+		target.css({
+			width:'auto',
+			position: 'absolute',
+			top: posY+'px',
+			right:0,
+			whiteSpace:'nowrap',
+			textShadow:'1px 1px 1px #000 ',
+			color:color[colorIndex]
+		}).appendTo($text_box).animate({right:boxWidth+5},time,function(){
+			target.get(0).remove();
+		});
+
+	}
+
+//清除所有弹幕
+	function danmu_clear(){
+		$('.danmu').parent().remove();
+	}
+})
+</script>
+</head>
+<body>
+<div class='container'>
+	<div class="jumbotron">
+		<div class="row">
+    		<div class="col-xs-12">
+       			<div class="text-box" >
+       				<!-- <p class="danmu"></p> -->
+       			</div>
+       			<br />
+        		<div class="col-xs-12 col-sm-10 col-md-4 col-sm-offset-1 col-md-offset-4 input">	
+          			<input type="text" class="form-control input-area" placeholder='说点什么吧…'/ >
+          			<br>
+          			<div class="row">
+          				<div class="col-xs-6 col-md-4 col-md-offset-2">
+          					<button class='btn btn-success btn-block btn-launch '>发射 biu~</button>
+          				</div>
+	          			
+	         			<div class="col-xs-6 col-md-4 ">
+          					<button class='btn btn-danger btn-block btn-clear'>清屏</button>
+          				</div>
+	         		</div>	         		
+       			</div>
+     		</div>
+    	</div>
+  </div>
+</div>
+</body>
+</html>
