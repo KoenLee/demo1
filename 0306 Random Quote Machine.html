@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="../css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome.css">
+<style>
+	body{
+		font-family: "Helvetica Neue", Helvetica, Arial,'Microsoft Yahei UI','Microsoft YaHei', 'SimHei', '\SB8B\4F53', 'simsun',sans-serif,"微软雅黑";
+	}
+
+	.box{
+		width: 400px;
+		min-height: 120px;
+		height: auto;
+		border-radius: 5px;
+		background: #fff;
+		margin: 0 auto;
+		padding-bottom: 2%;
+	}
+
+	.quote{
+		padding: 5% 10% 0 10%;
+		text-align: center;
+		font-size: 20px;
+	}
+
+	.quote-author{
+		text-align: right;
+		font-size: 14px;
+	}
+
+	.btngroup{
+		width: 400px;
+	}
+
+	.btngroup input{
+		color: #fff;
+		outline: none;
+	}
+
+	.btngroup .btn:hover{
+		color: #fff;
+	}
+
+	.btngroup .share{
+		margin-left: 10%;
+	}
+
+	.btngroup .change-quote{
+		float: right;
+		margin-right: 10%;
+	}
+
+</style>
+<script src='jquery-3.1.1.js'></script>
+<script>
+$(function(){
+	var Quote;
+	var Author;
+	var bgColor=['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
+	getQuote();
+//初始化背景颜色
+	randBGC();
+//初始化位置
+	posMid($('.box'));	
+//点击更换按钮换一句短语
+$('.change-quote').on('click',function(event) {
+	$('.btngroup .btn').css('color', '#fff');
+	//$('.quote').animate({opacity:0.2},'slow');
+	getQuote();
+});
+//点击分享按钮
+$('.share').on('click',function(event) {
+	postWeibo();
+});
+//随机改变配色方案
+	function randBGC(){
+		$('body').css({
+			background: bgColor[Math.floor(Math.random()*bgColor.length)]
+		});
+		$('.btngroup .btn').css({
+			background: $('body').css('backgroundColor')
+		});
+		$('.quote').css({
+			color: $('body').css('backgroundColor')
+		});
+	};
+//文字框始终水平位置居中
+	function posMid(obj){
+		obj.css({
+			marginTop:($(window).height()-obj.outerHeight())/2+'px'
+		});
+		$(window).resize(function() {
+			obj.css({
+			marginTop:($(window).height()-obj.outerHeight())/2+'px'
+			});
+		});
+	};
+//获取一次短语
+	function getQuote(){
+		$.ajax({
+			headers:{
+				'X-Mashape-Key': '4lLoiEBuqamshMC8qn6lqiYo0IMYp1RVPdLjsnTO9Lu92wTboq',
+				'Content-Type': 'application/x-www-form-urlencoded',
+				'Accept': 'application/json'
+			},
+			url: 'https://andruxnet-random-famous-quotes.p.mashape.com/?cat=',
+			success:function(response){
+				var res=JSON.parse(response);
+				Quote=res.quote;
+				Author=res.author;
+				$('.quote-content').html(Quote);
+				$('.quote-author').html('——'+Author);
+				$('.quote').animate({opacity:0},400,function(){
+					$(this).animate({opacity:1}, 700)
+				});
+			}
+		});
+	};
+//发布一条微博
+	function postWeibo(){
+		window.open('http://v.t.sina.com.cn/share/share.php?title=' + $('.quote-content').html())	
+	}
+
+})
+</script>
+</head>
+<body>
+	<div class="box">
+		<div class="quote">
+			<i class="fa fa-quote-left "></i>
+			<span class="h3 quote-content"><!-- This is my house,not yours. --></span>			
+			<p class="quote-author"><!-- <br/>——Koen --></p>
+		</div>
+		<div class="btngroup">
+			<button class="btn btn-default share"><i class="fa fa-share" style="color: #fff"></i></button>
+			<input type="button" class="btn btn-default change-quote" value="换一句">
+		</div>
+	</div>
+</body>
+</html>
