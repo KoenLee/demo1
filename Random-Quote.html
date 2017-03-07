@@ -8,11 +8,11 @@
 	<link rel="stylesheet" href="css/font-awesome.css">
 <style>
 	body{
-		font-family: "Helvetica Neue", Helvetica, Arial,'Microsoft Yahei UI','Microsoft YaHei', SimHei, '\SB8B\4F53', simsun,sans-serif,"微软雅黑";
+		font-family: "Helvetica Neue", Helvetica, Arial,'Microsoft Yahei UI','Microsoft YaHei', 'SimHei', '\SB8B\4F53', 'simsun',sans-serif,"微软雅黑";
 	}
 
 	.box{
-		width: 380px;
+		width: 30%;
 		min-height: 120px;
 		height: auto;
 		border-radius: 5px;
@@ -33,7 +33,7 @@
 	}
 
 	.btngroup{
-		width: 380px;
+		width: 100%;
 	}
 
 	.btngroup input{
@@ -54,6 +54,11 @@
 		margin-right: 10%;
 	}
 
+	@media (max-width: 768px){
+		.box{
+			width: 90%;
+		}
+	}
 </style>
 <script src='js/jquery-3.1.1.js'></script>
 <script>
