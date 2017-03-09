@@ -22,11 +22,13 @@ body{
 }
 
 .carousel-inner{
-	
+	background: lightgrey;
+	height: 400px;
 }
 
-.carousel-inner img{
+#myCarousel .carousel-inner img{
 	margin: 0 auto;
+	height: 400px;
 }
 
 .carousel-control{
@@ -140,7 +142,13 @@ body{
 }
 
 .info-content p{
+	color: #666;
 	font-size: 14px;
+}
+
+.info-content a:hover{
+	text-decoration: none;
+	opacity: 0.7;
 }
 
 .navbar-right {
@@ -163,6 +171,15 @@ body{
 	padding: 5px;
 }
 
+.info-right a{
+	color: #333;
+}
+
+.info-right a:hover{
+	text-decoration: none;
+	opacity: 0.7;
+}
+
 .info-right h4{
 	font-size: 16px;
 	padding: 5px 0 0 0;
@@ -183,7 +200,7 @@ body{
 	text-decoration: none;
 }
 
-#case h4:hover{
+#case a h4:hover{
 	color: #fff;
 }
 
@@ -235,6 +252,7 @@ body{
 }
 
 
+/*没有小于768px，因为Bootstrap以移动端为优先*/
 
 @media (min-width: 768px){
 	.tab-h2{
