@@ -103,37 +103,37 @@ function generateOneNumber(){
 
 
 function audioPlay(result){
-	var url = "https://koenlee.github.io/demo1/my2048/";
+	var url = "https://koenlee.github.io/demo1/my2048";
 	switch(result){
 		case 4:
-			$('#audio').attr('src', url+audio[0]).get(0).play();
+			$('#audio').attr('src', url+"/"+audio[0]).get(0).play();
 		break;
 		case 8:
-			$('#audio').attr('src', url+audio[1]).get(0).play();
+			$('#audio').attr('src', url+"/"+audio[1]).get(0).play();
 		break;
 		case 16:
-			$('#audio').attr('src', url+audio[2]).get(0).play();
+			$('#audio').attr('src', url+"/"+audio[2]).get(0).play();
 		break;
 		case 32:
-			$('#audio').attr('src', url+audio[3]).get(0).play();
+			$('#audio').attr('src', url+"/"+audio[3]).get(0).play();
 		break;
 		case 64:
-			$('#audio').attr('src', url+audio[4]).get(0).play();
+			$('#audio').attr('src', url+"/"+audio[4]).get(0).play();
 		break;
 		case 128:
-			$('#audio').attr('src', url+audio[5]).get(0).play();
+			$('#audio').attr('src', url+"/"+audio[5]).get(0).play();
 		break;
 		case 256:
-			$('#audio').attr('src', url+audio[6]).get(0).play();
+			$('#audio').attr('src', url+"/"+audio[6]).get(0).play();
 		break;
 		case 512:
-			$('#audio').attr('src', url+audio[7]).get(0).play();
+			$('#audio').attr('src', url+"/"+audio[7]).get(0).play();
 		break;
 		case 1024:
-			$('#audio').attr('src', url+audio[8]).get(0).play();
+			$('#audio').attr('src', url+"/"+audio[8]).get(0).play();
 		break;
 		default:
-			$('#audio').attr('src', url+audio[8]).get(0).play();
+			$('#audio').attr('src', url+"/"+audio[8]).get(0).play();
 		break;
 	}
 }
