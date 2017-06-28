@@ -103,7 +103,7 @@ function generateOneNumber(){
 
 
 function audioPlay(result){
-	var url = "https://koenlee.github.io/demo1/my2048";
+	var url = "https://koenlee.github.io/demo1/my2048/";
 	switch(result){
 		case 4:
 			$('#audio').attr('src', url+audio[0]).get(0).play();
