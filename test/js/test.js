@@ -1,6 +1,4 @@
-$(function(){
 	var page=1;
-
 
 	//获取窗口宽度
 	var W=$(window).width();
@@ -26,29 +24,23 @@ $(function(){
 		height:'auto'
 	});
 
-	//点击图片
+	//点击图片切换
 	$('.pic').click(function(event) {		
-		if (page<=10) {
+		if (page<10) {
 			page++;
 			skip();
 		}
-		
 	});
 
-
-
-	//点击反悔键
+	//点击退回键
 	$('#prev').click(function(event) {
 		if (page>=2) {
 			page--;
 			skip();
-
 		}
 	});
 
-
-
-	//切换图片
+	//切换当前进度和图片
 	function skip(){
 		$('.current-page').text(page);
 		$('#picA').animate({opacity:0.8},400,function(){
@@ -59,5 +51,3 @@ $(function(){
 			$('#picB').attr('src', 'img/'+page+'B.jpg').animate({opacity:1},400)
 		});
 	}
-
-})
