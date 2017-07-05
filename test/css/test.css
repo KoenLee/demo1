@@ -5,6 +5,22 @@ body{
 	height: 100%
 }
 
+#header h1 a{
+	line-height: 49px;
+	color: #333;
+	font-size: 18px;
+	font-family: 'Microsoft YaHei';
+}
+
+.container{
+	padding-top: 49px;
+}
+
+.blank{
+	width: 100%;
+	height: 49px;
+}
+
 .circle{
 	border: 1px solid #000;
 	border-radius: 50%;
@@ -24,4 +40,3 @@ body{
 	display: block;
 	margin: 0 auto;
 }
-
