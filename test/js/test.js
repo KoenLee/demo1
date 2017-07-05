@@ -31,15 +31,17 @@ $(function(){
 		if (page<=10) {
 			$('.current-page').text(page);
 			$('#picA').animate({opacity:0.8},400,function(){
-				$('#picA').animate({opacity:1},400)
-			}).attr('src', 'img/'+page+'A.jpg');
+				$('#picA').attr('src', 'img/'+page+'A.jpg').animate({opacity:1},400)
+			});
 
 			$('#picB').animate({opacity:0.8},400,function(){
-				$('#picB').animate({opacity:1},400)
-			}).attr('src', 'img/'+page+'B.jpg');
+				$('#picB').attr('src', 'img/'+page+'B.jpg').animate({opacity:1},400)
+			});
 
 		}
 		
 	});
+
+	//
 
 })
