@@ -12,7 +12,8 @@ $(function(){
 
 	//设置题号样式
 	$('.page').css({
-		fontSize: $('.circle').height()*0.28
+		fontSize: $('.circle').height()*0.28,
+		lineHeight: $('.circle').height()+'px'
 	});
 
 	//设置图片样式
