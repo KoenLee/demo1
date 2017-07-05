@@ -4,8 +4,8 @@ $(function(){
 	
 	//设置圆圈样式
 	$('.circle').css({
-		width: W*0.125,
-		height: W*0.125,
+		width: W*0.12,
+		height: W*0.12,
 		marginTop: W*0.0625,
 		marginBottom: W*0.0625
 	});
@@ -23,12 +23,4 @@ $(function(){
 		height:'auto'
 	});
 
-	//更改题号
-	$('.page').text()
-
-
-	//选中一张图
-	$('.page').click(function(event) {
-		console.log(event)
-	});
 })
