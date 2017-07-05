@@ -1,6 +1,7 @@
 $(function(){
 	var page=1;
 
+
 	//获取窗口宽度
 	var W=$(window).width();
 	
@@ -25,23 +26,38 @@ $(function(){
 		height:'auto'
 	});
 
-	//点击图片切换
-	$('.pic').click(function(event) {
-		page++;
+	//点击图片
+	$('.pic').click(function(event) {		
 		if (page<=10) {
-			$('.current-page').text(page);
-			$('#picA').animate({opacity:0.8},400,function(){
-				$('#picA').attr('src', 'img/'+page+'A.jpg').animate({opacity:1},400)
-			});
-
-			$('#picB').animate({opacity:0.8},400,function(){
-				$('#picB').attr('src', 'img/'+page+'B.jpg').animate({opacity:1},400)
-			});
-
+			page++;
+			skip();
 		}
 		
 	});
 
-	//
+
+
+	//点击反悔键
+	$('#prev').click(function(event) {
+		if (page>=2) {
+			page--;
+			skip();
+
+		}
+	});
+
+
+
+	//切换图片
+	function skip(){
+		$('.current-page').text(page);
+		$('#picA').animate({opacity:0.8},400,function(){
+				$('#picA').attr('src', 'img/'+page+'A.jpg').animate({opacity:1},400)
+			});
+
+		$('#picB').animate({opacity:0.8},400,function(){
+			$('#picB').attr('src', 'img/'+page+'B.jpg').animate({opacity:1},400)
+		});
+	}
 
 })
