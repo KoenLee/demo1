@@ -7,15 +7,15 @@ function isWeixinBrowser(){
 	if(ua.match(/MicroMessenger/i) == 'micromessenger'){
 		return true;
 	}else{
-	return false;
+		return false;
 	}
 }
-$(document).ready(){
-	if (isWeixinBrowser()) {
-		$('#header').attr('display', 'none');
-		$('.blank').attr('display', 'none');
-	}	
-}
+
+if (isWeixinBrowser()) {
+	$('#header').attr('display', 'none');
+	$('.blank').attr('display', 'none');
+}	
+
 
 
 $(document).ready(){
