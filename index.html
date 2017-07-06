@@ -2,48 +2,199 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>发现你的审美性格</title>
-	<link rel="stylesheet" href="css/reset.css">	
-	<link rel="stylesheet" href="css/style_sp.css">
-	<link rel="stylesheet" href="css/test.css">
-
-	<script src='js/pc_mobile.js'></script>	
-
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>Home</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div id="header" class="chunk_relative">
-	    <a href="javaScript:;" id="menu_button"></a>
-	    <h1 id="title">西班牙测试</h1>
-	    <a href="javaScript:;" id="prev" class="back_btn"></a>
-  </div>
 
-  <div class="menu_message">
-  <h2 class="chunk_relative"><a href="index.html"><img src="img/txt-logo.png"></a><a href="#" onClick="menu_closed()"></a></h2>
-  <ul>
-    <li><a href="classify.html?classId=1">生活</a></li>
-    <li><a href="classify.html?classId=2">旅行</a></li>
-    <li><a href="classify.html?classId=3">商业</a></li>
-    <li><a href="classify.html?classId=5">艺文</a></li>
-    <li><a href="save_society.html">美学救社会</a></li>
-    <li><a href="major_mag.html">Major Mag</a></li>
-  </ul>
-</div>
-<div class="out_hold"></div>
-	<div class="blank"></div>
-	<div class="circle">
-		<div class="circle-inner">
-			<p class="page"><span class="current-page">1</span>/10</p>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="index.html" class="navbar-brand logo">
+			<img class="logo-pic" src="img/Logo.png" alt="PlayStation">
+			</a>
+			<button class="navbar-toggle" data-toggle='collapse' data-target='#navbar-collapse'>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+				<li class="active"><a href="information.html"><span class="glyphicon glyphicon-list"></span> Article</a></li>
+				<li><a href="case.html"><span class="glyphicon glyphicon-fire"></span> Demo</a></li>
+				<li><a href="about.html"><span class="glyphicon glyphicon-question-sign"></span> About</a></li>
+			</ul>
+		</div>
+	</div>	
+</nav>
+
+<div id="myCarousel" class="carousel slide">
+	<ol class="carousel-indicators">
+		<li class="active" data-target='#myCarousel' data-slide-to='0'></li>
+		<li data-target='#myCarousel' data-slide-to='1'></li>
+		<li data-target='#myCarousel' data-slide-to='2'></li>
+		<li data-target='#myCarousel' data-slide-to='3'></li>
+	</ol>	
+	<div class="carousel-inner">
+		<div class="item active" style="background: #09071b">
+			<img src="img/11.jpg" alt="">
+		</div>
+		<div class="item" style="background: #684a2d">
+			<img src="img/12.jpg" alt="">
+		</div>
+		<div class="item" style="background: #1a1a0e">
+			<img src="img/13.jpg" alt="">
+		</div>
+		<div class="item" style="background: #1a1a0e">
+			<img src="img/14.jpg" alt="">
 		</div>
 	</div>
-	<div class="selector">
-		<img id="picA" class="pic" src="img/1A.jpg" alt="">
-		<img id="picB" class="pic" src="img/1B.jpg" alt="">
-	</div>
+	<a class="carousel-control left " href="#myCarousel" data-slide='prev'>
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a class="carousel-control right" href="#myCarousel" data-slide='next'>
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+</div>
 
-	<script src='js/jquery.js'></script>
-	<script src='js/test.js'></script>
-	<script src='js/sp_menu.js'></script>
+<div class="tab1">
+	<div class="container">
+		<h2 class="tab-h2">2月新游荐：《尼尔2》《地平线 零点黎明》等</h2>
+		<p class="tab-p">2017的第一个月份已经快进入尾声，接下来迎接我们的除了春节假期以外，当然还有新一月的游戏啦！2月份也算是大作集结了，不仅有《地平线：零点黎明》、《仁王》，还有系列新作《尼尔：机械部队》和《超级机器人大战V》等，话不多说，赶快来看看2月又有哪些精彩的游戏与我们见面吧。
+		</p>
+		<div class="row">
+			<div class="col-md-6 block">
+				<div class="media">
+					<div class="media-left">
+						<a href="#">
+						<img class="media-object" src="img/game/-1.jpg" alt="">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">地平线：零点黎明</h4>
+						<p class="text-muted">
+						这是由Guerrilla Games工作室负责开发的一款PS4独占RPG。游戏背景设定在世界末日来临之际，人类遭遇了极其巨大的挑战，随后又遭了庞大的机械恐龙入侵。在游戏中玩家将扮演身手不凡的女猎人阿洛伊，在这个变化多端且充满神秘生物的繁荣世界之中冒险。</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6 block">
+				<div class="media">
+					<div class="media-left">
+						<a href="#">
+						<img class="media-object" src="img/game/13.jpg" alt="">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">仁王</h4>
+						<p class="text-muted">《仁王》是由光荣特库摩制作的一款暗黑战国动作角色扮演游戏。游戏的故事发生在群雄割据的日本战国时代，一个金发碧眼的日本混血儿武将为了解开自己的身份之谜加入到了战斗之中。在游戏中玩家将扮演一位能看见妖魔鬼怪的金发男子威廉，他的角色原型是侍奉德川家康的英国航海家威廉亚当斯。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 block">
+				<div class="media">
+					<div class="media-left">
+						<a href="#">
+						<img class="media-object" src="img/game/-3.jpg" alt="">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">光环战争2</h4>
+						<p class="text-muted">《光环战争2》预计2月17日推出中文旗舰版，2月21日推出中文普通版。该作是由Creative Assembly开发的一款以《光环》系列为背景的即时战略游戏。本作的故事发生在FPS游戏《光环5》的5年之后，而且将会探索《光环5》剧情线上的关键节点，卡特船长也驾驶火灵号(Spirit of Fire)重返方舟遗迹。</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6 block">
+				<div class="media">
+					<div class="media-left">
+						<a href="#">
+						<img class="media-object" src="img/game/-4.jpg" alt="">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">尼尔：机械部队</h4>
+						<p class="text-muted">《尼尔：机械部队》是由SE和白金工作室联合开发的一款动作角色扮演游戏。游戏背景与前作相同，但剧情讲述的是一个全新的故事。在游戏中玩家将扮演人类派出的人造人部队“尤尔哈”里的2B，与敌人派出的机械生命体进行战斗。近日游戏制作人齐藤阳介在接受采访时还透露游戏将有多个不同结局，而且游戏目前已确认将推出中文版。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="tab2">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 tab2-img">
+				<img src="img/m1.png" class="img-responsive center-block auto" alt="">
+			</div>
+			<div class="text col-md-6 tab2-text">
+				<h3>最终幻想15</h3>
+				<p>《最终幻想15（FF15）》被设定在现代，但这个城市像国家Lucis主角Noctis冰雹从中世纪的国家所包围，否则只有先进的技术位置。</p>				
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="tab3">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				<img src="img/m2.png" class="img-responsive center-block auto" alt="">			
+			</div>
+			<div class="text col-md-6">
+				<h3>神秘海域4</h3>
+				<p>《神秘海域4》与前作相比，风格上会有一些转变，本作将是该系列中比较“黑暗”的一作，而且会比以前更加重视剧情。</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer">
+	<div class="container">
+		<p><a href="about.html">About</a> | <a href="case.html">Case</a></p>
+		<p>KoenLee Powered By Bootstrap</p>
+	</div>
+</footer>
+
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript">
+for (var i = 0; i < $('ul>li').length; i++) {
+	$('ul>li').eq(i).on('click',function(){
+		$('ul>li').removeClass('active')
+		$(this).addClass('active')
+	});
+	$('ul>li').eq(i).on('mouseover',function(){
+		$('ul>li').removeClass('active')
+		$(this).addClass('active')
+	})
+}
+$(function(){
+	//轮播图自动播放
+	$('#myCarousel').carousel({
+		interval:3000,
+		pause:'hover'
+	})
+	$('.block').css('height',(
+			$('.media-object').height()
+		)+'px')
+//设置文字垂直居中
+	$('.text').eq(0).css('margin-top',($('.auto').eq(0).height()-$('.text').eq(0).height())/2+'px');
+	$('.text').eq(1).css('margin-top',($('.auto').eq(1).height()-$('.text').eq(1).height())/2+'px');
+	$(window).resize(function(){
+		$('.text').eq(0).css('margin-top',($('.auto').eq(0).height()-$('.text').eq(0).height())/2+'px');
+		$('.text').eq(1).css('margin-top',($('.auto').eq(1).height()-$('.text').eq(1).height())/2+'px');
+	})
 	
+})
+</script>
 </body>
 </html>
