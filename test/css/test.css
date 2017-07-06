@@ -1,5 +1,5 @@
 body{
-	background-color: #fdfdfd;
+	background-color: #fbfbfb;
 	background-image: url(../img/bg.jpg);
 	width: 100%;
 	height: 100%
@@ -9,7 +9,7 @@ body{
 	line-height: 49px;
 	color: #333;
 	font-size: 18px;
-	font-family: 'Microsoft YaHei';
+	font-family: 'Microsoft聽YaHei';
 }
 
 .container{
@@ -26,22 +26,18 @@ body{
 	height: 45px;
 	max-width: 50px;
 	max-height: 50px;
+	border: 1px solid #000;
 	border-radius: 50%;
 	margin: 24px auto;
-	background-color: #fff;
-	overflow: hidden;
-	border: 1px solid #000;
 }
 
 .circle .page{
-	width:100px;
-	height: 100px;
 	text-align: center;
 	color: #000;
 	font-size: 12px;
-	line-height: 100px;
-	font-family: 'Microsoft YaHei';
-	background-color: #fff
+	line-height: 45px;
+	font-family: 'Microsoft YaHei';
+	background-color: #fff;
 }
 
 .selector .pic{
