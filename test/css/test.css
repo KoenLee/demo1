@@ -30,15 +30,18 @@ body{
 	margin: 24px auto;
 	background-color: #fff;
 	overflow: hidden;
-	box-shadow: 0 0 0 1px #000;
+	border: 1px solid #000;
 }
 
 .circle .page{
+	width:100px;
+	height: 100px;
 	text-align: center;
 	color: #000;
 	font-size: 12px;
-	line-height: 45px;
-	font-family: 'Microsoft YaHei'
+	line-height: 100px;
+	font-family: 'Microsoft YaHei';
+	background-color: #fff
 }
 
 .selector .pic{
