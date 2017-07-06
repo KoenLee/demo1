@@ -1,10 +1,22 @@
 var page=1;
 var progress=0;
+
 //判断是否在微信浏览器打开
 function isWeixinBrowser(){
-  //截至2014年2月12日,这个方法不能测试windows phone中的微信浏览器
-  return (/MicroMessenger/i).test(window.navigator.userAgent);
+	var ua = window.navigator.userAgent.toLowerCase();
+	if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+		return true;
+	}else{
+	return false;
+	}
 }
+$(document).ready(){
+	if (isWeixinBrowser()) {
+		$('#header').attr('display', 'none');
+		$('.blank').attr('display', 'none');
+	}	
+}
+
 
 $(document).ready(){
 	if (isWeixinBrowser()) {
