@@ -28,6 +28,7 @@ body{
 	border-radius: 50%;
 	margin: 24px auto;
 	background-color: #fff;
+	overflow:hidden;
 }
 
 .circle .page{
