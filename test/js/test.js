@@ -9,18 +9,10 @@ $('.circle').css({
 	width: W*0.12,
 	height: W*0.12,
 });
-$('.circle-inner').css({
-	width: W*0.12,
-	height: W*0.12,
-});
 //窗口缩放跟随变化
 $(window).resize(function() {
 	W=$(window).width();
 	$('.circle').css({
-		width: W*0.12,
-		height: W*0.12,
-	});
-	$('.circle-inner').css({
 		width: W*0.12,
 		height: W*0.12,
 	});
