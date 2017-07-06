@@ -1,5 +1,12 @@
 var page=1;
 var progress=0;
+//判断是否在微信浏览器打开
+document.addEventListener('WeixinJSBridgeReady', function(){
+	
+	$('#header').attr('display', 'none');
+	$('.blank').attr('display', 'none');
+});
+
 
 //获取浏览器窗口宽度
 var W=$(window).width();
