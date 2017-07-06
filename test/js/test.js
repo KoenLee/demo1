@@ -9,8 +9,8 @@ function isWeixinBrowser(){
 
 window.onload=function(){
 	if (isWeixinBrowser()) {
-		$('#header').attr('display', 'none');
-		$('.blank').attr('display', 'none');
+		$('#header').css('display', 'none');
+		$('.blank').css('display', 'none');
 	}			
 }
 		
