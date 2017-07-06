@@ -12,12 +12,17 @@ if (isWeixinBrowser()) {
 	$('.blank').css('height', '18px');
 }			
 
-		
-
 //获取浏览器窗口宽度
 var W=$(window).width();
+var H= $(window).height();
 
-//根据窗口尺寸调整圆圈大小
+//遮罩大小
+$('.mask').css({
+	width: W,
+	height: $(window).height()
+});
+
+//根据窗口尺寸调整大小
 $('.circle').css({
 	width: W*0.12,
 	height: W*0.12,
@@ -26,32 +31,82 @@ $('.circle-inner').css({
 	width: W*0.12,
 	height: W*0.12,
 });
+$('.page').css({
+	fontSize: $('.circle').height()*0.28,
+	lineHeight: $('.circle').height()+'px'
+});
+$('.popup').css({
+	height: H*0.264,
+	top: H*0.5-$('.popup').height()*0.5,
+	left: W*0.5-$('.popup').width()*0.5
+});
+$('.popup>p').css({
+	fontSize: $('.popup').height()*0.094
+});
+// if (parseInt($('.popup>p').css('fontSize'))>20) {
+// 	$('.popup>p').css('fontSize',20)
+// };
+$('.confirm').css({
+	fontSize: $('.popup').height()*0.094,
+	height: $('.popup').height()*0.247,
+	marginTop: $('.popup').height()*0.13
+});
 //窗口缩放跟随变化
 $(window).resize(function() {
 	W=$(window).width();
+	H=$(window).height();
+
+	$('.mask').css({
+		width: W,
+		height: $(window).height()
+	});
+
 	$('.circle').css({
 		width: W*0.12,
 		height: W*0.12,
 	});
 	$('.circle-inner').css({
-	width: W*0.12,
-	height: W*0.12,
-});
-});
-
-//根据窗口尺寸调整题号大小
-$('.page').css({
-	fontSize: $('.circle').height()*0.28,
-	lineHeight: $('.circle').height()+'px'
-});
-//窗口缩放跟随变化
-$(window).resize(function() {
-	W=$(window).width();
-	$('.page').css({
+		width: W*0.12,
+		height: W*0.12,
+	});
+		$('.page').css({
 		fontSize: $('.circle').height()*0.28,
 		lineHeight: $('.circle').height()+'px'
 	});
+	$('.mask').css({
+		width: W,
+		height: $(window).height()
+	});
+	$('.popup').css({
+		height: H*0.264,
+		top: H*0.5-$('.popup').height()*0.5,
+		left: W*0.5-$('.popup').width()*0.5
+	});
+	$('.popup>p').css({
+		fontSize: $('.popup').height()*0.094
+	});
+	if (parseInt($('.popup>p').css('fontSize'))>20) {
+		$('.popup>p').css('fontSize',20)
+	};
+	$('.confirm').css({
+		fontSize: $('.popup').height()*0.094,
+		height: $('.popup').height()*0.247,
+		marginTop: $('.popup').height()*0.13
+	});
 });
+
+//弹出弹窗
+
+
+//点击确认
+$('.confirm').click(function() {
+	$('.popup').fadeOut(400,function(){
+		$(this).remove();
+		$('.mask').remove();
+	});
+});
+
+
 
 //点击图片切换
 $('.pic').click(function() {	
