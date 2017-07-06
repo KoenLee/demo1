@@ -1,6 +1,37 @@
 var page=1;
 var progress=0;
 
+//获取浏览器窗口宽度
+var W=$(window).width();
+
+//根据窗口尺寸调整圆圈大小
+$('.circle').css({
+	width: W*0.12,
+	height: W*0.12,
+});
+//窗口缩放跟随变化
+$(window).resize(function() {
+	W=$(window).width();
+	$('.circle').css({
+		width: W*0.12,
+		height: W*0.12,
+	});
+});
+
+//根据窗口尺寸调整题号大小
+$('.page').css({
+	fontSize: $('.circle').height()*0.28,
+	lineHeight: $('.circle').height()+'px'
+});
+//窗口缩放跟随变化
+$(window).resize(function() {
+	W=$(window).width();
+	$('.page').css({
+		fontSize: $('.circle').height()*0.28,
+		lineHeight: $('.circle').height()+'px'
+	});
+});
+
 //点击图片切换
 $('.pic').click(function() {	
 	if (page<10) {
