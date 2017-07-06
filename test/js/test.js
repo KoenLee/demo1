@@ -10,9 +10,9 @@ $('.circle').css({
 	height: W*0.12,
 });
 $('.circle-inner').css({
-		width: W*0.12,
+	width: W*0.12,
+	height: W*0.12,
 });
-
 //窗口缩放跟随变化
 $(window).resize(function() {
 	W=$(window).width();
@@ -21,8 +21,9 @@ $(window).resize(function() {
 		height: W*0.12,
 	});
 	$('.circle-inner').css({
-		width: W*0.12,
-	});
+	width: W*0.12,
+	height: W*0.12,
+});
 });
 
 //根据窗口尺寸调整题号大小
