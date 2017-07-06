@@ -6,6 +6,11 @@ $('.page').css({
 		lineHeight: $('.circle').height()+'px'
 });
 
+$('.page').css({
+	fontSize: $('.circle').height()*0.28,
+	lineHeight: $('.circle').height()+'px'
+});
+
 //点击图片切换
 $('.pic').click(function() {	
 	if (page<10) {
