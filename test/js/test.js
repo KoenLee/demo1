@@ -16,16 +16,6 @@ if (isWeixinBrowser()) {
 	$('.blank').attr('display', 'none');
 }	
 
-
-
-$(document).ready(){
-	if (isWeixinBrowser()) {
-		$('#header').attr('display', 'none');
-		$('.blank').attr('display', 'none');
-	}	
-}
-	
-
 //获取浏览器窗口宽度
 var W=$(window).width();
 
