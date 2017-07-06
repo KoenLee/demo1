@@ -3,12 +3,8 @@ var progress=0;
 
 //判断是否在微信浏览器打开
 function isWeixinBrowser(){
-	var ua = window.navigator.userAgent.toLowerCase();
-	if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-		return true;
-	}else{
-		return false;
-	}
+  var ua = navigator.userAgent.toLowerCase();
+  return (/micromessenger/.test(ua)) ? true : false ;
 }
 
 if (isWeixinBrowser()) {
