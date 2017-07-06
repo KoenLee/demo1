@@ -21,14 +21,6 @@ body{
 	height: 49px;
 }
 
-.circle-inner{
-	width: 45px;
-	height: 45px;
-	max-width: 50px;
-	max-height: 50px;
-	border-radius: 50%;
-}
-
 .circle{
 	width: 45px;
 	height: 45px;
