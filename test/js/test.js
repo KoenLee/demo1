@@ -6,13 +6,12 @@ function isWeixinBrowser(){
   var ua = window.navigator.userAgent.toLowerCase();
   return (/micromessenger/.test(ua)) ? true : false ;
 }
+//是则隐藏顶栏
+if (isWeixinBrowser()) {
+	$('#header').css('display', 'none');
+	$('.blank').css('display', 'none');
+}			
 
-window.onload=function(){
-	if (isWeixinBrowser()) {
-		$('#header').css('display', 'none');
-		$('.blank').css('display', 'none');
-	}			
-}
 		
 
 //获取浏览器窗口宽度
