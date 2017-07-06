@@ -72,7 +72,6 @@ input[type="text"], input[type="email"], input[type="search"], input[type="passw
   right: 0;
   width: 100%;
   z-index: 100;
-  max-width: 1000px;
   height: 49px;
   background: #fff;
   margin: auto;
@@ -82,6 +81,7 @@ input[type="text"], input[type="email"], input[type="search"], input[type="passw
 }
 #header h1 {
   height: 49px;
+  line-height: 49px;
   text-align: center;
   color: #1a1a1a;
 }
@@ -159,6 +159,7 @@ input[type="text"], input[type="email"], input[type="search"], input[type="passw
   background-position: -81px 4px;
 }
 .menu_message h2 img {
+  width: auto;
   height: 100%;
 }
 .menu_message.current {
