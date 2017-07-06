@@ -34,11 +34,11 @@ body{
 	height: 45px;
 	max-width: 50px;
 	max-height: 50px;
-	border: 1px solid #000;
 	border-radius: 50%;
 	margin: 24px auto;
 	background-color: #fff;
 	overflow: hidden;
+	box-shadow: 0 0 0 1px #000;
 }
 
 .circle .page{
