@@ -9,6 +9,7 @@ function isWeixinBrowser(){
 //是则隐藏顶栏
 if (isWeixinBrowser()) {
 	$('#header').css('display', 'none');
+	$('.blank').css('height', '24px');
 }			
 
 		
