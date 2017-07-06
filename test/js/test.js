@@ -37,7 +37,7 @@ $('.page').css({
 });
 $('.popup').css({
 	height: H*0.264,
-	top: H*0.5-$('.popup').height()*0.5,
+	top: H*0.5-$('.popup').height()*0.5-$('.blank').height()*0.5,
 	left: W*0.5-$('.popup').width()*0.5
 });
 $('.popup>p').css({
@@ -79,7 +79,7 @@ $(window).resize(function() {
 	});
 	$('.popup').css({
 		height: H*0.264,
-		top: H*0.5-$('.popup').height()*0.5,
+		top: H*0.5-$('.popup').height()*0.5-$('.blank').height()*0.5,
 		left: W*0.5-$('.popup').width()*0.5
 	});
 	$('.popup>p').css({
