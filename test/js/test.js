@@ -1,12 +1,18 @@
 var page=1;
 var progress=0;
 //判断是否在微信浏览器打开
-document.addEventListener('WeixinJSBridgeReady', function(){
-	
-	$('#header').attr('display', 'none');
-	$('.blank').attr('display', 'none');
-});
+function isWeixinBrowser(){
+  //截至2014年2月12日,这个方法不能测试windows phone中的微信浏览器
+  return (/MicroMessenger/i).test(window.navigator.userAgent);
+}
 
+$(document).ready(){
+	if (isWeixinBrowser()) {
+		$('#header').attr('display', 'none');
+		$('.blank').attr('display', 'none');
+	}	
+}
+	
 
 //获取浏览器窗口宽度
 var W=$(window).width();
