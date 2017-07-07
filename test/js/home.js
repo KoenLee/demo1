@@ -9,7 +9,7 @@ function isWeixinBrowser(){
 //是则隐藏顶栏
 if (isWeixinBrowser()) {
 	$('#header').css('display', 'none');
-	$('.blank').remove();
+	$('.blank').eq(0).remove();
 }
 
 $('.title-circle').css({
@@ -66,13 +66,18 @@ if (W>500) {
 $('.blank').css({
 	height:$('#header').height()
 });
-$('#icon1').css({
-	marginTop: $('#discription1').height()*0.5-$('#icon1').width()*0.5
-});
 
-$('#icon2').css({
-	marginTop: $('#discription2').height()*0.5-$('#icon2').width()*0.5
-});
+for (var i = 0; i < $('.icon').length; i++) {
+	$('.icon').eq(i).css({
+		marginTop: $('.discription').eq(i).height()*0.5-$('.icon').eq(i).width()*0.5
+	});
+
+	if(parseInt($('.icon').eq(i).css('marginTop'))<=0){
+		$('.icon').eq(i).css('marginTop',0)
+	}
+}
+
+
 
 
 $(window).resize(function() {
@@ -129,12 +134,16 @@ $(window).resize(function() {
 	$('.blank').css({
 		height:$('#header').height()
 	});
-	$('#icon1').css({
-	marginTop: $('#discription1').height()*0.5-$('#icon1').width()*0.5
-	});
+	for (var i = 0; i < $('.icon').length; i++) {
+		$('.icon').eq(i).css({
+			marginTop: $('.discription').eq(i).height()*0.5-$('.icon').eq(i).width()*0.5
+		});
 
-	$('#icon2').css({
-		marginTop: $('#discription2').height()*0.5-$('#icon2').width()*0.5
-	});
+		if(parseInt($('.icon').eq(i).css('marginTop'))<=0){
+			$('.icon').eq(i).css('marginTop',0)
+		}
+	}
+
+
 
 })
