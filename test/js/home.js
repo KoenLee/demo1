@@ -3,10 +3,11 @@ function isWeixinBrowser(){
   var ua = window.navigator.userAgent.toLowerCase();
   return (/micromessenger/.test(ua)) ? true : false ;
 }
-//是则隐藏顶栏
+//是则隐藏顶栏，不显示弹窗
 if (isWeixinBrowser()) {
 	$('#header').css('display', 'none');
 	$('.blank').eq(0).remove();
+	$('.mask').remove();
 	$('.test').remove();
 }
 
@@ -16,7 +17,7 @@ styleInitialize();
 //改变窗口大小（屏幕旋转）时
 $(window).resize(function() {
 	styleInitialize();
-})
+});
 
 //点击确认
 $('.confirm').click(function() {
@@ -27,30 +28,18 @@ $('.confirm').click(function() {
 });
 
 
+
 //根据窗口尺寸调整其他元素尺寸和居中设置
 function styleInitialize(){
 	var W=$(window).width();
-	var H=$(window).height();
 	var hW=$('.header').width();
+	var H= $(window).height();
 
 	$('.mask').css({
 		width: W,
 		height: $(window).height()
 	});
-	$('.popup').css({
-		height: H*0.264,
-		top: H*0.5-$('.popup').height()*0.5-$('.blank').height()*0.5,
-		//left: W*0.5-$('.popup').width()*0.5
-	});
-	$('.popup>p').css({
-		fontSize: $('.popup').height()*0.094
-	});
 
-	$('.confirm').css({
-		fontSize: $('.popup').height()*0.094,
-		height: $('.popup').height()*0.247,
-		marginTop: $('.popup').height()*0.13
-	});
 	$('.content').css({
 		padding: W*0.078,
 	});
@@ -93,6 +82,9 @@ function styleInitialize(){
 			marginBottom:0
 		});
 	}
+	if (W>500){
+		$('img').css('marginBottom',15)
+	}
 	$('.button').css({
 		height: W*0.153,
 		fontSize:W*0.04375,
@@ -104,6 +96,10 @@ function styleInitialize(){
 	};
 	$('.blank').css({
 		height:$('#header').height()
+	});
+	$('.test>p').css({
+		fontSize: W*0.0375,
+		property2: 'value2'
 	});
 
 	for (var i = 0; i < $('.icon').length; i++) {
