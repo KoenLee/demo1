@@ -13,14 +13,15 @@ div img{
 	height: auto;
 	margin: 0 auto;
 	position: relative;
+	overflow: hidden;
 }
 #title{
 	line-height: 49px;
 	color: #333;
 	font-size: 18px;
+	font-family: 'Microsoft聽YaHei';
 }
 .header img{
-	display: block;
 	width: 100%;
 }
 .header .title-circle{
@@ -102,4 +103,49 @@ figcaption{
 }
 .button:hover{
 	background: #444;
+}
+.mask{
+	width: 100%;
+	height: auto;
+	background-color: #000;
+	opacity: 0.5;
+	position: fixed;
+}
+.test{
+	position: absolute;
+	text-align: center;
+	width: 100%;
+    z-index: 100;
+    top:  50%;
+    margin-top: -100px;
+}
+.popup{
+	display: inline-block;
+	width: 65%;
+	min-width: 200px;
+	max-width: 400px;
+	min-height: 200px;
+	background-color: #fff;
+	margin: 0 auto;
+	z-index: 2;
+}
+.popup p{
+	text-align: center;
+	line-height: 1.71em; 
+	font-size: 18px;
+	color: #3daad6
+}
+.popup .confirm{
+	display: block;
+	width: 78%;
+	margin: 0 auto;
+	font-size: 20px;
+	border-radius: 4px;
+	background-color: #333;
+	color: #fff;
+	border: 0;
+	outline: none;
+}
+.popup .p1{
+	margin-top: 26px;
 }
