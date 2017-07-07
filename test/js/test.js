@@ -10,92 +10,15 @@ function isWeixinBrowser(){
 if (isWeixinBrowser()) {
 	$('#header').css('display', 'none');
 	$('.blank').css('height', '18px');
-}			
+}
 
-//获取浏览器窗口宽度
-var W=$(window).width();
-var H= $(window).height();
+//文档载入时
+styleInitialize();			
 
-//遮罩大小
-$('.mask').css({
-	width: W,
-	height: $(window).height()
-});
-
-//根据窗口尺寸调整大小
-$('.circle').css({
-	width: W*0.12,
-	height: W*0.12,
-});
-$('.circle-inner').css({
-	width: W*0.12,
-	height: W*0.12,
-});
-$('.page').css({
-	fontSize: $('.circle').height()*0.28,
-	lineHeight: $('.circle').height()+'px'
-});
-$('.popup').css({
-	height: H*0.264,
-	top: H*0.5-$('.popup').height()*0.5-$('.blank').height(),
-	left: W*0.5-$('.popup').width()*0.5
-});
-$('.popup>p').css({
-	fontSize: $('.popup').height()*0.094
-});
-// if (parseInt($('.popup>p').css('fontSize'))>20) {
-// 	$('.popup>p').css('fontSize',20)
-// };
-$('.confirm').css({
-	fontSize: $('.popup').height()*0.094,
-	height: $('.popup').height()*0.247,
-	marginTop: $('.popup').height()*0.13
-});
-//窗口缩放跟随变化
+//改变窗口大小（屏幕旋转）时
 $(window).resize(function() {
-	W=$(window).width();
-	H=$(window).height();
-
-	$('.mask').css({
-		width: W,
-		height: $(window).height()
-	});
-
-	$('.circle').css({
-		width: W*0.12,
-		height: W*0.12,
-	});
-	$('.circle-inner').css({
-		width: W*0.12,
-		height: W*0.12,
-	});
-		$('.page').css({
-		fontSize: $('.circle').height()*0.28,
-		lineHeight: $('.circle').height()+'px'
-	});
-	$('.mask').css({
-		width: W,
-		height: $(window).height()
-	});
-	$('.popup').css({
-		height: H*0.264,
-		top: H*0.5-$('.popup').height()*0.5-$('.blank').height(),
-		left: W*0.5-$('.popup').width()*0.5
-	});
-	$('.popup>p').css({
-		fontSize: $('.popup').height()*0.094
-	});
-	if (parseInt($('.popup>p').css('fontSize'))>20) {
-		$('.popup>p').css('fontSize',20)
-	};
-	$('.confirm').css({
-		fontSize: $('.popup').height()*0.094,
-		height: $('.popup').height()*0.247,
-		marginTop: $('.popup').height()*0.13
-	});
+	styleInitialize();
 });
-
-//弹出弹窗
 
 
 //点击确认
@@ -139,5 +62,44 @@ function skip(){
 
 	$('#picB').animate({opacity:0.8},400,function(){
 		$('#picB').attr('src', 'img/'+page+'B.jpg').animate({opacity:1},400)
+	});
+}
+
+//根据窗口尺寸调整其他元素尺寸和居中设置
+function styleInitialize(){
+	var W=$(window).width();
+	var H= $(window).height();
+
+	$('.mask').css({
+		width: W,
+		height: $(window).height()
+	});
+
+
+	$('.circle').css({
+		width: W*0.12,
+		height: W*0.12,
+	});
+	$('.circle-inner').css({
+		width: W*0.12,
+		height: W*0.12,
+	});
+	$('.page').css({
+		fontSize: $('.circle').height()*0.28,
+		lineHeight: $('.circle').height()+'px'
+	});
+	$('.popup').css({
+		height: H*0.264,
+		top: H*0.5-$('.popup').height()*0.5-$('.blank').height()*0.5,
+		left: W*0.5-$('.popup').width()*0.5
+	});
+	$('.popup>p').css({
+		fontSize: $('.popup').height()*0.094
+	});
+
+	$('.confirm').css({
+		fontSize: $('.popup').height()*0.094,
+		height: $('.popup').height()*0.247,
+		marginTop: $('.popup').height()*0.13
 	});
 }
