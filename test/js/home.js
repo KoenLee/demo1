@@ -7,6 +7,7 @@ function isWeixinBrowser(){
 if (isWeixinBrowser()) {
 	$('#header').css('display', 'none');
 	$('.blank').eq(0).remove();
+	$('.test').remove();
 }
 
 //文档载入时
@@ -17,12 +18,39 @@ $(window).resize(function() {
 	styleInitialize();
 })
 
+//点击确认
+$('.confirm').click(function() {
+	$('.popup').fadeOut(400,function(){
+		$(this).remove();
+		$('.mask').remove();
+	});
+});
+
 
 //根据窗口尺寸调整其他元素尺寸和居中设置
 function styleInitialize(){
 	var W=$(window).width();
+	var H=$(window).height();
 	var hW=$('.header').width();
 
+	$('.mask').css({
+		width: W,
+		height: $(window).height()
+	});
+	$('.popup').css({
+		height: H*0.264,
+		top: H*0.5-$('.popup').height()*0.5-$('.blank').height()*0.5,
+		//left: W*0.5-$('.popup').width()*0.5
+	});
+	$('.popup>p').css({
+		fontSize: $('.popup').height()*0.094
+	});
+
+	$('.confirm').css({
+		fontSize: $('.popup').height()*0.094,
+		height: $('.popup').height()*0.247,
+		marginTop: $('.popup').height()*0.13
+	});
 	$('.content').css({
 		padding: W*0.078,
 	});
@@ -64,7 +92,7 @@ function styleInitialize(){
 		$('.header>img').css({
 			marginBottom:0
 		});
-	};
+	}
 	$('.button').css({
 		height: W*0.153,
 		fontSize:W*0.04375,
