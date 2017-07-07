@@ -38,13 +38,13 @@ function styleInitialize(){
 	$('#result-title').css({
 		fontSize: W*0.04375
 	});
-	$('#article-title').css({
+	$('.article-title').css({
 		fontSize: W*0.04375
 	});
 	if (W>500) {
 		$('.article-text').css('fontSize', 20);
 		$('#result-title').css('fontSize', 24);
-		$('#article-title').css('fontSize', 24);
+		$('.article-title').css('fontSize', 24);
 		$('.article-small').css('fontSize', 16);
 	};
 	$('figcaption').css({
