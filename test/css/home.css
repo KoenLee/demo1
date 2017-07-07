@@ -33,6 +33,9 @@ div img{
 	margin: 0 auto;
 	padding: 20px;
 }
+.stress{
+	font-weight: bold;
+}
 figcaption{
 	line-height: 1.5em;
 	color: #808080
