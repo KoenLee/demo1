@@ -97,10 +97,6 @@ function styleInitialize(){
 	$('.blank').css({
 		height:$('#header').height()
 	});
-	$('.test>p').css({
-		fontSize: W*0.0375,
-		property2: 'value2'
-	});
 
 	for (var i = 0; i < $('.icon').length; i++) {
 		$('.icon').eq(i).css({
