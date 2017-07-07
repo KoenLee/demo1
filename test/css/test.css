@@ -29,6 +29,7 @@ body{
 .popup{
 	width: 65%;
 	max-width: 350px;
+	min-height: 200px;
 	background-color: #fff;
 	margin: 0 auto;
 	position: fixed;
