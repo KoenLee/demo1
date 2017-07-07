@@ -1,6 +1,3 @@
-var W=$(window).width();
-var hW=$('.header').width();
-
 //判断是否在微信浏览器打开
 function isWeixinBrowser(){
   var ua = window.navigator.userAgent.toLowerCase();
@@ -12,12 +9,10 @@ if (isWeixinBrowser()) {
 	$('.blank').eq(0).remove();
 }
 
-$('.title-circle').css({
-	width: hW*0.24,
-	height: hW*0.24,
-	left: hW*0.5-$('.title-circle').width()*0.5,
-	top: $('.header').height()*0.5-$('.title-circle').width()*0.5
-});
+//根据窗口尺寸调整其他元素尺寸和垂直居中设置
+var W=$(window).width();
+var hW=$('.header').width();
+
 $('.content').css({
 	padding: W*0.078,
 });
@@ -77,18 +72,11 @@ for (var i = 0; i < $('.icon').length; i++) {
 	}
 }
 
-
-
-
+//改变窗口大小（屏幕旋转）时
 $(window).resize(function() {
 	W=$(window).width();
-	var hW=$('.header').width();
-	$('.title-circle').css({
-		width: hW*0.24,
-		height: hW*0.24,
-		left: hW*0.5-$('.title-circle').width()*0.5,
-		top: $('.header').height()*0.5-$('.title-circle').width()*0.5
-	});
+	hW=$('.header').width();
+
 	$('.content').css({
 		padding: W*0.078,
 	});
@@ -120,8 +108,11 @@ $(window).resize(function() {
 		$('figcaption').css('fontSize', 16);
 	};
 	$('img').css({
-		marginBottom:W*0.0265
+		marginBottom:hW*0.0265
 	})
+	if (W>500){
+		$('img').css('marginBottom',15)
+	};
 	$('.button').css({
 		height: W*0.153,
 		fontSize:W*0.04375,
