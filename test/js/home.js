@@ -55,10 +55,16 @@ function styleInitialize(){
 	};
 	$('img').css({
 		marginBottom:hW*0.0265
-	})
+	});
+	$('.header>img').css({
+		marginBottom:0
+	});
 	if (W>500){
 		$('img').css('marginBottom',15)
-	}
+		$('.header>img').css({
+			marginBottom:0
+		});
+	};
 	$('.button').css({
 		height: W*0.153,
 		fontSize:W*0.04375,
