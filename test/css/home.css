@@ -18,7 +18,7 @@ div img{
 	line-height: 49px;
 	color: #333;
 	font-size: 18px;
-	font-family: 'Microsoft YaHei';
+	font-family: 'Microsoft聽YaHei';
 }
 .header img{
 	display: block;
@@ -40,6 +40,7 @@ figcaption{
 	line-height: 1.5em;
 	color: #808080
 }
+.article-title,
 .article-text,
 .notice{
 	line-height: 1.8em;
