@@ -19,17 +19,6 @@ $(window).resize(function() {
 	styleInitialize();
 });
 
-//点击测试按钮
-$('.button').click(function() {
-	//如果不是微信浏览器，弹出提示
-	if (!isWeixinBrowser()) {
-		$(this).attr('href', '#');
-		$('.mask').css('display', 'block');
-		$('.test').fadeIn(400);
-	}
-	
-});
-
 //点击确认
 $('.confirm').click(function() {
 	$('.popup').fadeOut(400,function(){
@@ -38,7 +27,10 @@ $('.confirm').click(function() {
 	});
 });
 
-
+//划动页面时显示底部按钮
+$(window).scroll(function() {
+	$('.button').fadeIn(400);
+});
 
 //根据窗口尺寸调整其他元素尺寸和居中设置
 function styleInitialize(){
@@ -119,8 +111,3 @@ function styleInitialize(){
 		}
 	}
 }
-
-//滑动页面加载
-$(window).scroll(function() {
-	$('.button').fadeIn(400);
-});
