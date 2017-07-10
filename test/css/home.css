@@ -19,7 +19,7 @@ div img{
 	line-height: 49px;
 	color: #333;
 	font-size: 18px;
-	font-family: 'Microsoft聽YaHei';
+	font-family: 'Microsoft YaHei';
 }
 .header img{
 	width: 100%;
@@ -32,7 +32,7 @@ div img{
 	max-width: 500px;
 	margin: 0 auto;
 	padding: 20px;
-	
+	position: relative;
 }
 .stress{
 	font-weight: bold;
@@ -151,7 +151,8 @@ figcaption{
 }
 #result-text{
 	display: block;
-	margin-top: 30%
+	position: absolute;
+	top: 30%
 }
 .test p{
 	font-size: 1em;
