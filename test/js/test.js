@@ -75,15 +75,14 @@ function styleInitialize(){
 		height: $(window).height()
 	});
 
-
-	$('.circle').css({
-		width: W*0.12,
-		height: W*0.12,
-	});
-	$('.circle-inner').css({
-		width: W*0.12,
-		height: W*0.12,
-	});
+	// $('.circle').css({
+	// 	width: W*0.12,
+	// 	height: W*0.12,
+	// });
+	// $('.circle-inner').css({
+	// 	width: W*0.12,
+	// 	height: W*0.12,
+	// });
 	$('.page').css({
 		fontSize: $('.circle').height()*0.28,
 		lineHeight: $('.circle').height()+'px'
@@ -91,7 +90,7 @@ function styleInitialize(){
 	$('.popup').css({
 		height: H*0.264,
 		top: H*0.5-$('.popup').height()*0.5-$('.blank').height()*0.5,
-		left: W*0.5-$('.popup').width()*0.5
+		//left: W*0.5-$('.popup').width()*0.5
 	});
 	$('.popup>p').css({
 		fontSize: $('.popup').height()*0.094
