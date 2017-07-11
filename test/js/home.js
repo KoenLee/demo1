@@ -111,3 +111,5 @@ function styleInitialize(){
 		}
 	}
 }
+
+$('.button').attr('href', 'https://mp.weixin.qq.com/s/2i8FNWErWqdAhH5gRtzioQ');
