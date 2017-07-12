@@ -110,7 +110,9 @@ $('#prev').click(function() {
 		target=$(this);
 		if (page<10) {
 			page++;
-			nextPage++;
+			if(page<9){
+				nextPage++;
+			}
 		}
 		if(page<=10){
 			skip(target);//换图片
