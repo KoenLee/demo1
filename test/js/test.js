@@ -7,35 +7,6 @@ var countS = 0;//结构
 var countP = 0;//力量
 var answerArray= new Array();//保存答案json
 
-var images = new Array();
-function preload() {
-    for (i = 0; i < preload.arguments.length; i++) {
-        images[i] = new Image()
-        images[i].src = preload.arguments[i]
-    }
-}
-preload(
-    "img/1A.jpg",
-    "img/1B.jpg",
-    "img/2A.jpg",
-    "img/2B.jpg",
-    "img/3A.jpg",
-    "img/3B.jpg",
-    "img/4A.jpg",
-    "img/4B.jpg",
-    "img/5A.jpg",
-    "img/5B.jpg",
-    "img/6A.jpg",
-    "img/6B.jpg",
-    "img/7A.jpg",
-    "img/7B.jpg",
-    "img/8A.jpg",
-    "img/8B.jpg",
-    "img/9A.jpg",
-    "img/9B.jpg",
-    "img/10A.jpg",
-    "img/10B.jpg"
-)
 
 /*测试后台逻辑：
 1.选图A，E+1；选B，0，至第3题下同；
