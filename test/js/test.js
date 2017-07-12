@@ -120,13 +120,13 @@ $('#prev').click(function() {
 
 	$('.pic').click(function(target) {
 		target=$(this);
-		preload(imgs);
 		if (page<10) {
 			page++;
 			if(page<9){
 				nextPage++;
 				imgs[0]='img/'+nextPage+'A.jpg';
 				imgs[1]='img/'+nextPage+'B.jpg';
+				preload(imgs);
 			}
 		}
 		if(page<=10){
@@ -156,8 +156,6 @@ $('#prev').click(function() {
 //切换当前进度和图片
 function skip(target){
 	$('.current-page').text(page);
-	$('#picNextA').attr('src', imgs[0]);
-	$('#picNextB').attr('src', imgs[1]);
 	target.animate({opacity:0.5,borderRadius:'10%'},400,function(){
 		translate();
 		target.animate({opacity:1,borderRadius:1},400);
