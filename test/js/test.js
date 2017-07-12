@@ -156,8 +156,8 @@ $('#prev').click(function() {
 //切换当前进度和图片
 function skip(target){
 	$('.current-page').text(page);
-	$('#picNextA').attr('src', 'img/'+nextPage+'A.jpg');
-	$('#picNextB').attr('src', 'img/'+nextPage+'B.jpg');
+	$('#picNextA').attr('src', imgs[0]);
+	$('#picNextB').attr('src', imgs[1]);
 	target.animate({opacity:0.5,borderRadius:'10%'},400,function(){
 		translate();
 		target.animate({opacity:1,borderRadius:1},400);
