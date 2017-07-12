@@ -1,4 +1,5 @@
 var page=1;
+var nextPage=2;
 var progress=0;
 var standard = 3.5;//高低标准，大于等于为高
 var countE = 0;//情感
@@ -109,6 +110,7 @@ $('#prev').click(function() {
 		target=$(this);
 		if (page<10) {
 			page++;
+			nextPage++;
 		}
 		if(page<=10){
 			skip(target);//换图片
@@ -137,8 +139,8 @@ $('#prev').click(function() {
 //切换当前进度和图片
 function skip(target){
 	$('.current-page').text(page);
-	$('#picNextA').attr('src', 'img/'+page+'A.jpg');
-	$('#picNextB').attr('src', 'img/'+page+'B.jpg');
+	$('#picNextA').attr('src', 'img/'+nextPage+'A.jpg');
+	$('#picNextB').attr('src', 'img/'+nextPage+'B.jpg');
 	target.animate({opacity:0.5,borderRadius:'10%'},400,function(){
 		translate();
 		target.animate({opacity:1,borderRadius:1},400);
