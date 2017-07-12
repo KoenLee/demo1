@@ -139,9 +139,9 @@ $('#prev').click(function() {
 //切换当前进度和图片
 function skip(target){
 	$('.current-page').text(page);
-	translate();
+	
 	target.animate({opacity:0.5,borderRadius:'10%'},400,function(){
-		
+		translate();
 		target.animate({opacity:1,borderRadius:1},400);
 	});
 }
