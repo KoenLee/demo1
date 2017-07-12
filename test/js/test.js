@@ -6,7 +6,7 @@ var countE = 0;//情感
 var countS = 0;//结构
 var countP = 0;//力量
 var answerArray= new Array();//保存答案json
-
+var imgs = ['img/2A.jpg', 'img/2B.jpg'];
 
 /*测试后台逻辑：
 1.选图A，E+1；选B，0，至第3题下同；
@@ -23,7 +23,18 @@ var answerArray= new Array();//保存答案json
 $(function(){
 	styleInitialize();
 	//init();
+	preload(imgs);
 });
+
+function preload(arr) {
+    var newimages = [];
+    for (var i = 0; i < arr.length; i++) {
+        newimages[i] = new Image();
+        newimages[i].src = arr[i];
+    }
+}
+
+
 
 // //初始化
 // function init(){
@@ -109,10 +120,13 @@ $('#prev').click(function() {
 
 	$('.pic').click(function(target) {
 		target=$(this);
+		preload(imgs);
 		if (page<10) {
 			page++;
 			if(page<9){
 				nextPage++;
+				imgs[0]='img/'+nextPage+'A.jpg';
+				imgs[1]='img/'+nextPage+'B.jpg';
 			}
 		}
 		if(page<=10){
