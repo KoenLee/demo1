@@ -139,7 +139,8 @@ $('#prev').click(function() {
 //切换当前进度和图片
 function skip(target){
 	$('.current-page').text(page);
-	
+	$('#picNextA').attr('src', 'img/'+page+'A.jpg');
+	$('#picNextB').attr('src', 'img/'+page+'B.jpg');
 	target.animate({opacity:0.5,borderRadius:'10%'},400,function(){
 		translate();
 		target.animate({opacity:1,borderRadius:1},400);
@@ -149,8 +150,7 @@ function skip(target){
 function translate(){
 	$('#picA').attr('src', 'img/'+page+'A.jpg');
 	$('#picB').attr('src', 'img/'+page+'B.jpg');
-	$('#picNextA').attr('src', 'img/'+page+'A.jpg');
-	$('#picNextB').attr('src', 'img/'+page+'B.jpg');
+
 }
 
 //选第一张图片计算
