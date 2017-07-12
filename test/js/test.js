@@ -21,7 +21,7 @@ var imgs = ['img/2A.jpg', 'img/2B.jpg'];
 10.选A，ESP+2；选B，0。
 （E=情感，S=结构，P=力量。10道题分数累计，ESP各单项大于3.5为高，反之为低。根据三项指标的结果高低生成以上8种美学性格类型）*/
 $(function(){
-	preload(imgs);
+	//preload(imgs);
 	styleInitialize();
 	//init();
 	
@@ -124,13 +124,9 @@ $('#prev').click(function() {
 		if (page<10) {
 			page++;
 			if(page<9){
-				nextPage++;
-				imgs[0]='img/'+nextPage+'A.jpg';
-				imgs[1]='img/'+nextPage+'B.jpg';
-	
-				skip(target);
-				
+				nextPage++
 			}
+			skip(target);
 		}
 		if(page<=10){
 			skip(target);//换图片
@@ -158,6 +154,8 @@ $('#prev').click(function() {
 
 //切换当前进度和图片
 function skip(target){
+	$('#picNextA').attr('src', 'img/'+(page+1)+'A.jpg');
+	$('#picNextB').attr('src', 'img/'+(page+1)+'B.jpg');
 	$('.current-page').text(page);
 	target.animate({opacity:0.5,borderRadius:'10%'},400,function(){
 		translate();
