@@ -149,6 +149,8 @@ function skip(target){
 function translate(){
 	$('#picA').attr('src', 'img/'+page+'A.jpg');
 	$('#picB').attr('src', 'img/'+page+'B.jpg');
+	$('#picNextA').attr('src', 'img/'+page+'A.jpg');
+	$('#picNextB').attr('src', 'img/'+page+'B.jpg');
 }
 
 //选第一张图片计算
