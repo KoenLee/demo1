@@ -127,9 +127,7 @@ $('#prev').click(function() {
 				nextPage++;
 				imgs[0]='img/'+nextPage+'A.jpg';
 				imgs[1]='img/'+nextPage+'B.jpg';
-				if ($('.pic').get(0).complete && $('.pic').get(1).complete) {
-					skip(target);
-				}
+				skip(target);
 			}
 		}
 		if(page<=10){
