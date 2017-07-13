@@ -14,6 +14,20 @@ if (isWeixinBrowser()) {
 //文档载入时
 styleInitialize();
 
+//浏览器预加载测试页图片
+function preload(arr){
+	var images=[];
+	for (var i = 0; i < arr.length; i++) {
+		images[i]=new Image();
+		images[i].src=arr[i];
+	}
+}
+
+var imgs=['img/1A.jpg','img/1B.jpg','img/2A.jpg','img/2B.jpg','img/3A.jpg','img/3B.jpg','img/4A.jpg','img/4B.jpg','img/5A.jpg','img/5B.jpg','img/6A.jpg','img/6B.jpg','img/7A.jpg','img/7B.jpg','img/8A.jpg','img/8B.jpg','img/9A.jpg','img/9B.jpg','img/10A.jpg','img/10B.jpg']
+;
+
+preload(imgs);
+
 //改变窗口大小（屏幕旋转）时
 $(window).resize(function() {
 	styleInitialize();
