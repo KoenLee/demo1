@@ -126,4 +126,4 @@ function styleInitialize(){
 	}
 }
 
-$('.button').attr('href', 'https://mp.weixin.qq.com/s/2i8FNWErWqdAhH5gRtzioQ');
+$('.button：contains(什么是西班牙测试？)').attr('href', 'https://mp.weixin.qq.com/s/2i8FNWErWqdAhH5gRtzioQ');
