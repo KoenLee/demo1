@@ -6,7 +6,7 @@ var countE = 0;//情感
 var countS = 0;//结构
 var countP = 0;//力量
 var answerArray= new Array();//保存答案json
-var imgs = ['img/2A.jpg', 'img/2B.jpg'];
+
 
 /*测试后台逻辑：
 1.选图A，E+1；选B，0，至第3题下同；
@@ -154,19 +154,16 @@ $('#prev').click(function() {
 
 //切换当前进度和图片
 function skip(target){
-	$('#picNextA').attr('src', 'img/'+(page+1)+'A.jpg');
-	$('#picNextB').attr('src', 'img/'+(page+1)+'B.jpg');
 	$('.current-page').text(page);
 	target.animate({opacity:0.5,borderRadius:'10%'},400,function(){
 		translate();
-		target.animate({opacity:1,borderRadius:1},400);
+		target.animate({opacity:1,borderRadius:0},400);
 	});
 }
 
 function translate(){
 	$('#picA').attr('src', 'img/'+page+'A.jpg');
 	$('#picB').attr('src', 'img/'+page+'B.jpg');
-
 }
 
 //选第一张图片计算
