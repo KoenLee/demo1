@@ -154,10 +154,11 @@ $('#prev').click(function() {
 
 //切换当前进度和图片
 function skip(target){
+	var imgW=$('#picA').width();
 	$('.current-page').text(page);
-	target.animate({opacity:0.5,borderRadius:'10%'},400,function(){
+	target.animate({opacity:0.5,width:0.9*imgW},400,function(){
 		translate();
-		target.animate({opacity:1,borderRadius:0},400);
+		target.animate({opacity:1,width:imgW},400);
 	});
 }
 
