@@ -157,8 +157,7 @@ function skip(target){
 	var imgW=$('#picA').width();
 	$('.current-page').text(page);
 	target.animate({opacity:0.5,width:0.9*imgW},400,function(){
-		translate();
-		target.animate({opacity:1,width:imgW},400);
+		target.animate({opacity:1,width:imgW},400,function(){translate();});
 	});
 }
 
