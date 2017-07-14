@@ -118,6 +118,7 @@ $('#prev').click(function() {
 //图片点击切换
 // function picClick(){
 	//点击图片切换
+var imgW=$('#picA').width();
 
 	$('.pic').click(function(target) {
 		target=$(this);
@@ -154,10 +155,10 @@ $('#prev').click(function() {
 
 //切换当前进度和图片
 function skip(target){
-	var imgW=$('#picA').width();
 	$('.current-page').text(page);
 	target.animate({opacity:0.5,width:0.9*imgW},400,function(){
-		target.animate({opacity:1,width:imgW},400,function(){translate();});
+		translate();
+		target.animate({opacity:1,width:imgW},400);
 	});
 }
 
