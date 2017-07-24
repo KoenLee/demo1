@@ -130,7 +130,7 @@ body{
 .brand{
 	float: left;
 	width: 45.3125%;
-	height: 65px;
+	height: 100px;
 	background-color: #f7f7f7;
 	margin: 0 0 3.125% 3.125%;
 	border-radius: 5px;
@@ -148,7 +148,7 @@ body{
 .item-logo{
 	width:100%;
 	position: absolute;
-	bottom: 20px;
+	bottom: 10px;
 }
 
 .clear{
