@@ -10,6 +10,7 @@ function styleInitialize(){
 	$('.brand').css('height', $('.brand').width()*0.448);
 	$('.text-normal').css('fontSize', W*0.034375);
 	$('.number').css('margin-bottom', W*0.0234);
+	$('#danmu').css('height', W*0.4375);
 }
 
 
