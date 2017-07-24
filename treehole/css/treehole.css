@@ -120,7 +120,6 @@ body{
 .loading{
 	text-align: center;
 	font-size: 1rem;
-	font-family: '微软雅黑'
 }
 
 #list-brand{
@@ -142,7 +141,6 @@ body{
 	font-size: 1rem;
 	text-align: center;
 	color: #666;
-	font-size: '微软雅黑'
 }
 
 .item-logo{
@@ -163,4 +161,5 @@ body{
 	font-size: 0.75rem;
 	padding: 0 3.125%;
 	line-height: 1.5em;
+	font-family: '微软雅黑'
 }
