@@ -9,6 +9,7 @@ function styleInitialize(){
 	$('.number').css('fontSize',W*0.05);
 	$('.brand').css('height', $('.brand').width()*0.448);
 	$('.text-normal').css('fontSize', W*0.034375);
+	$('.number').css('margin-bottom', W*0.0234);
 }
 
 
