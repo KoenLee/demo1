@@ -3,11 +3,16 @@ var color=['#ffffff','#b2ffff','#ccffcc','#99ccff','#99ffff'];
 var danmu_box=$('#danmu');
 var W=$('#danmu').width();
 var H=$('#danmu').height();
+var timer=null;
 
 
 
 danmu_autoPlay();
 
+$(window).resize(function() {
+	W=$('.content').width();
+	danmu_autoPlay();
+});
 
 //弹幕随机
 function danmu_item_random(){
@@ -16,7 +21,7 @@ function danmu_item_random(){
 	var color_index=Math.floor(Math.random()*color.length);
 	var temp=danmu_list[danmu_index];
 	var posX=Math.floor(Math.random()*W);
-	var posY=Math.floor(Math.random()*(H-W*0.0475-40));
+	var posY=Math.floor(Math.random()*(H-W*0.0475-30));
 	danmu_item.text(temp);
 	danmu_item.css({
 		position: 'absolute',
@@ -42,9 +47,10 @@ function danmu_item_random(){
 
 
 function danmu_autoPlay(){
-	setInterval(function(){
+	clearInterval(timer);
+	timer=setInterval(function(){
 		danmu_item_random();
-	},600)
+	},750)
 }
 
 
