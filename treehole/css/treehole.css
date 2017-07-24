@@ -96,6 +96,7 @@ body{
 #list-title{
 	display: block;
 	margin: 0 auto;
+	width: auto;
 }
 
 #stars{
