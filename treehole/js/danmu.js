@@ -16,7 +16,7 @@ function danmu_item_random(){
 	var color_index=Math.floor(Math.random()*color.length);
 	var temp=danmu_list[danmu_index];
 	var posX=Math.floor(Math.random()*W);
-	var posY=Math.floor(Math.random()*(H-W*0.0475-25));
+	var posY=Math.floor(Math.random()*(H-W*0.0475-40));
 	danmu_item.text(temp);
 	danmu_item.css({
 		position: 'absolute',
@@ -44,7 +44,7 @@ function danmu_item_random(){
 function danmu_autoPlay(){
 	setInterval(function(){
 		danmu_item_random();
-	},750)
+	},600)
 }
 
 
