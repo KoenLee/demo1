@@ -7,7 +7,7 @@ $(function(){
 //样式初始化
 function styleInitialize(){
 	var W=$('.content').width();
-	$('.icon').css('width', W*0.2125);
+	$('.icon').css('width', W*0.2);
 	$('.number').css('fontSize',W*0.05);
 	$('.brand').css('height', $('.brand').width()*0.448);
 	$('.text-normal').css('fontSize', W*0.034375);
@@ -15,7 +15,7 @@ function styleInitialize(){
 	$('.text-notice').css('fontSize', W*0.028125);
 }
 
-//跟随窗口调整格式
+//跟随窗口变化调整
 $(window).resize(function() {
 	W=$('.content').width();
 	styleInitialize();
