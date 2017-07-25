@@ -1,6 +1,7 @@
 $(function(){
 	styleInitialize();
 	dotAnimation();
+	document.ondragstart=function() {return false;}
 })
 
 //样式初始化
