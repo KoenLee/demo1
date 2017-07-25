@@ -106,16 +106,19 @@ body{
 
 }
 .list-group{
-	margin: 7.8125% 7.8125% 0 7.8125%;
+	margin: 7% 0 3% 0;
+	padding: 0 3.125%;
 }
 
-.icon-middle{
-	margin:0 10%;
-}
+/*.icon-middle{
+	margin:0 1.5625%;
+}*/
 
 .icon{
-	width:  25.185%;
-	margin-bottom: 5.625%
+	width:  21.333%;
+	margin: 0 1.71875%;
+	margin-bottom: 5.625%;
+	float: left;
 }
 
 .loading{
@@ -177,4 +180,5 @@ div,p,img{
    user-select: none;
 }
 
-img { pointer-events: none; }
+
+
