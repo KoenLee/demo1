@@ -1,8 +1,9 @@
-var danmu_list=['母胎单身','空巢青年','空巢青年','一个人过','青年危机','社交恐惧','外向孤独症','晨眠者','行走巨婴','恐婚族'];
-var color=['#ffffff','#b2ffff','#ccffcc','#99ccff','99ffff'];
+$(function(){
+	styleInitialize();
+	dotAnimation();
+})
 
-styleInitialize();
-
+//样式初始化
 function styleInitialize(){
 	var W=$('.content').width();
 	$('.icon').css('width', W*0.2125);
@@ -10,16 +11,18 @@ function styleInitialize(){
 	$('.brand').css('height', $('.brand').width()*0.448);
 	$('.text-normal').css('fontSize', W*0.034375);
 	$('.number').css('margin-bottom', W*0.0234);
+	$('.text-notice').css('fontSize', W*0.028125);
 }
 
-
+//跟随窗口调整格式
 $(window).resize(function() {
 	W=$('.content').width();
 	styleInitialize();
+	console.log(W);
 });
 
-dotAnimation();
 
+//加载中...效果
 function dotAnimation(){
 	var dotText=['..','...','.'];
 	var dotIndex=0;
