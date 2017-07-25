@@ -5,22 +5,28 @@ var W=$('#danmu').width();
 var H=$('#danmu').height();
 var timer=null;
 
+//弹幕时间参数
+var danmu_setting={
+	duration:4500,
+	interval:750
+}
 
+$(function(){
+	danmu_autoPlay();
 
-danmu_autoPlay();
+});
 
 $(window).resize(function() {
 	W=$('.content').width();
 	danmu_autoPlay();
 });
 
-//弹幕随机
+//弹幕生成
 function danmu_item_random(){
 	var danmu_item=$("<div class='danmn-item'></div>");
 	var danmu_index=Math.floor(Math.random()*danmu_list.length);
 	var color_index=Math.floor(Math.random()*color.length);
 	var temp=danmu_list[danmu_index];
-	var posX=Math.floor(Math.random()*W);
 	var posY=Math.floor(Math.random()*(H-W*0.0475-30));
 	danmu_item.text(temp);
 	danmu_item.css({
@@ -32,35 +38,23 @@ function danmu_item_random(){
 		top: posY
 	});
 
+	//弹幕div里添加一条弹幕
 	danmu_box.append(danmu_item);
-	console.log(danmu_item.outerWidth());
+
+	//弹幕运动效果
 	danmu_item.animate({
 		left: -Math.round(danmu_item.outerWidth()+10),
 		},
-		4500, function() {
+		danmu_setting.duration, function() {
 		$(this).remove()
 	});
 
-	console.log(color_index)
 }
 
-
-
+//弹幕自动播放
 function danmu_autoPlay(){
 	clearInterval(timer);
 	timer=setInterval(function(){
 		danmu_item_random();
-	},750)
+	},danmu_setting.interval)
 }
-
-
-
-
-
-
-
-
-
-
-
-
