@@ -43,7 +43,7 @@ function danmu_item_random(){
 
 	//弹幕运动效果
 	danmu_item.animate({
-		left: -Math.round(danmu_item.outerWidth()+10),
+		left: -Math.round(danmu_item.outerWidth()+10)
 		},
 		danmu_setting.duration, function() {
 		$(this).remove()
