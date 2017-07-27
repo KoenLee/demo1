@@ -3,6 +3,7 @@ $(function(){
 	dotAnimation();
 	document.ondragstart=function() {return false;};
 	$(window).scroll(function() {
+		console.log($(window).scrollY);
 		if ($(window).scrollY>=$('#stars').height()) {
 			$('.article_share').show(300);
 		}		
