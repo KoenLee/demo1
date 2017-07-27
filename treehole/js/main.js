@@ -2,13 +2,14 @@ $(function(){
 	styleInitialize();
 	dotAnimation();
 	document.ondragstart=function() {return false;};
-	$(window).scroll(function() {
-		console.log($(window).scrollY);
-		if ($(window).scrollY>=$('#stars').height()) {
-			$('.article_share').show(300);
-		}		
-	});
 })
+
+$(window).scroll(function() {
+	console.log($(window).scrollY);
+	if ($(window).scrollY>=$('#stars').height()) {
+		$('.article_share').show(300);
+	}		
+});
 
 //样式初始化
 function styleInitialize(){
