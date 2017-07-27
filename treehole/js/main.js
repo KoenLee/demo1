@@ -73,3 +73,4 @@ function wxShareShow(){
 function wxShareHide(){
 	$(".share_attention").fadeOut(300);
 }
+
