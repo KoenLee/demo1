@@ -16,6 +16,11 @@ function styleInitialize(){
 	// if (!isWeiXinBrowser()) {
 	// 	$('.article_share').css('display', 'none');
 	// }
+	$(window).scroll(function() {
+		if (window.scrollY>=$('#stars').height()) {
+			$('.article_share').show(300);
+		}		
+	});
 }
 
 //跟随窗口变化调整
@@ -58,7 +63,7 @@ function isWeiXinBrowser(){
 function wxShareShow(){
 	// if (isWeiXinBrowser()) {
 		$('.article_share').click(function() {
-			$('.share_attention').fadeIn(500);
+			$('.share_attention').fadeIn(300);
 		});
 	// }
 
@@ -66,5 +71,5 @@ function wxShareShow(){
 
 //微信分享提示关闭
 function wxShareHide(){
-	$(".share_attention").fadeOut(500);
+	$(".share_attention").fadeOut(300);
 }
