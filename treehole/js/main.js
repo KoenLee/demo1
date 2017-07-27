@@ -1,7 +1,12 @@
 $(function(){
 	styleInitialize();
 	dotAnimation();
-	document.ondragstart=function() {return false;}
+	document.ondragstart=function() {return false;};
+	$(window).scroll(function() {
+		if ($(window).scrollY>=$('#stars').height()) {
+			$('.article_share').show(300);
+		}		
+	});
 })
 
 //样式初始化
@@ -16,11 +21,6 @@ function styleInitialize(){
 	// if (!isWeiXinBrowser()) {
 	// 	$('.article_share').css('display', 'none');
 	// }
-	$(window).scroll(function() {
-		if ($(window).scrollY>=$('#stars').height()) {
-			$('.article_share').show(300);
-		}		
-	});
 }
 
 //跟随窗口变化调整
