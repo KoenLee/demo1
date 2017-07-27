@@ -17,7 +17,7 @@ function styleInitialize(){
 	// 	$('.article_share').css('display', 'none');
 	// }
 	$(window).scroll(function() {
-		if (window.scrollY>=$('#stars').height()) {
+		if ($(window).scrollY>=$('#stars').height()) {
 			$('.article_share').show(300);
 		}		
 	});
