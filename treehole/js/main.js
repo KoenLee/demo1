@@ -2,6 +2,7 @@ $(function(){
 	styleInitialize();
 	dotAnimation();
 	document.ondragstart=function() {return false;};
+	console.log($(window))
 })
 
 //样式初始化
