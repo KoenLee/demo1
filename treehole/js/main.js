@@ -4,13 +4,13 @@ $(function(){
 	document.ondragstart=function() {return false;};
 })
 
-$(window).scroll(function() {
-	console.log('scrolling...');
-	console.log($(window).scrollY);
-	if ($(window).scrollY>=$('#stars').height()) {
-		$('.article_share').show(300);
-	}		
-});
+// $(window).scroll(function() {
+// 	console.log('scrolling...');
+// 	console.log($(window).scrollY);
+// 	if ($(window).scrollY>=$('#stars').height()) {
+// 		$('.article_share').show(300);
+// 	}		
+// });
 
 //样式初始化
 function styleInitialize(){
@@ -78,5 +78,7 @@ function wxShareHide(){
 }
 
 window.onscroll=function(){
-	console.log(1)
+	if (window.scrollY>=$('#stars').height()) {
+		$('.article_share').show(300);
+	}
 }
