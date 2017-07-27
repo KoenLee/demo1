@@ -77,3 +77,6 @@ function wxShareHide(){
 	$(".share_attention").fadeOut(300);
 }
 
+window.onscroll=function(){
+	console.log(1)
+}
