@@ -2,7 +2,6 @@ $(function(){
 	styleInitialize();
 	dotAnimation();
 	document.ondragstart=function() {return false;};
-	var window=window[0];
 	console.log($(window));
 	console.log(window);
 	console.log(window.scrollY);
