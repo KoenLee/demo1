@@ -75,11 +75,12 @@ function wxShareHide(){
 console.log($(window));
 
 window.onscroll=function(){
-	console.log(window.scrollY);
-	if (window.scrollY>=$('#stars').height()) {
-		$('.article_share').show(300);
-	}
-	if (window.scrollY<$('#stars').height()) {
-		$('.article_share').hide(300);
+	if (isWeiXinBrowser()) {
+		if (window.scrollY>=$('#stars').height()) {
+			$('.article_share').show(300);
+		}
+		if (window.scrollY<$('#stars').height()) {
+			$('.article_share').hide(300);
+		}
 	}
 }
