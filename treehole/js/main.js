@@ -65,6 +65,7 @@ var shareImg='../img/m.ico';
 function wxShareShow(){
 	// if (isWeiXinBrowser()) {
 		$('.article_share').click(function() {
+			wxShare(shareUrl,shareTitle,shareContent,shareImg);
 			$('.share_attention').fadeIn(300);
 		});
 	// }
@@ -80,7 +81,6 @@ console.log($(window));
 
 window.onscroll=function(){
 	if (isWeiXinBrowser()) {
-		wxShare(shareUrl,shareTitle,shareContent,shareImg);
 		if (window.scrollY>=$('#stars').height()) {
 			$('.article_share').show(300);
 		}
