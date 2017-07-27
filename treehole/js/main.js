@@ -55,7 +55,11 @@ function isWeiXinBrowser(){
 	}
 }
 
-
+//微信分享参数
+var shareUrl=window.location.href;
+var shareTitle=document.title;
+var shareContent='和王凯、冯绍峰一起倾诉'
+var shareImg='../img/m.ico';
 
 //微信分享提示开启
 function wxShareShow(){
