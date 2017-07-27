@@ -79,4 +79,7 @@ window.onscroll=function(){
 	if (window.scrollY>=$('#stars').height()) {
 		$('.article_share').show(300);
 	}
+	if (window.scrollY<$('#stars').height()) {
+		$('.article_share').hide(300);
+	}
 }
