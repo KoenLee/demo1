@@ -5,6 +5,7 @@ $(function(){
 })
 
 $(window).scroll(function() {
+	console.log('scrolling...');
 	console.log($(window).scrollY);
 	if ($(window).scrollY>=$('#stars').height()) {
 		$('.article_share').show(300);
