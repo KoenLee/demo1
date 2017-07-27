@@ -13,6 +13,9 @@ function styleInitialize(){
 	$('.text-normal').css('fontSize', W*0.034375);
 	$('.number').css('margin-bottom', W*0.0234);
 	$('.text-notice').css('fontSize', W*0.028125);
+	// if (!isWeiXinBrowser()) {
+	// 	$('.article_share').css('display', 'none');
+	// }
 }
 
 //跟随窗口变化调整
@@ -35,4 +38,33 @@ function dotAnimation(){
 		$('.loading-dot').text(dotText[dotIndex])
 	},500)
 	
+}
+
+
+
+//判断微信浏览器
+function isWeiXinBrowser(){
+	var wechatInfo = navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/i) ;
+	if(wechatInfo) {
+		return true;
+	} else {
+	    return false;
+	}
+}
+
+
+
+//微信分享提示开启
+function wxShareShow(){
+	// if (isWeiXinBrowser()) {
+		$('.article_share').click(function() {
+			$('.share_attention').fadeIn(500);
+		});
+	// }
+
+}
+
+//微信分享提示关闭
+function wxShareHide(){
+	$(".share_attention").fadeOut(500);
 }
