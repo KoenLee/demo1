@@ -149,10 +149,10 @@ function styleInitialize(){
 // 	document.write('我触发了微信内置浏览器返回事件')
 // }, false);
 
-// function pushHistory() { 
-// var state = { 
-// title: "title", 
-// url: "#"
-// }; 
-// window.history.pushState(state, "title", "home.html"); 
-// }
+function pushHistory() { 
+var state = { 
+title: "title", 
+url: "#"
+}; 
+window.history.pushState(state, "title", "home.html"); 
+}
