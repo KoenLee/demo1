@@ -12,14 +12,11 @@ if (isWeixinBrowser()) {
 }
 
 $(function(){  
-          //  pushHistory();  
+          pushHistory();  
             window.addEventListener("popstate", function(e) {  
-              	 goBack(2)
-            	//alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能  
-               //	window.location=home.html;
-               // pushHistory();  
-		
-                  
+         	pushHistory();
+            	//alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能
+		    window.history.back()
         }, false);  
         });
 
