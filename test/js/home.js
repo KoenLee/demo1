@@ -14,9 +14,10 @@ if (isWeixinBrowser()) {
 $(function(){  
           pushHistory();  
             window.addEventListener("popstate", function(e) {  
+		e.preventDefault();
          	pushHistory(); 
             	//alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能
-		 retutn false
+		console.log(window.history)
         }, false);  
         });
 
