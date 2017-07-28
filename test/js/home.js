@@ -152,7 +152,7 @@ function styleInitialize(){
 function pushHistory() { 
 var state = { 
 title: "title", 
-url: "#"
+url: "home.html"
 }; 
 window.history.pushState(state, "title", "home.html"); 
 }
