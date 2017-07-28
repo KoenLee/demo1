@@ -146,6 +146,7 @@ var imgW=$('#picA').width();
 		console.log("progress:"+progress);
 		if(progress==10){
 			//出结果.......
+			window.navigate("result"+Math.ceil(Math.random()*8)+'.html')
 			console.log("end countE:"+countE+"--countS:"+countS+"--countP:"+countP);
 			//获取结果页面
 			getResult();
