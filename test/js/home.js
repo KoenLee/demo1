@@ -16,8 +16,7 @@ $(function(){
             window.addEventListener("popstate", function(e) {  
          	pushHistory(); 
             	//alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能
-		    window.history.go(-1);
-		    retutn false;
+		 retutn false;
         }, false);  
         });
 
