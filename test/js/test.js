@@ -157,9 +157,9 @@ var imgW=$('#picA').width();
 //切换当前进度和图片
 function skip(target){
 	$('.current-page').text(page);
-	target.animate({opacity:0.5,width:0.9*imgW},400,function(){
+	target.animate({opacity:0.5},400,function(){
 		translate();
-		target.animate({opacity:1,width:imgW},400);
+		target.animate({opacity:1},400);
 	});
 }
 
