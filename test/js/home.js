@@ -16,6 +16,7 @@ $(function(){
             window.addEventListener("popstate", function(e) {  
 		e.preventDefault();
          	pushHistory(); 
+		window.location='home.html';
             	//alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能
 		console.log(window.history)
         }, false);  
