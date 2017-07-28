@@ -130,7 +130,7 @@ $('.button：contains(什么是西班牙测试？)').attr('href', 'https://mp.we
 pushHistory();
 window.addEventListener("popstate", function(e) { 
 	pushHistory();
-	//document.write('我触发了微信内置浏览器返回事件')
+	document.write('我触发了微信内置浏览器返回事件')
 }, false);
 
 function pushHistory() { 
