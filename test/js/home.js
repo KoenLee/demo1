@@ -14,8 +14,7 @@ if (isWeixinBrowser()) {
 $(function(){  
           //  pushHistory();  
             window.addEventListener("popstate", function(e) {  
-              
-             	window.history.go(-2);
+              	 goBack(2)
             	//alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能  
                //	window.location=home.html;
                // pushHistory();  
@@ -152,4 +151,8 @@ title: document.title,
 url: "home.html"
 }; 
 window.history.pushState(state, "title", "home.html"); 
+}
+
+function goBack(index) {
+    window.history.go(-index);
 }
