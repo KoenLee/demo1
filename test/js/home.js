@@ -11,6 +11,22 @@ if (isWeixinBrowser()) {
 	$('.test').remove();
 }
 
+$(function(){  
+            pushHistory();  
+            var bool=false;  
+            setTimeout(function(){  
+                  bool=true;  
+            },1500);  
+            window.addEventListener("popstate", function(e) {  
+              if(bool)  
+                {  
+                        alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能  
+                }  
+                pushHistory();  
+                  
+        }, false);  
+        });
+
 //文档载入时
 styleInitialize();
 
@@ -126,17 +142,17 @@ function styleInitialize(){
 	}
 }
 
-$('.button：contains(什么是西班牙测试？)').attr('href', 'https://mp.weixin.qq.com/s/2i8FNWErWqdAhH5gRtzioQ');
-pushHistory();
-window.addEventListener("popstate", function(e) { 
-	pushHistory();
-	document.write('我触发了微信内置浏览器返回事件')
-}, false);
+// $('.button：contains(什么是西班牙测试？)').attr('href', 'https://mp.weixin.qq.com/s/2i8FNWErWqdAhH5gRtzioQ');
+// pushHistory();
+// window.addEventListener("popstate", function(e) { 
+// 	pushHistory();
+// 	document.write('我触发了微信内置浏览器返回事件')
+// }, false);
 
-function pushHistory() { 
-var state = { 
-title: "title", 
-url: "#"
-}; 
-window.history.pushState(state, "title", "home.html"); 
-}
+// function pushHistory() { 
+// var state = { 
+// title: "title", 
+// url: "#"
+// }; 
+// window.history.pushState(state, "title", "home.html"); 
+// }
