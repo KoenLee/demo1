@@ -1,7 +1,7 @@
 body{
 	font-size:62.5%;
 	background-color: #fff;
-	font-family:'å¾®è½¯é›…é»‘';
+	font-family:'Î¢ÈíÑÅºÚ';
 }
 .container{
 	width: 100%;
@@ -106,28 +106,33 @@ body{
 #stars{
 	border-top: 15px solid #eee;
 	border-bottom: 15px solid #eee;
-	padding: 30px 0;
+	padding: 30px 0 0 0;
 
 }
 .list-group{
-	margin: 7% 0 3% 0;
+	margin: 7% 0 0 0;
 	padding: 0 3.125%;
 }
 
-/*.icon-middle{
-	margin:0 1.5625%;
-}*/
-
-.icon{
+.icon-item{
 	width:  21.333%;
 	margin: 0 1.71875%;
 	margin-bottom: 5.625%;
 	float: left;
+	text-align: center;
+}
+
+.icon-item img{
+	width:  21.333%;
+}
+
+.icon-item figcaption{
+	margin-top: 15.6%;
 }
 
 .loading{
 	text-align: center;
-	font-size: 1rem;
+	font-size: 0.5rem;
 }
 
 #list-brand{
@@ -219,3 +224,16 @@ div,p,img{
   width: 100%;
 }
 
+.clearfix{
+	overflow: auto;
+	zoom:1;
+}
+
+.icon-loading{
+	background: url(../img/star.png) no-repeat;
+	background-size: 100%;
+}
+
+.icon-loading span{
+	font-weight: bold;
+}
