@@ -16,6 +16,12 @@ function styleInitialize(){
 	$('.text-normal').css('fontSize', W*0.034375);
 	$('.number').css('margin-bottom', W*0.0234);
 	$('.text-notice').css('fontSize', W*0.028125);
+	$('figcaption').css('fontSize', W*0.0375);
+	$('.icon-loading').css('height', W*0.2);
+	$('.loading').css({
+		fontSize: $('.icon-loading').height()*0.15,
+		marginTop: $('.icon-loading').height()*0.5-$('.loading').height()*0.5
+	});
 }
 
 //跟随窗口变化调整
@@ -52,17 +58,14 @@ function isWeiXinBrowser(){
 }
 
 //微信分享提示开启
-function wxShareShow(){
-	// if (isWeiXinBrowser()) {
-		$('.article_share').click(function() {
-			$('.share_attention').fadeIn(300);
-		});
-	// }
-
+function shareBtnShow(){
+	$('.article_share').click(function() {
+		$('.share_attention').fadeIn(300);
+	});
 }
 
 //微信分享提示关闭
-function wxShareHide(){
+function shareBtnHide(){
 	$(".share_attention").fadeOut(300);
 }
 
