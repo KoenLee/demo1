@@ -1,0 +1,51 @@
+.designer_list ul {
+  width: 508px;
+}
+.designer_pic a {
+  display: block;
+}
+.designer_pic li {
+  width: 240px;
+  float: left;
+  margin-left: 14px;
+}
+.designer_pic li a:hover {
+  cursor: zoom-in;
+  cursor: -webkit-zoom-in;
+}
+.designer_pic li.mb13 {
+  margin-bottom: 13px;
+}
+.designer_pic_b div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(../img/bg-opacity_black.png) repeat;
+  color: #fff;
+  font-size: 20px;
+  padding: 0 40px 15px 40px;
+}
+.designer_pic_b div p {
+  text-align: center;
+  line-height: 1;
+  padding-bottom: 5px;
+}
+.designer_info dl dt,.designer_info dl dd,.designer_info div dl {
+  float: left;
+}
+.designer_info div {
+  color: #4d4d4d;
+}
+.designer_info div dl {
+  padding-right: 15px;
+}
+.designer_name {
+  color: #1a1a1a;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 0;
+}
+.designer_time {
+  float: right;
+}

@@ -1,0 +1,149 @@
+.personal_card {
+  border: 3px solid #e6e6e6;
+  padding: 20px 35px;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 0px 0px 10px 0px #ededed;
+  -moz-box-shadow: 0px 0px 10px 0px #ededed;
+  box-shadow: 0px 0px 10px 0px #ededed;
+}
+.personal_head {
+  width: 135px;
+  height: 135px;
+  overflow: hidden;
+}
+.personal_details_txt {
+  padding-left: 35px;
+  padding-top: 10px;
+}
+.personal_details_txt h2 {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 1;
+}
+.personal_details_txt h2 span {
+  font-weight: normal;
+  font-size:16px;
+  color: #3daad3;
+  padding-left: 20px;
+}
+.personal_details_txt dl {
+  padding-top: 20px;
+  height: 25px;
+  line-height: 25px;
+}
+.personal_details_txt dl dt {
+  color: #333;
+  float: left;
+  padding-right: 10px;
+}
+.personal_details_txt dl dd {
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+}
+.focus {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  display: block;
+  padding: 0 14px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #eee;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+}
+.focus:link, .focus:visited, .focus:hover, .focus:active {
+  color: #333;
+}
+.focus_list li {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  background: url(../img/bg-focus_line.png) repeat-x;
+  -webkit-box-shadow: 0 0 8px 0px #c1c1c1;
+  -moz-box-shadow: 0 0 8px 0px #c1c1c1;
+  box-shadow: 0 0 8px 0px #c1c1c1;
+  padding: 10px 10px 0 10px;
+  height: 360px;
+}
+.focus_list li.last {
+  margin-right: 0;
+}
+.focus_head {
+  border: 5px solid #fff;
+  width: 130px;
+  height: 130px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin: 15px auto 0 auto;
+  -webkit-box-shadow: 0px 0px 10px 0px #dadada;
+  -moz-box-shadow: 0px 0px 10px 0px #dadada;
+  box-shadow: 0px 0px 10px 0px #dadada;
+}
+.focus_list h2 {
+  font-size: 18px;
+  text-align: center;
+  line-height: 1;
+  padding: 20px 0 15px 0; 
+}
+.focus_info {
+  text-align: center;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+}
+.focus_info dl {
+  display: inline-block;
+  padding: 0 7px;
+  color: #808080;
+}
+.focus_info dl dt,.focus_info dl dd {
+  float: left;
+}
+.focus_list li ul {
+  padding: 15px 0;
+}
+.focus_list li li {
+  float: left;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0 5px 0 0;
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.focus_list li li.last {
+  margin: 0;
+}
+.focus_cancel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: #fff;
+  background: #eb3b3b;
+  border-radius: 20px;
+  padding: 6px 10px;
+  display: none;
+  cursor: pointer;
+}
+.focus_list li.no_focus {
+  background: #fafafa;
+  padding-bottom: 10px;
+  height: 350px;
+}
+.no_focus a {
+  display: block;
+  border: 2px dashed #ccc;
+  height: 100%;
+  text-align: center;
+  padding-top: 112px;
+  box-sizing: border-box;
+}

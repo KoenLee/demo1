@@ -1,0 +1,128 @@
+.article_details_left {
+  width: 780px;
+  float: left;
+  overflow: hidden;
+  padding-left: 40px;
+}
+.article_info {
+  padding: 40px 0 10px 0;
+}
+.article_info ul li {
+  float: left;
+  margin-right: 13px;
+}
+.article_info ul li a {
+  display: block;
+  border: 1px solid #808080;
+  border-radius: 30px;
+  font-size: 14px;
+  padding: 2px 9px;
+}
+.article_info ul li a:hover {
+  background: #3daad6;
+  border: 1px solid #3daad6;
+  color: #fff;
+}
+.article_info h2 {
+  font-size: 30px;
+  padding: 20px 0;
+}
+.article_info p {
+  color: #808080;
+}
+.article_details_right {
+  float: right;
+  width: 300px;
+  padding-top: 90px;
+}
+.article_details_right.pt35 {
+  padding-top: 35px;
+}
+.article_details_right h2 {
+  background: #eee;
+  border-bottom: 1px solid #e6e6e6;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 18px;
+}
+.article_details_right ul li {
+  padding: 15px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+.article_details_right ul li.last {
+  border-bottom: none;
+}
+.article_details_right ul li p.float_left {
+  margin-right: 15px;
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+}
+.article_details_right ul li p.float_left img {
+  height: 100%;
+}
+.article_details_right ul li div.float_left {
+  width: 194px;
+}
+.article_details_right ul li div p {
+  color: #a5a5a5;
+  font-size: 14px;
+  line-height: 1;
+  padding-bottom: 11px;
+}
+.article_details_right ul li div h3 {
+  font-size: 16px;
+  font-weight: normal;
+}
+.article_details_right a:hover {
+  color: #3daad6;
+}
+.zan_share {
+  text-align: center;
+}
+.zan_share ul {
+  display: inline-block;
+}
+.zan_share li {
+  float: left;
+  text-align: center;
+  padding: 0 30px;
+  position: relative;
+}
+.zan_share li i {
+  display: block;
+  width: 65px;
+  height: 65px;
+  background: url(../img/bg-icon.png) no-repeat;
+  background-position: -177px 0;
+  background-size: 238px;
+  -ms-behavior: url(../css/backgroundsize.min.htc);
+  behavior: url(../css/backgroundsize.min.htc);
+  margin-bottom: 10px;
+}
+.zan_share li.share_btn i {
+  background-position: -177px -130px;
+}
+.zan_share li a:hover i,.zan_share li a.current i {
+  background-position: -177px -65px;
+}
+.zan_share li.share_btn:hover i {
+  background-position: -177px -196px;
+}
+.zan_share li .bdsharebuttonbox {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 65px;
+  height: 65px;
+}
+.right_ad {
+  display: block;
+  width: 300px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+embed {
+  width: 600px;
+  height: 335px;
+}

@@ -1,0 +1,7 @@
+.login_details .check_forget input,.check_agree input {
+  display: inline-block;
+  vertical-align: middle;
+}
+.login_details .check_forget label,.check_agree label {
+  display: none;
+}

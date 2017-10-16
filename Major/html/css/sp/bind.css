@@ -1,0 +1,85 @@
+.bind_chunk {
+  padding: 35px;
+}
+.bind_chunk .chunk_relative {
+  padding-bottom: 10px;
+}
+.bind_chunk input {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  height: 35px;
+  line-height: 35px;
+  text-indent: 13px;
+  font-size: 16px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.get_code {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  line-height: 37px;
+  font-size: 16px;
+  padding-right: 10px;
+}
+.get_code:link,.get_code:visited,.get_code:hover,.send_success ul a:link,.send_success ul a:visited,.send_success ul a:hover {
+  color: #3daad3;
+}
+.bind_confirm,.load_mail {
+  display: block;
+  background: #3daad3;
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 3px;
+}
+.bind_confirm:link,.bind_confirm:visited,.bind_confirm:hover,.load_mail:link,.load_mail:visited,.load_mail:hover {
+  color: #fff;
+}
+.mail_atti {
+  color: #b3b3b3;
+  line-height: 1.6;
+  padding-bottom: 25px;
+}
+/*邮件发送成功*/
+.send_success {
+  background: #fff;
+}
+.send_success #content h2 {
+  font-size: 16px;
+}
+.send_success .success_chunk {
+  padding: 35px;
+}
+.send_success .color_blue {
+  color: #5da8cf;
+  padding: 10px 0;
+  font-size: 16px;
+}
+.send_success .att_24 {
+  color: #333;
+  line-height: 1.4;
+}
+.send_success .load_mail {
+  margin: 20px 0;
+}
+.send_success ul {
+  color: #808080;
+  line-height: 1.6;
+}
+.send_success ul a {
+  display: inline-block;
+}
+.send_success h3 {
+  padding-bottom: 3px;
+}
+.send_success h2 i {
+  padding: 5px 14px;
+  background: url(../../img/sp/bg-icon_sp.png) no-repeat;
+  background-position: -61px -34px;
+  background-size: 185px;
+}

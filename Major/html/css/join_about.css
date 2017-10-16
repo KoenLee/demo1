@@ -1,0 +1,17 @@
+#content {
+  text-align: center;
+}
+.content_txt {
+  line-height: 2.3;
+  padding-top: 40px;
+}
+.pb160 {
+  padding-bottom: 160px;
+}
+.sector_txt {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -122px;
+  width: 245px;
+}
