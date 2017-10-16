@@ -1,0 +1,75 @@
+.personal_card {
+  border: 3px solid #e6e6e6;
+  padding: 20px 35px;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 0px 0px 10px 0px #ededed;
+  -moz-box-shadow: 0px 0px 10px 0px #ededed;
+  box-shadow: 0px 0px 10px 0px #ededed;
+}
+.personal_card_head {
+  border-bottom: 1px solid #e3e3e8;
+  padding-bottom: 20px;
+  height: 27px;
+  line-height: 27px;
+}
+.personal_name {
+  float: left;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1;
+}
+.personal_name span {
+  color: #3daad3;
+  font-weight: normal;
+  font-size: 16px;
+  padding-left: 20px;
+}
+.personal_num dl {
+  float: left;
+  padding-left: 25px;
+}
+.personal_num dl dt,.personal_num dl dd {
+  float: left;
+}
+.personal_num dl dd {
+  font-weight: bold;
+  padding-left: 10px;
+  font-size: 18px;
+}
+.personal_head {
+  width: 135px;
+  height: 135px;
+  overflow: hidden;
+}
+.personal_card_details {
+  padding: 20px 0 0 0;
+}
+.personal_details_txt {
+  padding-left: 35px;
+  padding-top: 10px;
+}
+.personal_details_txt dl {
+  padding-top: 20px;
+}
+.personal_details_txt dl dt {
+  color: #808080;
+  float: left;
+}
+.personal_details_txt dl dd {
+  float: left;
+}
+.focus {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  display: block;
+  min-width: 75px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #3daad3;
+  border-radius: 30px;
+}
+.focus:link,.focus:visited,.focus:hover,.focus:active {
+  color: #fff;
+}

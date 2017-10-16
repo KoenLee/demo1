@@ -1,0 +1,143 @@
+.title_classify {
+  height: 20px;
+  padding: 25px 15px;
+  background: #fff;
+}
+.title_classify span {
+  display: block;
+  height: 20px;
+}
+.title_classify img {
+  height: 100%;
+}
+.content_list {
+  margin-top: 0;
+  padding-top: 0;
+}
+/*label file*/
+#content.label_file {
+  padding-top: 91px;
+}
+.label_file .label_hold {
+  position: fixed;
+  top: 49px;
+  left: 0;
+  width: 100%;
+  z-index: 96;
+  background: #ededed;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+.label_file .swiper-container a:link,.label_file .swiper-container a:visited,.label_file .swiper-container a:hover {
+  color: #1a1a1a;
+}
+.label_file .swiper-slide,.scroll_chunk li {
+  height: 42px;
+  line-height: 40px;
+  text-align: center;
+}
+.label_file .swiper-slide a,.scroll_chunk li a {
+  display: block;
+}
+.scroll_chunk li a:link,.scroll_chunk li a:visited,.scroll_chunk li a:hover {
+  color: #1a1a1a;
+}
+.label_file .swiper-slide a.current,.scroll_chunk li a.current {
+  border-bottom: 2px solid #333;
+}
+.over_scroll {
+  height: 42px;
+  overflow: hidden;
+}
+.scroll_chunk {
+  overflow-x: scroll;
+  height: 72px;
+}
+.scroll_chunk ul {
+  display: table;
+}
+.scroll_chunk li {
+  display: table-cell;
+  white-space: nowrap;
+}
+.scroll_chunk li a {
+  display: block;
+  padding: 0 10px;
+}
+.label_file .turn_label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30px;
+  background: blue;
+  z-index: 97;
+  background: url(../../img/sp/icon-label_arrow.png) no-repeat center #ededed;
+  background-size: 10px;
+  transform: rotate(0deg);
+  -ms-transform:rotate(0deg); 	/* IE 9 */
+  -moz-transform:rotate(0deg); 	/* Firefox */
+  -webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+  -o-transform:rotate(0deg); 	/* Opera */
+}
+.label_file .turn_label.arrow_top {
+  transform: rotate(180deg);
+  -ms-transform:rotate(180deg); 	/* IE 9 */
+  -moz-transform:rotate(180deg); 	/* Firefox */
+  -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+  -o-transform:rotate(180deg); 	/* Opera */
+}
+.label_file .all_label {
+  position: fixed;
+  top: 49px;
+  left: 0;
+  width: 100%;
+  z-index: 97;
+  background: #ededed;
+  height: 42px;
+  line-height: 42px;
+  box-sizing: border-box;
+  display: none;
+}
+.label_file .all_label h2 {
+  padding-left: 13px;
+}
+.label_file .all_label ul {
+  background: #fff;
+}
+.label_file .all_label ul li {
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  text-align: center;
+  height: 45px;
+  line-height: 45px;
+}
+.label_file .all_label ul li.last {
+  border-right: none;
+}
+.label_file .all_label ul li a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.label_file .all_label ul li a:link,.label_file .all_label ul li a:visited,.label_file .all_label ul li a:hover {
+  color: #1a1a1a;
+}
+.label_file .bg_pop_label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 96;
+  background: url(../../img/sp/bg-label_hold.png) repeat;
+  display: none;
+}
+#tabs_info {
+  padding-top: 15px;
+  background: #fff;
+}

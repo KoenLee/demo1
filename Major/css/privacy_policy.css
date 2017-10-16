@@ -1,0 +1,16 @@
+#content h2 {
+  font-size: 30px;
+  text-align: center;
+  padding: 60px 0 30px 0;
+}
+#content h3 {
+  font-size: 18px;
+  padding-bottom: 25px;
+}
+#content h3.pb40 {
+  padding-bottom: 40px;
+}
+#content p {
+  padding-bottom: 40px;
+  line-height: 1.6;
+}

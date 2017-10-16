@@ -1,0 +1,436 @@
+body {
+  background: #ededed;
+}
+#header {
+  height: 65px;
+}
+.fixed_chunk {
+  background: #fff;
+  -webkit-box-shadow: 0px 7px 10px 0px #d3d2d2;
+  -moz-box-shadow: 0px 7px 10px 0px #d3d2d2;
+  box-shadow: 0px 7px 10px 0px #d3d2d2;
+}
+.my_data_details {
+  background: #fff;
+}
+.user_head {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 40px 0 40px 80px;
+}
+.user_head_img {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.head_img_info {
+  padding: 15px 0 0 40px;
+  color: #808080;
+  position: relative;
+}
+.head_img_info input {
+  position: absolute;
+  top: 5px;
+  left: 40px;
+  height: 30px;
+  opacity: 0;
+  width: 70px;
+  display: block;
+}
+.modify_btn {
+  padding-bottom: 16px;
+  color: #3daad3;
+}
+.user_info {
+  padding: 60px 0 0 100px;
+}
+.user_info dl {
+  padding-bottom: 30px;
+}
+.user_info dl dt,.user_info dl dd {
+  float: left;
+}
+.user_info dl dd {
+  height: 42px;
+}
+.user_info dl dt {
+  width: 175px;
+  color: #808080;
+}
+.user_info .color_blue {
+  color: #3daad3;
+  cursor: pointer;
+}
+.pl20 {
+  padding-left: 20px;
+}
+.personal_manage {
+  width: 205px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  -webkit-box-shadow: 0px 0px 10px 0px #d8d8d8;
+  -moz-box-shadow: 0px 0px 10px 0px #d8d8d8;
+  box-shadow: 0px 0px 10px 0px #d8d8d8;
+}
+.personal_manage h2 {
+  color: #808080;
+  padding: 20px 0 20px 20px;
+}
+.personal_manage li {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+.personal_manage li a {
+  display: block;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.personal_manage li a:hover {
+  background: #eee;
+}
+.personal_manage li a.current,.personal_manage li a.current:hover {
+  background: #3daad3;
+  color: #fff;
+}
+.manage_details {
+  width: 980px;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 10px 0px #d8d8d8;
+  -moz-box-shadow: 0px 0px 10px 0px #d8d8d8;
+  box-shadow: 0px 0px 10px 0px #d8d8d8;
+}
+.initial_info {
+  padding-top: 0;
+  height: auto;
+}
+.focus_list {
+  padding: 40px 40px 0 40px;
+}
+.focus_list li {
+  float: left;
+  width: 250px;
+  margin: 0 40px 30px 0;
+  background: url(../img/bg-focus_line.png) repeat-x;
+  -webkit-box-shadow: 0 0 8px 0px #c1c1c1;
+  -moz-box-shadow: 0 0 8px 0px #c1c1c1;
+  box-shadow: 0 0 8px 0px #c1c1c1;
+  padding: 10px 10px 0 10px;
+  height: 360px;
+}
+.focus_list li.last {
+  margin-right: 0;
+}
+.focus_list li ul {
+  padding: 15px 0;
+}
+.focus_list li li {
+  float: left;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0 5px 0 0;
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.focus_list li li.last {
+  margin: 0;
+}
+.focus_cancel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: #fff;
+  background: #eb3b3b;
+  border-radius: 20px;
+  padding: 6px 10px;
+  display: none;
+  cursor: pointer;
+}
+.focus_list li:hover .focus_cancel {
+  display: block;
+}
+.focus_list li.no_focus {
+  background: #fafafa;
+  padding-bottom: 10px;
+  height: 350px;
+}
+.no_focus a {
+  display: block;
+  border: 2px dashed #ccc;
+  height: 100%;
+  text-align: center;
+  padding-top: 112px;
+  box-sizing: border-box;
+}
+.focus_head {
+  border: 5px solid #fff;
+  width: 130px;
+  height: 130px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin: 15px auto 0 auto;
+  -webkit-box-shadow: 0px 0px 10px 0px #dadada;
+  -moz-box-shadow: 0px 0px 10px 0px #dadada;
+  box-shadow: 0px 0px 10px 0px #dadada;
+}
+.focus_list h2 {
+  font-size: 18px;
+  text-align: center;
+  line-height: 1;
+  padding: 20px 0 15px 0; 
+}
+.focus_info {
+  text-align: center;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+}
+.focus_info dl {
+  display: inline-block;
+  padding: 0 7px;
+  color: #808080;
+}
+.focus_info dl dt,.focus_info dl dd {
+  float: left;
+}
+.target_page {
+  border-top: 1px solid #e6e6e6;
+  margin: 0 40px;
+  height: 39px;
+  overflow: hidden;
+  padding: 20px 0;
+}
+.pagination {
+  float: right;
+  padding: 0;
+}
+.pagination ul li.last span {
+  margin-right: 0;
+}
+.pagination .show_num {
+  border: none;
+  line-height: 40px;
+  padding-right: 5px;
+}
+.pagination .show_num:hover {
+  background: none;
+}
+.menu_t {
+  padding-left: 30px;
+}
+.menu_t li {
+  float: left;
+  padding: 0 20px;
+}
+.menu_t li a {
+  display: block;
+  padding: 0 10px;
+}
+.menu_t li a.current {
+  border-bottom: 3px solid #333;
+}
+.edit_state {
+  display: none;
+}
+.edit_state input {
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  height: 38px;
+  line-height: 38px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-indent: 20px;
+  width: 298px;
+  margin-right: 35px;
+}
+.edit_state span {
+  color: #808080;
+  cursor: pointer;
+}
+.edit_state .color_blue {
+  margin-right: 20px;
+}
+.wrong_info {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  color: #eb3b3b;
+}
+.login_chunk {
+  height: 370px;
+  margin-top: -185px;
+}
+.login_chunk h2 {
+  padding: 25px 0;
+}
+.bind_chunk {
+  padding: 45px 55px 0 55px;
+}
+.bind_chunk input {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  background: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-indent: 15px;
+  padding: 12px 0;
+}
+.phone_code {
+  padding-top: 15px;
+}
+.phone_code span {
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  min-width: 80px;
+  height: 45px;
+  line-height: 45px;
+  padding-right: 20px;
+  color: #3daad3;
+  cursor: pointer;
+}
+.bind_confirm {
+  background: #3daad3;
+  color: #fff;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 37px;
+  cursor: pointer;
+}
+.mail_attention {
+  color: #b3b3b3;
+  line-height: 2;
+  padding-top: 15px;
+}
+.next_step {
+  margin-top: 30px;
+}
+.mail_chunk {
+  padding: 35px;
+}
+.mail_chunk p {
+  padding-top: 5px;
+  color: #333;
+}
+.mail_chunk p.pb10 {
+  padding-bottom: 10px;
+}
+.title_mail {
+  font-size: 22px;
+  font-weight: bold;
+}
+.title_mail i {
+  padding: 5px 20px;
+  background: url(../img/bg-icon.png) no-repeat;
+  background-position: -73px -43px;
+  -ms-behavior: url(../css/backgroundsize.min.htc);
+  behavior: url(../css/backgroundsize.min.htc);
+}
+.font_blue,.mail_chunk p.font_blue,.mail_chunk dl dd a:link,.mail_chunk dl dd a:visited,.mail_chunk dl dd a:hover,.mail_chunk dl dd a:active {
+  color: #3daad3;
+}
+.login_mail {
+  display: block;
+  background: #3daad3;
+  padding: 10px 0;
+  width: 110px;
+  text-align: center;
+  margin: 15px 0 35px 0;
+}
+.login_mail:link,.login_mail:visited,.login_mail:hover,.login_mail:active {
+  color: #fff;
+}
+.mail_chunk dl {
+  font-size: 14px;
+}
+.mail_chunk dl dt {
+  color: #333;
+}
+.mail_chunk dl dd {
+  color: #808080;
+  line-height: 1.8;
+}
+.mail_invalid p:first-child {
+  padding: 60px 0 30px 0;
+}
+.mail_invalid p:first-child i {
+  padding: 15px 25px; 
+  background: url(../img/bg-icon.png) no-repeat;
+  background-position: -227px -52px;
+}
+.mail_invalid p:nth-child(2) {
+  font-size: 14px;
+}
+.mail_invalid p:nth-child(2) a:link,.mail_invalid p:nth-child(2) a:visited,.mail_invalid p:nth-child(2) a:hover {
+  color: #3daad3;
+}
+.submit_again {
+  display: block;
+  padding: 5px 0;
+  background: #3daad3;
+  width: 110px;
+  text-align: center;
+  margin-top: 20px;
+}
+.submit_again:link,.submit_again:visited,.submit_again:hover {
+  color: #fff;
+}
+.mail_success {
+  text-align: left;
+}
+.mail_success p {
+  padding-top: 60px;
+}
+.mail_success p span {
+  color: #3daad3;
+}
+.mail_success p i {
+  padding: 15px 25px; 
+  background: url(../img/bg-icon.png) no-repeat;
+  background-position: -227px -99px;
+}
+.mail_success a {
+  display: block;
+  background: #3daad3;
+  padding: 10px 0;
+  width: 110px;
+  text-align: center;
+  margin: 35px 0 30px 0;
+}
+.mail_success a:link,.mail_success a:visited,.mail_success a:hover {
+  color: #fff;
+}
+.mail_inner {
+  width: 680px;
+  height: 300px;
+  margin: 0 auto 300px auto;
+  padding: 0 0 0 80px;
+  background: #fff;
+}
+.mail_success dl dt,.mail_success dl dd {
+  float: left;
+}
+.mail_success dl dd a {
+  display: inline;
+  background: none;
+  padding: 0;
+  width: auto;
+  text-align: center;
+  margin: 0 17px 0 0;
+}
+.mail_success dl dd a:link,.mail_success dl dd a:visited,.mail_success dl dd a:hover,.mail_success dl dd a:active {
+  color: #3daad3;
+}

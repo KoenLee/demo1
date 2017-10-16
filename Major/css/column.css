@@ -1,0 +1,41 @@
+.writer_img {
+  padding: 20px 0;
+}
+.column_list li {
+  padding-top: 60px;
+}
+.writer_info {
+  height: 80px;
+  padding: 0 0 30px 100px;
+}
+.writer_info h2 {
+  font-size: 20px;
+  padding: 10px 0 7px 0;
+}
+.writer_info div,.writer_info div a {
+  color: #4d4d4d;
+}
+.writer_head {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.column_list li li {
+  padding: 0;
+  float: left;
+  width: 280px;
+  margin-right: 26px;
+}
+.column_list li li.last {
+  margin-right: 0;
+}
+.column_list li li h3 {
+  padding: 15px 10px 0 10px;
+  font-size: 16px;
+  height: 66px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

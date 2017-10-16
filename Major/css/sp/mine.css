@@ -1,0 +1,111 @@
+#header {
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#content {
+  padding-top: 0;
+}
+.mine_head {
+  padding: 50px 0 35px 0;
+  background: url(../../img/sp/bg-mine_hold.png) repeat;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.mine_head a {
+  display: inline-block;
+}
+.mine_head a:first-child {
+  border: 2px solid #fff;
+  height: 65px;
+  width: 65px;
+  background: #ccc;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+.mine_head img {
+  border-radius: 100px;
+}
+.mine_bg {
+  background: url(../../img/sp/img-hot_article.jpg) no-repeat center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  filter: blur(10px);
+}
+.mine_list {
+  background: #fff;
+  padding: 0 15px;
+}
+.mine_list li {
+  border-bottom: 1px solid #e6e6e6;
+  height: 45px;
+  line-height: 45px;
+  font-size: 16px;
+  background: url(../../img/sp/bg-mine_arrow.png) no-repeat right center;
+  background-size: 8px;
+}
+.mine_list li.bg_none {
+  background: none;
+}
+.mine_list li:last-child {
+  border-bottom: none;
+}
+.mine_list li a {
+  display: block;
+}
+.mine_list li a:link,.mine_list li a:visited,.mine_list li a:hover {
+  color: #333;
+}
+/*我的资料*/
+.my_data #header {
+  background: #fff;
+  -webkit-box-shadow: 0px 2px 10px 0px #d3d2d2;
+  -moz-box-shadow: 0px 2px 10px 0px #d3d2d2;
+  box-shadow: 0px 2px 10px 0px #d3d2d2;
+}
+.my_data #content {
+  padding-top: 49px;
+}
+.my_data .mine_head {
+  background: none;
+  padding: 10px 0;
+}
+.my_data .mine_head a:first-child,.my_data .mine_head {
+  margin-bottom: 0;
+}
+.mine_list li a:link,.mine_list li a:visited,.mine_list li a:hover {
+  color: #808080;
+}
+.mine_list li span {
+  padding-left: 30px;
+  color: #1a1a1a;
+}
+.my_data .mine_head input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+}
+.my_data .s_camera {
+  display: block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  bottom: 0;
+  right: -5px;
+  background: url(../../img/sp/bg-icon_sp.png) no-repeat;
+  background-position: -95px -36px;
+  background-size: 185px;
+}
