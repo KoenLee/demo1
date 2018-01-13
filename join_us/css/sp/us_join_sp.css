@@ -8,7 +8,7 @@ a{
   color: #343434;
 }
 .bg_join_major {
-  background: url(../../img/sp/bg-join_major_sp.jpg) repeat;
+  background: url(../../img/sp/bg-join_major_sp.jpg) 100% repeat;
   background-size: cover;
 }
 #content h2 {
