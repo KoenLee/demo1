@@ -1,0 +1,35 @@
+#content {
+  text-align: center;
+}
+.content_txt {
+  line-height: 2.3;
+}
+.pb160 {
+  padding-bottom: 160px;
+}
+.sector_txt {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -122px;
+  width: 245px;
+}
+.pt20{
+	padding-top: 20px
+}
+.pt10{
+	padding-top: 10px;
+}
+#content .text_left{
+	text-align: left;
+}
+#content .content_txt{
+	margin: 0 auto;
+	width: 60%;
+}
+.text_underline{
+	text-decoration: underline;
+}
+.pt30{
+	padding-top: 30px
+}
