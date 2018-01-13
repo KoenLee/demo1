@@ -558,3 +558,6 @@ input[type="text"], input[type="email"], input[type="search"], input[type="passw
 #content .text_left{
   text-align: left;
 }
+.text_underline{
+  text-decoration: underline;
+}
