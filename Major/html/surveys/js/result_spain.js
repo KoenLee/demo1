@@ -20,32 +20,7 @@ $(function(){
 });
 
 //--------------------------------------
-//控制微信里面结果页面的返回，直接返回到测试说明页面
-(function() {
-    getHistory();
 
-    var flag = false;
-
-    setTimeout(function() {
-          flag = true;
-    }, 1000);
-
-    window.addEventListener('popstate', function(e) {
-        if( flag ) {
-            window.location.href = '/html/surveys/mobile/home_spain.html';//返回的页面
-        }
-        getHistory();
-    }, false); 
-
-    function getHistory() {
-        var state = {
-            title:'',
-            url:'/html/surveys/mobile/home_spain.html'  
-        };
-        window.history.pushState(state, 'title', state.url);
-    }
-
-})();
 
 //--------------------------------------
 
