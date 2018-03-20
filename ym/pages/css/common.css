@@ -1,0 +1,97 @@
+html{
+	font-size: 10px;
+	color: #040404;
+}
+body{
+	width: auto;
+	color:  #040404;
+	position: relative;
+}
+a{
+	color: #7d7d7d;
+}
+#header-top,header{
+	width: 64%;
+	margin: 0 auto;
+}
+#header-top{
+	margin-top: 10px;
+	height: 40px;
+	font-size: 1.2rem;
+}
+#ym-header{
+	font-size: 1.4rem;
+}
+#header-top ul li{
+	float: right;
+	padding-left: 2em;
+}
+header{
+	position: relative;
+	height: 38px;
+	margin-bottom: 20px;
+}
+header img{
+	width: 120px;
+	position: absolute;
+	left: 0;
+	bottom: 1em;
+}
+header ul{
+	float: right;
+	position: absolute;
+	bottom: 0;
+	left: 20%;
+}
+header ul li{
+	float: left;	
+	text-align:justify;
+	width: 60px;
+	text-align-last: justify;
+	padding: 0 30px;
+	
+}
+header ul li:after{
+	content: '';
+	width: 100%;
+	display: inline-block;
+}
+#bottom{
+	height: 60px;
+	width: 100%;
+	background-color: #2c2c2c;
+	color: #fff;
+}
+#bottom .container .logo-bottom{
+	height: 30px;
+	
+}
+#bottom .container{
+	width: 64%;
+	margin: 0 auto;
+	height: 40px;
+	padding: 10px 0 0 0;
+	position: relative;
+}
+#bottom .container .share{
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	width: 500px;
+}
+#bottom .container .share ul{
+	float: right;
+}
+#bottom .container .share li{
+	float: left;
+	padding: 0 5px;
+}
+#bottom .container .share span{
+	float: left;
+	line-height: 20px;
+	font-size: 1.4em;
+}
+#bottom .container .share li img{
+	height: 20px;
+}
