@@ -11,23 +11,26 @@ function corner(){
 }
 
 function hover(targetArr,zoom,opacity){
-    for (let i = 0; i < targetArr.length; i++) {
-        const e = targetArr[i];
+    for (var i = 0; i < targetArr.length; i++) {
+        var e = targetArr[i];
         zoomToggle(e,zoom,opacity)
     }
 }
 
 function zoomToggle(target,zoom,opacity){
-    target.mouseover(function(){
+    var w=target.width();
+    target.mouseover(function(e){
         $(this).animate({
-            zoom:zoom,
+            width:zoom*w,
             opacity:opacity
-        })
-    }).mouseout(function(){
+        });
+        e.stopPropagation();
+    }).mouseout(function(e){
         $(this).animate({
-            zoom:'1',
+            width:w,
             opacity:'1'
-        })
+        });
+        e.stopPropagation();
     })
     
 }
@@ -35,15 +38,9 @@ function zoomToggle(target,zoom,opacity){
 
 
 hover([
-    $('.button'),$('.section img')
+    $('.button')
+],'1.5','0.7');
+
+hover([
+    $('.section img')
 ],'1.2','0.8');
-
-
-function slideLeft(){
-    $('#preview .container').animate({
-        marginLeft:-($('#preview .container li:eq(0)').outerWidth())
-    },function(){
-        $('#preview .container li:eq(0)').appendTo($('#preview .container'));
-        $('#preview .container').css('marginLeft',0);
-    })
-}

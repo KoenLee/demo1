@@ -1,12 +1,15 @@
 #start{
 	width: 100%;
-	max-width: 1920px;
-	background:url(../images/edit-top.jpg) no-repeat top;
+	/* background:url(../images/edit-top.jpg) no-repeat top; */
 	background-size: 100%;
 	overflow: hidden;
 	margin: 0 auto;
-	position: relative;
-	height: 300px;
+	margin-bottom: 5px;
+}
+#start img{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 #progress{
 	width: 100%;
@@ -100,16 +103,21 @@
 }
 #selector .container{
 	width: 64%;
+	height: 300px;
 	margin: 0 auto;
-	margin-top: 50px;
 	display: flex;
 	flex-flow: row;
 	-ms-flex-flow: row;
+	overflow: hidden;
 }
 .section{
 	flex: 2;
 	-ms-flex: 2;
-	text-align: center
+	text-align: center;
+	padding: 50px 0;
+}
+#selector .actived{
+	animation:bgChange;
 }
 .section img{
 	width: 180px;
@@ -189,4 +197,15 @@
 	text-align: center;
 	font-size: 1.6em;
 	color: #fff;
+}
+@keyframes bgChange
+{
+	from {background-color:#fff;}
+	to {background-color:#4a4a4a;}
+}
+
+@-webkit-keyframes bgChange /*Safari and Chrome*/
+{
+	from {background-color:#fff;}
+	to {background-color:#4a4a4a;}
 }

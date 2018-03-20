@@ -5,7 +5,8 @@
  	<title>You Memory</title>
 	 <link rel="stylesheet" href="css/reset.css">
 	 <link rel="stylesheet" href="css/common.css">
- 	<link rel="stylesheet" href="css/ym.css">
+	 <link rel="stylesheet" href="css/ym.css">
+	 <link rel="stylesheet" href="css/swiper.min.css">
  </head>
  <body>
  	<div id="header-top">
@@ -25,19 +26,13 @@
  		</ul>
  	</header>
 	<div id="start">
+		<img src="images/bg-top.jpg" alt="">
 		<div class="title">
 			<p class="title-en">create a book of your own</p>
 			<p class="title-ch">做一本属于自己的书</p>
+			<a href="edit.html"><div class="button">开 始 制 作</div></a>
 		</div>
-		<a href="edit.html"><div class="button">开 始 制 作</div></a>
-		<div class="corner">
-			<div class="left"></div>
-			<ul>
-				<li></li>
-				<li></li>
-			</ul>
-			<div class="right"></div>
-		</div>
+		
 	</div>
 	
 	<div id="selector">
@@ -78,10 +73,11 @@
 
 	</div>
 	<div id="about">
+		<img src="images/book-bg.jpg" alt="">
 		<div class="title">
 			<p class="title-en">Our books</p>
 			<p class="title-cn">我们的书</p>
-			<div class="button">了解详情</div>
+			<a href="style.html"><div class="button">了解详情</div></a>
 		</div>
 	</div>
 	<div id="director">
@@ -96,42 +92,36 @@
 	</div>
 	<div id="preview">
 		<p class="tip-title">你能制作的书</p>
-		<ul class="container">
-			<li>
-			<figure>
-				<img src="images/item1.png" alt="">
-				<figcaption>摄影集</figcaption>
-			</figure>
-			</li>
-			<li>
-			<figure>
-				<img src="images/item2.png" alt="">
-				<figcaption>游记</figcaption>
-			</figure>
-			</li>
-			<li>
-			<figure>
-				<img src="images/item3.png" alt="">
-				<figcaption>家庭生活</figcaption>
-			</figure>
-			</li>
-			<li>
-			<figure>
-				<img src="images/item4.png" alt="">
-				<figcaption>成长记录</figcaption>
-			</figure>
-			</li>
-			<li>
+		<div class="swiper-container">
+			<div class="container swiper-wrapper">
+				<div class="swiper-slide">
+				<figure>
+					<img src="images/item1.png" alt="">
+					<figcaption>摄影集</figcaption>
+				</figure>
+				</div>
+				<div class="swiper-slide">
+				<figure>
+					<img src="images/item2.png" alt="">
+					<figcaption>游记</figcaption>
+				</figure>
+				</div>
+				<div class="swiper-slide">
+				<figure>
+					<img src="images/item3.png" alt="">
+					<figcaption>家庭生活</figcaption>
+				</figure>
+				</div>
+				<div class="swiper-slide">
 				<figure>
 					<img src="images/item4.png" alt="">
 					<figcaption>成长记录</figcaption>
 				</figure>
-			</li>
-		</ul>
-		<div class="swiper">
-			<a href="javascript:slideLeft()"><img src="images/left-button.png" alt=""></a>
-			<a href="javascript:slideRight()"><img src="images/right-button.png" alt=""></a>
+				</div>
+			</div>
 		</div>
+		<div class="swiper-button-prev swiper-button-black"></div>
+		<div class="swiper-button-next swiper-button-black"></div>
 	</div>
 	<div id="bottom">
 		<div class="container">
@@ -149,5 +139,18 @@
 	</div>
 	<script src="js/jquery.js"></script>
 	<script src="js/ym.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script>        
+			var mySwiper = new Swiper ('.swiper-container', {
+				loop: true,
+				slidesPerView: 4,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				hideOnClick: true
+			});
+			mySwiper.navigation.update();        
+		</script>
  </body>
  </html> 

@@ -6,6 +6,8 @@ body{
 	width: auto;
 	color:  #040404;
 	position: relative;
+	min-width: 1000px;
+	margin: 0 auto;
 }
 a{
 	color: #7d7d7d;

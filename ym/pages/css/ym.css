@@ -1,20 +1,29 @@
 
 #start{
 	width: 100%;
-	max-width: 1920px;
 	background:url(../images/bg-top.jpg) no-repeat top;
 	background-size: 100%;
 	overflow: hidden;
 	margin: 0 auto;
 	position: relative;
-	height: 430px;
+}
+#start img{
+	width: 100%
+}
+#start .title{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	
+	
 }
 #start .title-ch,
 #start .title-en{
 	color: #fffefe;
 }
 #start .title-en{
-	margin-top: 150px;
+	margin-top: 10%;
 	text-align: center;
 	font-size: 2rem;
 }
@@ -22,34 +31,6 @@
 	text-align: center;
 	margin-top: 5px;
 	font-size: 3rem;
-}
-.corner .left{
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 30px;
-	background-color: #fff;
-}
-.corner .right{
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	height: 30px;
-	background-color: #fff;
-}
-.corner ul{
-	position: absolute;
-	bottom: 0;
-	height: 30px;
-	width: 120px;
-	overflow: hidden;
-}
-.corner li{
-	float: left;
-	height: 60px;
-	width: 60px;
-	border-radius: 50%;
-	background: #fff;
 }
 .button{
 	width: 7em;
@@ -114,22 +95,26 @@
 #about{
 	background: url(../images/book-bg.jpg) no-repeat;
 	background-size: 100%;
+	background-size:cover；
 	width: 100%;
-	height:475px;;
 	margin-top: 60px;
 	text-align: center;
-	position: relative;
 	background-color: #ececec;
+	position: relative;
+}
+#about img{
+	width: 100%;
 }
 #about p{
 	font-size: 2.8rem;
 	line-height: 3rem;
 }
 #about .title{
-	position: absolute;
 	width: 100%;
 	text-align: center;
-	top: 150px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 #about .button{
 	margin-top: 15px;
@@ -182,18 +167,14 @@
 #preview{
 	padding: 60px 0;
 	position: relative;
-	overflow: hidden;
 	width: 64%;
 	margin: 0 auto;
 }
+
 #preview .container{
 	margin-top: 50px;
-	width: 200%;
-	height: 180px;
 }
-#preview .container li{
-	float: left;
-	padding: 0 2em;
+#preview .container div{
 	text-align: center;
 }
 #preview .container figcaption{
@@ -203,29 +184,11 @@
 #preview .container figure img{
 	height: 280px;
 }
-#preview .swiper{
-	width: 100%;
-	height: 1em;
-	margin: 0 auto;
-	position: absolute;
-	text-align: justify;
-	text-align-last: justify;
-	-moz-text-align-last: justify;
-	-ms-text-align-last: justify;
-	top: 50%;
-	left: 50%;
-	transform: translateY(-50%);
-	-moz-transform: translateY(-50%);
-	transform: translateX(-50%);
-	-moz-transform: translateX(-50%);
+#preview .swiper-button-prev{
+	left: -1em;
 }
-#preview .swiper:after{
-	content: '';
-	width: 100%;
-	display: inline-block;
-}
-#preview .swiper a{
-	font-size: 4rem;
+#preview .swiper-button-next{
+	right: -1em;
 }
 /* @keyframes zoom-in
 {
