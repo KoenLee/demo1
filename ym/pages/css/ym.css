@@ -4,6 +4,7 @@
 	overflow: hidden;
 	margin: 0 auto;
 	position: relative;
+	max-width: 1920px;
 }
 #start img{
 	width: 100%
