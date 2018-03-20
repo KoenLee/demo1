@@ -6,6 +6,7 @@ body{
 	width: auto;
 	color:  #040404;
 	position: relative;
+	max-width: 1920px;
 	min-width: 1000px;
 	margin: 0 auto;
 }
