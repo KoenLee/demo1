@@ -1,8 +1,6 @@
 
 #start{
 	width: 100%;
-	background:url(../images/bg-top.jpg) no-repeat top;
-	background-size: 100%;
 	overflow: hidden;
 	margin: 0 auto;
 	position: relative;
@@ -15,8 +13,6 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	
-	
 }
 #start .title-ch,
 #start .title-en{
