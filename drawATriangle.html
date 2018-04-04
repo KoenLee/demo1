@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .wraper{
+            zoom: 0.4;
+            background: linear-gradient(15deg,#5a20f8 30%, #bf3bf3 50%,rgb(238, 145, 40) );
+            height: 1200px;
+        }
+        .container{
+            position: relative;
+            left: 400px;
+            top: 100px;
+            height:800px;
+            width: 800px;
+            /* background: linear-gradient(40deg,#ffcc33, #d6ffff); */
+            
+        }
+        #line1{
+            width: 0px;
+            height: 30px;
+            background-color:gainsboro;
+            transform: rotate(49deg);
+            animation: longerStart 0.7s,gradient1 3s,wider 3s;
+            position: absolute;
+            transform-origin: right bottom;
+            bottom: 315px;
+            right: 195px;
+            animation-fill-mode: both;
+            border-radius: 50px;
+        }
+        #line2{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 75px;
+            right: 510px;
+            background-color:gainsboro;
+            transform-origin: right top;
+            transform: rotate(289deg);
+            animation: longer 1s 1s,gradient2 2s,wider 5s;
+            animation-fill-mode:both;
+            border-radius: 50px
+        }
+        #line3{
+            width: 0px;
+            height: 30px;
+            background-color:gainsboro;
+            transform: rotate(348.5deg);
+            animation: longer 1s 2s,gradient3 1s,wider 5s;
+            position: absolute;
+            transform-origin: left bottom;
+            bottom: 20px;
+            left: 65px;
+            animation-fill-mode: both;
+            border-radius: 50px
+        }
+        #line4{
+            width: 0px;
+            height: 30px;
+            background-color:gainsboro;
+            transform: rotate(49deg);
+            animation: longerEnd 0.3s 3s,gradient1 3s,wider 3s;
+            position: absolute;
+            transform-origin: right bottom;
+            bottom: 150px;
+            right: 50px;
+            animation-fill-mode: both;
+            border-radius: 50px;
+        }
+        /* #wa1{
+            transform: rotate(45deg);
+            width: 60px;
+            position: absolute;
+            left: 280px;
+            top: 74px;
+        } */
+        #triangle-up {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 37px solid transparent;
+            border-right: 51px solid transparent;
+            border-bottom: 78px solid rgb(253, 252, 224);
+            left: 268px;
+            top: 46px;
+            opacity: 0;
+            transform: rotate(-6deg);
+            animation: appear 2.5s 1s;
+            animation-fill-mode: both
+        }
+        #triangle-left {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 51px solid transparent;
+            border-right: 49px solid transparent;
+            border-bottom: 77px solid rgb(253, 242, 78);
+            left: 32px;
+            bottom: 23px;
+            opacity: 0;
+            transform: rotate(-13deg);
+            animation: appear 1.5s 2s;
+            animation-fill-mode: both
+        }
+        #triangle-right {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 27px solid transparent;
+            border-right: 48px solid transparent;
+            border-bottom: 78px solid rgb(253, 249, 197);
+            right: 0px;
+            bottom: 162px;
+            transform: rotate(-11deg);
+            opacity: 0;
+            animation: appear 0.2s 3s;
+            animation-fill-mode: both;
+        }
+        .tri{
+            animation: gradient 9s
+        }
+        @keyframes longer{
+            from{width: 0px}
+            to{width: 730px}
+        }
+        @keyframes longerStart{
+            from{width: 0px}
+            to{width: 511px}
+        }
+        @keyframes longerEnd{
+            from{width: 0px}
+            to{width: 259px}
+        }
+        @keyframes gradient{
+            from{background-color: rgb(248, 250, 225)}
+            to{background: gold}
+        }
+        @keyframes wider {
+            from{height: 30px}
+            to{height: 55px}
+        }
+        @keyframes gradient1{
+            from{background:linear-gradient(-90deg, rgb(253, 250, 204),rgb(253, 250, 204))}
+            to{background:linear-gradient(-90deg, rgb(253, 250, 204),rgb(253, 252, 236))}
+        }
+        @keyframes gradient2{
+            from{background:linear-gradient(-90deg,rgb(253, 252, 236),rgb(253, 252, 236))}
+            to{background:linear-gradient(-90deg,rgb(253, 252, 236),rgb(253, 241, 67))}
+        }
+        @keyframes gradient3{
+            from{background:linear-gradient(90deg,rgb(253, 241, 67),rgb(253, 241, 67))}
+            to{background:linear-gradient(90deg,rgb(253, 241, 67),rgb(253, 250, 204))}
+        }
+        @keyframes appear {
+            from{opacity: 0}
+            to{opacity: 1}
+        }
+    </style>
+</head>
+<body>
+<div class="wraper">
+    <div class="container">
+        <div id="line1" class="line"></div>
+        <div id="line2" class="line"></div>
+        <div id="line3" class="line"></div>
+        <div id="line4" class="line"></div>
+        <!-- <div id="wa1"> -->
+            <div id="triangle-up"></div>
+            <div id="triangle-left"></div>
+            <div id="triangle-right"></div>
+        <!-- </div> -->
+     
+        <div id="angle2"></div>
+        <div id="angle3"></div>
+    </div>
+</div>
+
+</body>
+</html>
