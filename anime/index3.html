@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>空间规划服务</title>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="stylesheet" type="text/css" href="./animate.css">
+    <link rel="stylesheet" type="text/css" href="./swiper-4.2.2.min.css">
+</head>
+
+<body>
+    <div class="content__list">
+        <!-- 空间规划服务 -->
+        <div class="content__list__item content__list__item-2">
+            <div class="content__list__item__container content__list__item-2__container">
+                <img src="./img/index-2/2.png" class="content__list__item__container__underground animated slideInUp" alt="">
+                <img src="./img/index-1/3.png" class="content__list__item__container__line-left animated" alt="">
+                <img src="./img/index-1/4.png" class="content__list__item__container__line-right animated" alt="">
+                <img src="./img/index-2/3.png" class="content__list__item-2__container__icon-1 animated fadeInLeft" alt="">
+                <img src="./img/index-2/4.png" class="content__list__item-2__container__icon-2 animated fadeInLeft" alt="">
+                <img src="./img/index-2/5.png" class="content__list__item-2__container__icon-3 animated fadeInUp" alt="">
+                <img src="./img/index-2/6.png" class="content__list__item-2__container__icon-4 animated fadeInRight" alt="">
+                <img src="./img/index-2/7.png" class="content__list__item-2__container__icon-5 animated slideInDown" alt="">
+                <img src="./img/index-2/8.png" class="content__list__item-2__container__icon-6 animated" alt="">
+                <img src="./img/index-2/9.png" class="content__list__item-2__container__icon-7 animated" alt="">
+                <img src="./img/index-2/10.png" class="content__list__item-2__container__icon-8 animated" alt="">
+                <img src="./img/index-2/11.png" class="content__list__item-2__container__icon-9 animated" alt="">
+                <img src="./img/index-2/12.png" class="content__list__item-2__container__icon-10 animated fadeIn" alt="">
+                <img src="./img/index-2/13.png" class="content__list__item-2__container__icon-11 content__list__item-2__container__icon-arrow slideInLeft animated" alt="">
+                <img src="./img/index-2/13.png" class="content__list__item-2__container__icon-12 content__list__item-2__container__icon-arrow slideInLeft animated" alt="">
+                <img src="./img/index-2/13.png" class="content__list__item-2__container__icon-13 content__list__item-2__container__icon-arrow slideInLeft animated" alt="">
+                <img src="./img/index-2/14.png" class="content__list__item-2__container__icon-14 content__list__item-2__container__icon-cpic bounceInLeft animated" alt="">
+                <img src="./img/index-2/15.png" class="content__list__item-2__container__icon-15 content__list__item-2__container__icon-cpic animated" alt="">
+                <img src="./img/index-2/16.png" class="content__list__item-2__container__icon-16 content__list__item-2__container__icon-cpic bounceInLeft animated" alt="">
+                <img src="./img/index-2/17.png" class="content__list__item-2__container__icon-17 content__list__item-2__container__icon-cpic animated" alt="">
+                <img src="./img/index-2/18.png" class="content__list__item-2__container__icon-18 bounceInRight animated" alt="">
+                <img src="./img/index-2/19.png" class="content__list__item-2__container__icon-19 animated" alt="">
+                <img src="./img/index-2/20.png" class="content__list__item-2__container__icon-20 bounceInRight animated" alt="">
+                <img src="./img/index-2/21.png" class="content__list__item-2__container__icon-21 animated" alt="">
+                <img src="./img/index-2/23.png" class="content__list__item-2__container__icon-22 bounceInLeft animated" alt="">
+                <img src="./img/index-2/22.png" class="content__list__item-2__container__icon-23 animated" alt="">
+                <img src="./img/index-2/25.png" class="content__list__item-2__container__icon-24 bounceInLeft animated" alt="">
+                <img src="./img/index-2/24.png" class="content__list__item-2__container__icon-25 animated" alt="">
+                <img src="./img/index-2/26.png" class="content__list__item-2__container__icon-26 animated" alt="">
+                <img src="./img/index-2/27.png" class="content__list__item-2__container__icon-27 animated" alt="">
+                <div id="light-rect" class="animated">
+                    <img src="./img/index-2/28.png" class="content__list__item-2__container__icon-28 animated fadeInDown" alt="">
+                </div>
+                <img src="./img/index-2/29.png" class="content__list__item-2__container__icon-29 animated bounceIn" alt="">
+                <img src="./img/index-2/30.png" class="content__list__item-2__container__icon-30 animated fadeIn" alt="">
+                <img src="./img/index-2/31.png" class="content__list__item-2__container__icon-31 animated fadeIn" alt="">
+                <img src="./img/index-2/32.png" class="content__list__item-2__container__icon-32 animated fadeIn" alt="">
+                <img src="./img/index-2/33.png" class="content__list__item-2__container__icon-33 animated fadeIn" alt="">
+                <canvas id="colorful-circle-container" width="520" height="520"></canvas>
+                <canvas id="colorful-circle-container-1" width="520" height="520"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./jquery.min.js"></script>
+<script src="./swiper-4.2.2.min.js"></script>
+<script src="./main.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        effect: 'fade',
+        observer: true,
+        observeParents: true,
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+<script>
+    // 空间服务圆环运动
+    function renderCircleA() {
+        var c = document.getElementById('colorful-circle-container');
+        var ctx = c.getContext('2d');
+
+        var mW = c.width;
+        var mH = c.height;
+        var lineWidth = 36;
+        var r = mW / 2; //中间位置
+        var cR = r - lineWidth; //圆半径
+        var startAngle = 1 / 4 * Math.PI; //开始角度
+        var endAngle = startAngle + 2 * Math.PI; //结束角度
+        var xAngle = 8 * (Math.PI / 180); //偏移角度量
+        var tmpAngle = startAngle; //临时角度变量
+
+        //渲染函数
+        var render = function() {
+            if (tmpAngle >= endAngle) {
+                return;
+            } else if (tmpAngle + xAngle > endAngle) {
+                tmpAngle = endAngle;
+            } else {
+                tmpAngle += xAngle;
+            }
+            ctx.clearRect(0, 0, mW, mH);
+
+            //画圈
+            ctx.beginPath();
+            ctx.lineWidth = lineWidth;
+            ctx.lineCap = 'round';
+            var grd = ctx.createLinearGradient(0, 0, 520, 0);
+            grd.addColorStop(0, "#0376c9");
+            grd.addColorStop(0.5, "#5efb77");
+            grd.addColorStop(0.8, "#b2fc35");
+            grd.addColorStop(1, "#e7ee0d");
+            ctx.strokeStyle = grd;
+            ctx.arc(r, r, cR, startAngle, tmpAngle);
+            ctx.stroke();
+            ctx.closePath();
+            requestAnimationFrame(render);
+        };
+
+        render();
+    }
+
+    function renderCircleB() {
+        var c = document.getElementById('colorful-circle-container-1');
+        var ctx = c.getContext('2d');
+
+        var mW = c.width;
+        var mH = c.height;
+        var lineWidth = 36;
+        var r = mW / 2; //中间位置
+        var cR = r - lineWidth; //圆半径
+        var startAngle = 1 / 3 * Math.PI; //开始角度
+        var endAngle = startAngle + 2 * Math.PI; //结束角度
+        var xAngle = 6 * (Math.PI / 180); //偏移角度量
+        var tmpAngle = startAngle; //临时角度变量
+
+        //渲染函数
+        var render = function() {
+            if (tmpAngle >= endAngle) {
+                return;
+            } else if (tmpAngle + xAngle > endAngle) {
+                tmpAngle = endAngle;
+            } else {
+                tmpAngle += xAngle;
+            }
+            ctx.clearRect(0, 0, mW, mH);
+
+            //画圈
+            ctx.beginPath();
+            ctx.lineWidth = lineWidth;
+            ctx.lineCap = 'round';
+            var grd = ctx.createLinearGradient(0, 50, 520, 50);
+            grd.addColorStop(0, "#54ec80");
+            grd.addColorStop(0.5, "#32ba9e");
+            grd.addColorStop(0.8, "#148eba");
+            grd.addColorStop(1, "#0e85bf");
+            ctx.strokeStyle = grd;
+            ctx.arc(r, r, cR, startAngle, tmpAngle);
+            ctx.stroke();
+            ctx.closePath();
+            requestAnimationFrame(render);
+        };
+
+        render();
+    }
+    setTimeout(function() {
+        renderCircleA();
+        renderCircleB();
+    }, 2150);
+    setTimeout(function() {
+
+        renderCircleB();
+    }, 2550);
+    // 纸媒服务矩形运动
+    // function renderLineBottom() {
+    //     var c = document.getElementById('colorful-rect');
+    //     var ctx = c.getContext('2d');
+    //     var startX = 737;
+    //     var endX = 408;
+    //     var render = function() {
+    //         startX = startX <= 0 ? 0 : startX -= 40;
+    //         var style = ctx.createLinearGradient(737, 408, 0, 408);
+    //         style.addColorStop(0, '#2f1ff4');
+    //         style.addColorStop(0.5, '#6330e5');
+    //         style.addColorStop(1, '#bb4ecc');
+    //         ctx.lineWidth = 50;
+    //         ctx.strokeStyle = style;
+    //         ctx.beginPath();
+    //         ctx.moveTo(737, 408);
+    //         ctx.lineTo(startX, 408);
+    //         ctx.stroke();
+    //         ctx.closePath();
+    //         requestAnimationFrame(render);
+    //     }
+    //     render();
+    // }
+
+    // function renderLineLeft() {
+    //     var c = document.getElementById('colorful-rect');
+    //     var ctx = c.getContext('2d');
+    //     var startY = 408;
+    //     var endY = 0;
+    //     var render = function() {
+    //         startY = startY <= 0 ? 0 : startY -= 40;
+    //         var style = ctx.createLinearGradient(0, 408, 0, 0);
+    //         style.addColorStop(0, '#bb4ecc');
+    //         style.addColorStop(0.5, '#e55cc0');
+    //         style.addColorStop(1, '#eb5ebe');
+    //         ctx.lineWidth = 50;
+    //         ctx.strokeStyle = style;
+    //         ctx.beginPath();
+    //         ctx.moveTo(0, 408);
+    //         ctx.lineTo(0, startY);
+    //         ctx.stroke();
+    //         ctx.closePath();
+    //         requestAnimationFrame(render);
+    //     }
+    //     render();
+    // }
+
+    // function renderLineTop() {
+    //     var c = document.getElementById('colorful-rect');
+    //     var ctx = c.getContext('2d');
+    //     var startX = 0;
+    //     var endX = 0;
+    //     var render = function() {
+    //         startX = startX >= 737 ? 737 : startX += 35;
+    //         var style = ctx.createLinearGradient(0, 0, 737, 0);
+    //         style.addColorStop(0, '#eb5ebe');
+    //         style.addColorStop(0.5, '#d657c4');
+    //         style.addColorStop(1, '#5f2fe6');
+    //         ctx.lineWidth = 50;
+    //         ctx.strokeStyle = style;
+    //         ctx.beginPath();
+    //         ctx.moveTo(0, 0);
+    //         ctx.lineTo(startX, 0);
+    //         ctx.stroke();
+    //         ctx.closePath();
+    //         requestAnimationFrame(render);
+    //     }
+    //     render();
+    // }
+
+    // function renderLineRight() {
+    //     var c = document.getElementById('colorful-rect');
+    //     var ctx = c.getContext('2d');
+    //     var startY = 0;
+    //     var endY = 408;
+    //     var render = function() {
+    //         startY = startY >= 408 ? 408 : startY += 20;
+    //         var style = ctx.createLinearGradient(737, 0, 737, 408);
+    //         style.addColorStop(0, '#5f2fe6');
+    //         style.addColorStop(0.5, '#3922f1');
+    //         style.addColorStop(1, '#2f1ff4');
+    //         ctx.lineWidth = 50;
+    //         ctx.strokeStyle = style;
+    //         ctx.beginPath();
+    //         ctx.moveTo(737, 0);
+    //         ctx.lineTo(737, startY);
+    //         ctx.stroke();
+    //         ctx.closePath();
+    //         requestAnimationFrame(render);
+
+    //     }
+    //     render();
+    // }
+
+    // setTimeout(function() {
+    //     renderLineBottom();
+    // }, 2200)
+    // setTimeout(function() {
+    //     renderLineLeft();
+    // }, 2500);
+    // setTimeout(function() {
+    //     renderLineTop();
+    // }, 2700);
+    // setTimeout(function() {
+    //     renderLineRight()
+    // }, 3000);
+
+    function SRCBPopup() {
+        $('.content__list__item__popup').hide();
+        $('.content__list__item__popup.SRCB').show();
+    }
+
+    function CPICPaperMedia() {
+        $('.content__list__item__popup').hide();
+        $('.content__list__item__popup.CPICPaperMedia').show();
+    }
+    $('.content__list__item-4__container__icon-16').on('click', function() {
+        $('.content__list__item__popup').hide();
+        $('.content__list__item__popup.Huatai').show();
+    });
+    $('.content__list__item-4__container__icon-5 ').on('click', function() {
+        $('.content__list__item__popup').hide();
+        $('.content__list__item__popup.CPIC').show();
+    });
+    $('.content__list__item-4__container__icon-1').on('click', function() {
+        SRCBPopup();
+    });
+    $('.content__list__item-4__container__icon-2').on('click', function() {
+        SRCBPopup();
+    });
+    $('.content__list__item-4__container__icon-3').on('click', function() {
+        SRCBPopup();
+    });
+    $('.content__list__item-1__container__icon-7').on('click', function() {
+        CPICPaperMedia();
+    });
+    $('.content__list__item-1__container__icon-9').on('click', function() {
+        CPICPaperMedia();
+    });
+    $('.content__list__item-1__container__icon-11').on('click', function() {
+        CPICPaperMedia();
+    });
+    $('.content__list__item-1__container__icon-17').on('click', function() {
+        CPICPaperMedia();
+    });
+
+    $('.close-popup-btn').on('click', function() {
+        $(this).parents('.content__list__item__popup').hide();
+    });
+</script>
+
+</html>
